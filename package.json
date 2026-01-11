@@ -1,0 +1,30 @@
+{
+  "name": "local-home-services",
+  "version": "1.0.0",
+  "description": "نظام سوق محلي لخدمات المنازل - مشروع التخرج",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "setup": "node setup-database.js",
+    "check-db": "node check-database.js"
+  },
+  "keywords": [
+    "home services",
+    "local market",
+    "رعاية",
+    "خدمات المنازل"
+  ],
+  "author": "abderlrhman",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.22.1",
+    "mongoose": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
