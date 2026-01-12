@@ -19,6 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // إعداد النافذة المنبثقة للحجز
     setupBookingModal();
 
+    // السيطرة على نماذج المصادقة (دخول/تسجيل)
+    setupAuthForms();
+
+    // تحديث واجهة المستخدم بناءً على تسجيل الدخول
+    updateUIForAuth();
+
     // جلب الخدمات من الـ API
     fetchServices().then(() => {
         // تحديد الصفحة الحالية
@@ -214,6 +220,9 @@ function renderAllServices(container) {
         if (service.name.includes('صيانة') || service.description.includes('كهرباء')) imgSrc = 'photo_2025-12-19_22-22-15.jpg';
         if (service.name.includes('نظافة')) imgSrc = 'photo_2025-12-19_22-22-04.jpg';
 
+        const averageRating = service.averageRating || 0;
+        const numOfReviews = service.numOfReviews || 0;
+
         const html = `
             <div class="service-card-full">
                 <div class="service-card-img">
@@ -221,14 +230,36 @@ function renderAllServices(container) {
                 </div>
                 <div class="service-card-body">
                     <h3>${service.name}</h3>
+                    <div class="service-rating" style="margin-bottom: 10px; color: #f1c40f;">
+                        ${generateStars(averageRating)}
+                        <span style="color: #888; font-size: 0.8rem; margin-right: 5px;">(${numOfReviews} تقييم)</span>
+                    </div>
                     <p>${service.description}</p>
                     <div class="service-price">${service.price} ج.م</div>
-                    <button class="btn btn-outline" style="width:100%" onclick="openOrderModal('${service.name}', '${service._id}')">طلب الخدمة</button>
+                    <div style="display:flex; gap:10px;">
+                        <button class="btn btn-outline" style="flex:1" onclick="openOrderModal('${service.name}', '${service._id}')">طلب</button>
+                        <button class="btn btn-primary" style="flex:1" onclick="window.openReviewsModal('${service._id}', '${service.name}')">تقييمات</button>
+                    </div>
                 </div>
             </div>
         `;
         container.insertAdjacentHTML('beforeend', html);
     });
+}
+
+/**
+ * توليد نجوم التقييم
+ */
+function generateStars(rating) {
+    let stars = '';
+    for (let i = 1; i <= 5; i++) {
+        if (i <= Math.round(rating)) {
+            stars += '<span class="star-filled">★</span>';
+        } else {
+            stars += '<span class="star-empty" style="color:#ddd">★</span>';
+        }
+    }
+    return `<div class="stars" style="display:inline-flex;">${stars}</div>`;
 }
 
 /**
@@ -252,6 +283,10 @@ function setupBookingModal() {
                     <div class="form-group">
                         <label for="userPhone">رقم الهاتف</label>
                         <input type="tel" id="userPhone" placeholder="01xxxxxxxxx" required pattern="^(010|011|012|015)\\d{8}$">
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail">البريد الإلكتروني (اختياري)</label>
+                        <input type="email" id="userEmail" placeholder="example@mail.com">
                     </div>
                     <div class="form-group">
                         <label for="userAddress">العنوان بالتفصيل</label>
@@ -287,11 +322,13 @@ function setupBookingModal() {
 
         const name = document.getElementById('userName').value;
         const phone = document.getElementById('userPhone').value;
+        const email = document.getElementById('userEmail').value;
         const address = document.getElementById('userAddress').value;
 
         await submitOrder({
             user_name: name,
             user_phone: phone,
+            user_email: email,
             user_address: address,
             serviceId: currentServiceId
         });
@@ -308,6 +345,15 @@ function setupBookingModal() {
 window.openOrderModal = function (serviceName, serviceId) {
     currentServiceId = serviceId;
     document.getElementById('modalTitle').textContent = `طلب خدمة: ${serviceName}`;
+
+    // تعبئة البيانات تلقائياً إذا كان مسجل دخول
+    const userJson = localStorage.getItem('user');
+    if (userJson) {
+        const user = JSON.parse(userJson);
+        document.getElementById('userName').value = user.username || '';
+        document.getElementById('userEmail').value = user.email || '';
+    }
+
     document.getElementById('bookingModal').classList.add('active');
 };
 
@@ -359,3 +405,227 @@ function getMockServices() {
         { _id: 'mock6', name: 'صيانة تكييف', description: 'غسيل وشحن فريون وصيانة', price: 250 }
     ];
 }
+
+/**
+ * إعداد نماذج المصادقة (دخول وتسجيل)
+ */
+function setupAuthForms() {
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    localStorage.setItem('token', result.token);
+                    localStorage.setItem('user', JSON.stringify(result.user));
+                    alert('👋 تم تسجيل الدخول بنجاح!');
+                    window.location.href = 'index.html';
+                } else {
+                    alert('❌ ' + result.message);
+                }
+            } catch (err) {
+                console.error(err);
+                alert('❌ حدث خطأ في الاتصال');
+            }
+        });
+    }
+
+    if (registerForm) {
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('regUsername').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, email, password })
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    localStorage.setItem('token', result.token);
+                    localStorage.setItem('user', JSON.stringify(result.user));
+                    alert('🎉 تم إنشاء الحساب بنجاح!');
+                    window.location.href = 'index.html';
+                } else {
+                    alert('❌ ' + result.message);
+                }
+            } catch (err) {
+                console.error(err);
+                alert('❌ حدث خطأ في الاتصال');
+            }
+        });
+    }
+}
+
+/**
+ * تحديث واجهة المستخدم بناءً على حالة تسجيل الدخول
+ */
+function updateUIForAuth() {
+    const userJson = localStorage.getItem('user');
+    const navLinks = document.querySelector('.nav-links.desktop-nav');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    if (!navLinks) return;
+
+    // إزالة أزرار قديمة إذا وجدت
+    const oldAuthLinks = document.querySelectorAll('.auth-link');
+    oldAuthLinks.forEach(l => l.remove());
+
+    if (userJson) {
+        const user = JSON.parse(userJson);
+
+        // إضافة رابط لوحة التحكم للمدير
+        if (user.role === 'admin') {
+            const adminLink = `<a href="admin.html" class="auth-link">لوحة التحكم</a>`;
+            navLinks.insertAdjacentHTML('beforeend', adminLink);
+            if (mobileNav) mobileNav.insertAdjacentHTML('beforeend', `<a href="admin.html" class="mobile-link auth-link">لوحة التحكم</a>`);
+        }
+
+        // إضافة زر خروج
+        const logoutBtn = `<a href="#" class="auth-link" onclick="logout()">خروج (${user.username})</a>`;
+        navLinks.insertAdjacentHTML('beforeend', logoutBtn);
+        if (mobileNav) mobileNav.insertAdjacentHTML('beforeend', `<a href="#" class="mobile-link auth-link" onclick="logout()">خروج</a>`);
+
+    } else {
+        // إضافة رابط تسجيل دخول
+        const loginLink = `<a href="auth.html" class="auth-link">دخول</a>`;
+        navLinks.insertAdjacentHTML('beforeend', loginLink);
+        if (mobileNav) mobileNav.insertAdjacentHTML('beforeend', `<a href="auth.html" class="mobile-link auth-link">دخول</a>`);
+    }
+}
+
+/**
+ * تسجيل الخروج
+ */
+window.logout = function () {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    window.location.reload();
+};
+
+/**
+ * فتح نافذة التقييمات
+ */
+window.openReviewsModal = async function (serviceId, serviceName) {
+    // إنشاء المودال إذا لم يكن موجوداً
+    if (!document.getElementById('reviewsModal')) {
+        const modalHTML = `
+            <div id="reviewsModal" class="modal-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center; z-index: 3000;">
+                <div class="modal-content" style="background: white; width: 90%; max-width: 500px; padding: 30px; border-radius: 20px; position: relative;">
+                    <button onclick="document.getElementById('reviewsModal').style.display = 'none'" style="position: absolute; left: 20px; top: 20px; border: none; background: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+                    <h2 id="reviewsModalTitle" style="margin-bottom: 20px; color: #333;">التقييمات</h2>
+                    <div id="reviewsList" style="max-height: 300px; overflow-y: auto; margin-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <p style="text-align:center;">جاري تحميل التقييمات...</p>
+                    </div>
+                    
+                    <div id="addReviewFormContainer">
+                        <h4 style="margin-bottom:10px;">أضف تقييمك</h4>
+                        <form id="addReviewForm">
+                            <input type="hidden" id="reviewServiceId">
+                            <div style="margin-bottom: 15px;">
+                                <label style="display:block; margin-bottom:5px;">التقييم:</label>
+                                <select id="reviewRating" style="width:100%; padding:10px; border-radius:8px; border: 1px solid #ccc;">
+                                    <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
+                                    <option value="4">⭐⭐⭐⭐ (4/5)</option>
+                                    <option value="3">⭐⭐⭐ (3/5)</option>
+                                    <option value="2">⭐⭐ (2/5)</option>
+                                    <option value="1">⭐ (1/5)</option>
+                                </select>
+                            </div>
+                            <div style="margin-bottom: 15px;">
+                                <label style="display:block; margin-bottom:5px;">تعليقك:</label>
+                                <textarea id="reviewComment" placeholder="اكتب رأيك في الخدمة..." required style="width:100%; padding:10px; border-radius:8px; border: 1px solid #ccc; min-height:80px;"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width:100%;">إرسال التقييم</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+        // ربط حدث الإرسال
+        document.getElementById('addReviewForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const token = localStorage.getItem('token');
+            if (!token) {
+                alert('⚠️ يرجى تسجيل الدخول أولاً للتمكن من التقييم');
+                window.location.href = 'auth.html';
+                return;
+            }
+
+            const reviewData = {
+                service: document.getElementById('reviewServiceId').value,
+                rating: parseInt(document.getElementById('reviewRating').value),
+                comment: document.getElementById('reviewComment').value
+            };
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/reviews`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify(reviewData)
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    alert('✅ شكراً لتقييمك!');
+                    document.getElementById('addReviewForm').reset();
+                    openReviewsModal(reviewData.service, serviceName); // إعادة تحميل التقييمات
+                    fetchServices(); // لتحديث النجوم في البطاقة
+                } else {
+                    alert('❌ ' + result.message);
+                }
+            } catch (err) {
+                alert('❌ حصل خطأ في الاتصال');
+            }
+        });
+    }
+
+    document.getElementById('reviewsModalTitle').textContent = `تقييمات خدمة: ${serviceName}`;
+    document.getElementById('reviewServiceId').value = serviceId;
+    document.getElementById('reviewsModal').style.display = 'flex';
+
+    // تحميل التقييمات من الـ API
+    try {
+        const res = await fetch(`${API_BASE_URL}/api/reviews/${serviceId}`);
+        const result = await res.json();
+        const list = document.getElementById('reviewsList');
+
+        if (result.data.length === 0) {
+            list.innerHTML = '<p style="text-align:center; color:#888; padding: 20px;">لا توجد تقييمات لهذه الخدمة بعد.</p>';
+        } else {
+            list.innerHTML = result.data.map(r => `
+                <div class="review-item" style="padding:15px; border-bottom:1px solid #f9f9f9;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
+                        <span style="font-weight:700;">${r.user_name}</span>
+                        <span>${generateStars(r.rating)}</span>
+                    </div>
+                    <p style="color:#555; font-size:0.9rem;">${r.comment}</p>
+                    <small style="color:#ccc; font-size:0.7rem;">${new Date(r.createdAt).toLocaleDateString('ar-EG')}</small>
+                </div>
+            `).join('');
+        }
+    } catch (err) {
+        console.error(err);
+    }
+};

@@ -28,13 +28,12 @@ router.get("/", async (req, res) => {
   }
 });
 
-// ====================================
-// POST - إنشاء طلب جديد
-// ====================================
+// @desc    إنشاء طلب جديد
+// @route   POST /api/orders
 router.post("/", async (req, res) => {
   try {
     // استخراج البيانات من الطلب
-    const { user_name, user_phone, user_address, serviceId } = req.body;
+    const { user_name, user_phone, user_address, user_email, serviceId } = req.body;
 
     // التحقق من وجود البيانات المطلوبة
     if (!user_name || !user_phone || !user_address || !serviceId) {
@@ -49,7 +48,8 @@ router.post("/", async (req, res) => {
       user_name,
       user_phone,
       user_address,
-      serviceId: Array.isArray(serviceId) ? serviceId : [serviceId], // تحويل إلى array إذا لم يكن
+      user_email,
+      serviceId: Array.isArray(serviceId) ? serviceId : [serviceId],
       order_date: new Date(),
       status: "جديد"
     });
@@ -57,11 +57,36 @@ router.post("/", async (req, res) => {
     // حفظ الطلب في قاعدة البيانات
     await order.save();
 
+    // إرسال إشعار بريد إلكتروني (محاولة)
+    try {
+      const sendEmail = require("../utils/email");
+
+      // إرسال للعميل
+      if (user_email) {
+        await sendEmail({
+          email: user_email,
+          subject: "تم استلام طلبك بنجاح - رعاية للمهام المنزلية",
+          html: `<h1>أهلاً بك يا ${user_name}</h1><p>لقد تلقينا طلبك وسنتواصل معك قريباً.</p><p>تفاصيل الطلب: ${user_address}</p>`
+        });
+      }
+
+      // إرسال للمدير (مثال)
+      await sendEmail({
+        email: "admin@raya.com",
+        subject: "طلب خدمة جديد 🆕",
+        html: `<h3>طلب جديد من ${user_name}</h3><p>الهاتف: ${user_phone}</p><p>العنوان: ${user_address}</p>`
+      });
+
+    } catch (emailErr) {
+      console.error("❌ فشل إرسال البريد:", emailErr.message);
+      // لا نعيد خطأ للعميل لأن الطلب تم حفظه فعلياً
+    }
+
     console.log(`✅ تم استلام طلب جديد من: ${user_name}`);
 
     res.status(201).json({
       success: true,
-      message: "تم استلام الطلب بنجاح! سيتم التواصل معك قريباً.",
+      message: "تم استلام الطلب بنجاح! سيتم التواصل معك قريباً عبر الهاتف أو البريد.",
       data: order
     });
   } catch (err) {

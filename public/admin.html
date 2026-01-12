@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رعاية | لوحة التحكم</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+Arabic:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        :root {
+            --sidebar-width: 280px;
+        }
+
+        body {
+            background: #f0f2f5;
+            display: flex;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--secondary-color);
+            color: white;
+            position: fixed;
+            right: 0;
+            top: 0;
+            padding: 30px 0;
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+        }
+
+        .sidebar-logo {
+            padding: 0 30px;
+            margin-bottom: 50px;
+        }
+
+        .sidebar-logo h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+
+        .sidebar-menu {
+            flex-grow: 1;
+        }
+
+        .menu-item {
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #adb5bd;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border-right: 4px solid transparent;
+        }
+
+        .menu-item:hover,
+        .menu-item.active {
+            background: rgba(43, 198, 193, 0.1);
+            color: var(--primary-color);
+            border-right-color: var(--primary-color);
+        }
+
+        /* Main Content */
+        .main-admin {
+            margin-right: var(--sidebar-width);
+            flex-grow: 1;
+            padding: 40px;
+            width: calc(100% - var(--sidebar-width));
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .admin-header h1 {
+            font-size: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-light);
+            color: var(--primary-color);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .stat-info h3 {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+
+        .stat-info p {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+        }
+
+        /* Content Cards */
+        .admin-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .card-header {
+            padding: 25px 30px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        /* Table Styles */
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .admin-table th {
+            text-align: right;
+            padding: 15px 20px;
+            background: #f8f9fa;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .admin-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .status-badge {
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .status-new {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .status-pending {
+            background: #fff3e0;
+            color: #ef6c00;
+        }
+
+        .status-completed {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .action-btn {
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            background: white;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-left: 5px;
+        }
+
+        .action-btn:hover {
+            background: #f8f9fa;
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Section Control */
+        .admin-section {
+            display: none;
+        }
+
+        .admin-section.active {
+            display: block;
+        }
+
+        @media (max-width: 992px) {
+            .sidebar {
+                width: 80px;
+            }
+
+            .sidebar-logo h2,
+            .menu-item span {
+                display: none;
+            }
+
+            .main-admin {
+                margin-right: 80px;
+                width: calc(100% - 80px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <h2>رعاية</h2>
+        </div>
+        <nav class="sidebar-menu">
+            <div class="menu-item active" onclick="switchSection('dashboard')">
+                <span>لوحة المعلومات</span>
+            </div>
+            <div class="menu-item" onclick="switchSection('services')">
+                <span>إدارة الخدمات</span>
+            </div>
+            <div class="menu-item" onclick="switchSection('orders')">
+                <span>الطلبات</span>
+            </div>
+        </nav>
+        <div class="menu-item" onclick="logout()">
+            <span>تسجيل الخروج</span>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-admin">
+        <header class="admin-header">
+            <div>
+                <h1>مرحباً، المدير</h1>
+                <p>متابعة أداء المنصة اليوم</p>
+            </div>
+            <a href="index.html" class="btn btn-primary" style="padding: 10px 20px;">معاينة الموقع</a>
+        </header>
+
+        <!-- Section: Dashboard -->
+        <section id="dashboardSection" class="admin-section active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-info">
+                        <h3>إجمالي الخدمات</h3>
+                        <p id="totalServices">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🛒</div>
+                    <div class="stat-info">
+                        <h3>طلبات جديدة</h3>
+                        <p id="newOrders">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-info">
+                        <h3>متوسط التقييم</h3>
+                        <p>4.8</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-card">
+                <div class="card-header">
+                    <h3>أحدث الطلبات</h3>
+                </div>
+                <div class="card-body">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>العميل</th>
+                                <th>الخدمة</th>
+                                <th>التاريخ</th>
+                                <th>الحالة</th>
+                                <th>الإجراء</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentOrdersTable">
+                            <!-- سيتم التحميل هنا -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Services -->
+        <section id="servicesSection" class="admin-section">
+            <div class="admin-card">
+                <div class="card-header">
+                    <h3>جميع الخدمات</h3>
+                    <button class="btn btn-primary" onclick="openAddServiceModal()" style="padding: 8px 20px;">إضافة
+                        خدمة +</button>
+                </div>
+                <div class="card-body">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>اسم الخدمة</th>
+                                <th>السعر</th>
+                                <th>القسم</th>
+                                <th>الإجراء</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminServicesTable">
+                            <!-- سيتم التحميل هنا -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="admin-script.js"></script>
+</body>
+
+</html>

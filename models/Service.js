@@ -34,8 +34,20 @@ const ServiceSchema = new mongoose.Schema({
     ref: 'Department' // للربط مع نموذج الأقسام في المستقبل
   }
 }, {
-  // إضافة timestamps تلقائياً (createdAt, updatedAt)
+  // إضافة timestamps تلقائياً
   timestamps: true
+});
+
+// إضافة حقول التقييمات
+ServiceSchema.add({
+  averageRating: {
+    type: Number,
+    default: 0
+  },
+  numOfReviews: {
+    type: Number,
+    default: 0
+  }
 });
 
 // إنشاء فهرس (Index) على اسم الخدمة لتحسين الأداء

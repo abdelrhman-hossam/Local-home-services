@@ -1,0 +1,192 @@
+ INFO  Accepting connections at http://localhost:5001
+ INFO  Accepting connections at http://0.0.0.0:3000
+ HTTP  1/12/2026 5:15:33 PM ::1 GET /pro!
+ HTTP  1/12/2026 5:15:33 PM ::1 Returned 304 in 52 ms
+ HTTP  1/12/2026 5:15:33 PM ::1 GET /style.css
+ HTTP  1/12/2026 5:15:33 PM ::1 GET /photo_2025-12-19_22-23-03.jpg
+ HTTP  1/12/2026 5:15:33 PM ::1 GET /photo_2025-12-19_22-22-08.jpg
+ HTTP  1/12/2026 5:15:33 PM ::1 Returned 304 in 6 ms
+ HTTP  1/12/2026 5:15:33 PM ::1 Returned 304 in 8 ms
+ HTTP  1/12/2026 5:15:33 PM ::1 Returned 304 in 6 ms
+ HTTP  1/12/2026 5:15:35 PM ::1 GET /photo_2025-12-19_22-22-19.jpg
+ HTTP  1/12/2026 5:15:35 PM ::1 GET /photo_2025-12-19_22-22-15.jpg
+ HTTP  1/12/2026 5:15:35 PM ::1 GET /photo_2025-12-19_22-22-17.jpg
+ HTTP  1/12/2026 5:15:35 PM ::1 GET /script.js
+ HTTP  1/12/2026 5:15:35 PM ::1 GET /photo_2025-12-19_22-22-14.jpg
+ HTTP  1/12/2026 5:15:35 PM ::1 Returned 304 in 15 ms
+ HTTP  1/12/2026 5:15:35 PM ::1 Returned 304 in 16 ms
+ HTTP  1/12/2026 5:15:35 PM ::1 Returned 304 in 16 ms
+ HTTP  1/12/2026 5:15:35 PM ::1 Returned 304 in 13 ms
+ HTTP  1/12/2026 5:15:35 PM ::1 Returned 304 in 12 ms
+ HTTP  1/12/2026 5:15:35 PM ::1 GET /script.js
+ HTTP  1/12/2026 5:15:35 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:15:35 PM ::1 GET /photo_2025-12-19_22-22-04.jpg
+ HTTP  1/12/2026 5:15:35 PM ::1 GET /photo_2025-12-19_22-22-10.jpg
+ HTTP  1/12/2026 5:15:35 PM ::1 Returned 304 in 6 ms
+ HTTP  1/12/2026 5:15:35 PM ::1 Returned 304 in 5 ms
+ HTTP  1/12/2026 5:15:35 PM ::1 GET /photo_2025-12-19_22-23-03.jpg
+ HTTP  1/12/2026 5:15:35 PM ::1 Returned 304 in 4 ms
+ HTTP  1/12/2026 5:15:44 PM ::1 GET /auth
+ HTTP  1/12/2026 5:15:44 PM ::1 Returned 304 in 12 ms
+ HTTP  1/12/2026 5:15:44 PM ::1 GET /style.css
+ HTTP  1/12/2026 5:15:44 PM ::1 GET /photo_2025-12-19_22-23-03.jpg
+ HTTP  1/12/2026 5:15:44 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:15:44 PM ::1 Returned 304 in 3 ms
+ HTTP  1/12/2026 5:15:44 PM ::1 GET /script.js
+ HTTP  1/12/2026 5:15:44 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:15:44 PM ::1 GET /script.js
+ HTTP  1/12/2026 5:15:44 PM ::1 Returned 304 in 1 ms
+ HTTP  1/12/2026 5:15:49 PM ::1 GET /index.html
+ HTTP  1/12/2026 5:15:49 PM ::1 Returned 301 in 5 ms
+ HTTP  1/12/2026 5:15:49 PM ::1 GET /index
+ HTTP  1/12/2026 5:15:49 PM ::1 Returned 301 in 7 ms
+ HTTP  1/12/2026 5:15:49 PM ::1 GET /
+ HTTP  1/12/2026 5:15:49 PM ::1 Returned 304 in 10 ms
+ HTTP  1/12/2026 5:15:49 PM ::1 GET /style.css
+ HTTP  1/12/2026 5:15:49 PM ::1 GET /photo_2025-12-19_22-23-03.jpg
+ HTTP  1/12/2026 5:15:49 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:15:49 PM ::1 GET /photo_2025-12-19_22-22-08.jpg
+ HTTP  1/12/2026 5:15:49 PM ::1 Returned 304 in 4 ms
+ HTTP  1/12/2026 5:15:49 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:15:50 PM ::1 GET /photo_2025-12-19_22-22-19.jpg
+ HTTP  1/12/2026 5:15:50 PM ::1 GET /photo_2025-12-19_22-22-15.jpg
+ HTTP  1/12/2026 5:15:50 PM ::1 Returned 304 in 3 ms
+ HTTP  1/12/2026 5:15:50 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:15:50 PM ::1 GET /photo_2025-12-19_22-22-17.jpg
+ HTTP  1/12/2026 5:15:50 PM ::1 GET /script.js
+ HTTP  1/12/2026 5:15:50 PM ::1 GET /photo_2025-12-19_22-22-14.jpg
+ HTTP  1/12/2026 5:15:50 PM ::1 Returned 304 in 3 ms
+ HTTP  1/12/2026 5:15:50 PM ::1 Returned 304 in 3 ms
+ HTTP  1/12/2026 5:15:50 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:15:50 PM ::1 GET /script.js
+ HTTP  1/12/2026 5:15:50 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:15:50 PM ::1 GET /photo_2025-12-19_22-22-04.jpg
+ HTTP  1/12/2026 5:15:50 PM ::1 GET /photo_2025-12-19_22-22-10.jpg
+ HTTP  1/12/2026 5:15:50 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:15:50 PM ::1 Returned 304 in 4 ms
+ HTTP  1/12/2026 5:15:58 PM ::1 GET /
+ HTTP  1/12/2026 5:15:58 PM ::1 Returned 304 in 7 ms
+ HTTP  1/12/2026 5:15:59 PM ::1 GET /style.css
+ HTTP  1/12/2026 5:15:59 PM ::1 GET /photo_2025-12-19_22-23-03.jpg
+ HTTP  1/12/2026 5:15:59 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:15:59 PM ::1 GET /photo_2025-12-19_22-22-08.jpg
+ HTTP  1/12/2026 5:15:59 PM ::1 Returned 304 in 4 ms
+ HTTP  1/12/2026 5:15:59 PM ::1 Returned 304 in 4 ms
+ HTTP  1/12/2026 5:15:59 PM ::1 GET /photo_2025-12-19_22-22-19.jpg
+ HTTP  1/12/2026 5:15:59 PM ::1 GET /photo_2025-12-19_22-22-15.jpg
+ HTTP  1/12/2026 5:15:59 PM ::1 Returned 304 in 4 ms
+ HTTP  1/12/2026 5:15:59 PM ::1 GET /photo_2025-12-19_22-22-17.jpg
+ HTTP  1/12/2026 5:15:59 PM ::1 Returned 304 in 4 ms
+ HTTP  1/12/2026 5:15:59 PM ::1 GET /script.js
+ HTTP  1/12/2026 5:15:59 PM ::1 GET /photo_2025-12-19_22-22-14.jpg
+ HTTP  1/12/2026 5:15:59 PM ::1 Returned 304 in 6 ms
+ HTTP  1/12/2026 5:15:59 PM ::1 Returned 304 in 9 ms
+ HTTP  1/12/2026 5:15:59 PM ::1 Returned 304 in 9 ms
+ HTTP  1/12/2026 5:15:59 PM ::1 GET /script.js
+ HTTP  1/12/2026 5:15:59 PM ::1 Returned 304 in 3 ms
+ HTTP  1/12/2026 5:16:00 PM ::1 GET /photo_2025-12-19_22-22-04.jpg
+ HTTP  1/12/2026 5:16:00 PM ::1 GET /photo_2025-12-19_22-22-10.jpg
+ HTTP  1/12/2026 5:16:00 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:16:00 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:16:00 PM ::1 GET /photo_2025-12-19_22-23-03.jpg
+ HTTP  1/12/2026 5:16:00 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:17:03 PM ::1 GET /
+ HTTP  1/12/2026 5:17:03 PM ::1 Returned 304 in 5 ms
+ HTTP  1/12/2026 5:17:03 PM ::1 GET /style.css
+ HTTP  1/12/2026 5:17:03 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:17:03 PM ::1 GET /photo_2025-12-19_22-23-03.jpg
+ HTTP  1/12/2026 5:17:03 PM ::1 GET /photo_2025-12-19_22-22-08.jpg
+ HTTP  1/12/2026 5:17:03 PM ::1 Returned 304 in 4 ms
+ HTTP  1/12/2026 5:17:03 PM ::1 Returned 304 in 5 ms
+ HTTP  1/12/2026 5:17:05 PM ::1 GET /photo_2025-12-19_22-22-19.jpg
+ HTTP  1/12/2026 5:17:05 PM ::1 Returned 304 in 1 ms
+ HTTP  1/12/2026 5:17:05 PM ::1 GET /photo_2025-12-19_22-22-15.jpg
+ HTTP  1/12/2026 5:17:05 PM ::1 GET /photo_2025-12-19_22-22-17.jpg
+ HTTP  1/12/2026 5:17:05 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:17:05 PM ::1 Returned 304 in 1 ms
+ HTTP  1/12/2026 5:17:05 PM ::1 GET /script.js
+ HTTP  1/12/2026 5:17:05 PM ::1 Returned 304 in 1 ms
+ HTTP  1/12/2026 5:17:05 PM ::1 GET /photo_2025-12-19_22-22-14.jpg
+ HTTP  1/12/2026 5:17:05 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:17:05 PM ::1 GET /script.js
+ HTTP  1/12/2026 5:17:05 PM ::1 Returned 304 in 1 ms
+ HTTP  1/12/2026 5:17:05 PM ::1 GET /photo_2025-12-19_22-22-04.jpg
+ HTTP  1/12/2026 5:17:05 PM ::1 GET /photo_2025-12-19_22-22-10.jpg
+ HTTP  1/12/2026 5:17:05 PM ::1 Returned 304 in 1 ms
+ HTTP  1/12/2026 5:17:05 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:18:01 PM ::1 GET /auth
+ HTTP  1/12/2026 5:18:01 PM ::1 Returned 304 in 14 ms
+ HTTP  1/12/2026 5:18:01 PM ::1 GET /style.css
+ HTTP  1/12/2026 5:18:01 PM ::1 Returned 304 in 1 ms
+ HTTP  1/12/2026 5:18:01 PM ::1 GET /photo_2025-12-19_22-23-03.jpg
+ HTTP  1/12/2026 5:18:01 PM ::1 GET /script.js
+ HTTP  1/12/2026 5:18:01 PM ::1 Returned 304 in 3 ms
+ HTTP  1/12/2026 5:18:01 PM ::1 Returned 304 in 1 ms
+ HTTP  1/12/2026 5:18:01 PM ::1 GET /script.js
+ HTTP  1/12/2026 5:18:01 PM ::1 Returned 304 in 1 ms
+ HTTP  1/12/2026 5:21:28 PM ::1 GET /
+ HTTP  1/12/2026 5:21:28 PM ::1 Returned 304 in 6 ms
+ HTTP  1/12/2026 5:21:28 PM ::1 GET /style.css
+ HTTP  1/12/2026 5:21:28 PM ::1 Returned 304 in 1 ms
+ HTTP  1/12/2026 5:21:28 PM ::1 GET /photo_2025-12-19_22-23-03.jpg
+ HTTP  1/12/2026 5:21:28 PM ::1 GET /photo_2025-12-19_22-22-08.jpg
+ HTTP  1/12/2026 5:21:28 PM ::1 Returned 304 in 1 ms
+ HTTP  1/12/2026 5:21:28 PM ::1 Returned 304 in 1 ms
+ HTTP  1/12/2026 5:21:29 PM ::1 GET /photo_2025-12-19_22-22-19.jpg
+ HTTP  1/12/2026 5:21:29 PM ::1 GET /photo_2025-12-19_22-22-15.jpg
+ HTTP  1/12/2026 5:21:29 PM ::1 GET /photo_2025-12-19_22-22-17.jpg
+ HTTP  1/12/2026 5:21:29 PM ::1 Returned 304 in 4 ms
+ HTTP  1/12/2026 5:21:29 PM ::1 Returned 304 in 5 ms
+ HTTP  1/12/2026 5:21:29 PM ::1 Returned 304 in 5 ms
+ HTTP  1/12/2026 5:21:29 PM ::1 GET /script.js
+ HTTP  1/12/2026 5:21:29 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:21:29 PM ::1 GET /photo_2025-12-19_22-22-14.jpg
+ HTTP  1/12/2026 5:21:29 PM ::1 Returned 304 in 5 ms
+ HTTP  1/12/2026 5:21:29 PM ::1 GET /photo_2025-12-19_22-22-04.jpg
+ HTTP  1/12/2026 5:21:29 PM ::1 GET /photo_2025-12-19_22-22-10.jpg
+ HTTP  1/12/2026 5:21:29 PM ::1 Returned 304 in 4 ms
+ HTTP  1/12/2026 5:21:29 PM ::1 Returned 304 in 4 ms
+ HTTP  1/12/2026 5:21:42 PM ::1 GET /services
+ HTTP  1/12/2026 5:21:42 PM ::1 Returned 304 in 8 ms
+ HTTP  1/12/2026 5:21:43 PM ::1 GET /style.css
+ HTTP  1/12/2026 5:21:43 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:21:43 PM ::1 GET /photo_2025-12-19_22-23-03.jpg
+ HTTP  1/12/2026 5:21:43 PM ::1 GET /script.js
+ HTTP  1/12/2026 5:21:43 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:21:43 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:21:44 PM ::1 GET /photo_2025-12-19_22-22-19.jpg
+ HTTP  1/12/2026 5:21:44 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:21:44 PM ::1 GET /photo_2025-12-19_22-22-15.jpg
+ HTTP  1/12/2026 5:21:44 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:21:44 PM ::1 GET /photo_2025-12-19_22-22-04.jpg
+ HTTP  1/12/2026 5:21:44 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:22:24 PM ::1 GET /auth
+ HTTP  1/12/2026 5:22:24 PM ::1 Returned 304 in 4 ms
+ HTTP  1/12/2026 5:22:24 PM ::1 GET /style.css
+ HTTP  1/12/2026 5:22:24 PM ::1 Returned 304 in 1 ms
+ HTTP  1/12/2026 5:22:24 PM ::1 GET /photo_2025-12-19_22-23-03.jpg
+ HTTP  1/12/2026 5:22:24 PM ::1 GET /script.js
+ HTTP  1/12/2026 5:22:24 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:22:24 PM ::1 Returned 304 in 3 ms
+ HTTP  1/12/2026 5:22:31 PM ::1 GET /pro!
+ HTTP  1/12/2026 5:22:31 PM ::1 Returned 304 in 3 ms
+ HTTP  1/12/2026 5:22:31 PM ::1 GET /style.css
+ HTTP  1/12/2026 5:22:31 PM ::1 Returned 304 in 3 ms
+ HTTP  1/12/2026 5:22:31 PM ::1 GET /photo_2025-12-19_22-23-03.jpg
+ HTTP  1/12/2026 5:22:31 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:22:31 PM ::1 GET /photo_2025-12-19_22-22-08.jpg
+ HTTP  1/12/2026 5:22:31 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:22:32 PM ::1 GET /photo_2025-12-19_22-22-19.jpg
+ HTTP  1/12/2026 5:22:32 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:22:32 PM ::1 GET /photo_2025-12-19_22-22-15.jpg
+ HTTP  1/12/2026 5:22:32 PM ::1 Returned 304 in 2 ms
+ HTTP  1/12/2026 5:22:32 PM ::1 GET /photo_2025-12-19_22-22-17.jpg
+ HTTP  1/12/2026 5:22:32 PM ::1 GET /script.js
+ HTTP  1/12/2026 5:22:32 PM ::1 GET /photo_2025-12-19_22-22-14.jpg
+ HTTP  1/12/2026 5:22:32 PM ::1 Returned 304 in 4 ms
+ HTTP  1/12/2026 5:22:32 PM ::1 Returned 304 in 5 ms
+ HTTP  1/12/2026 5:22:32 PM ::1 Returned 304 in 7 ms
+ HTTP  1/12/2026 5:22:32 PM ::1 GET /photo_2025-12-19_22-22-04.jpg
+ HTTP  1/12/2026 5:22:32 PM ::1 Returned 304 in 1 ms
+ HTTP  1/12/2026 5:22:32 PM ::1 GET /photo_2025-12-19_22-22-10.jpg
+ HTTP  1/12/2026 5:22:32 PM ::1 Returned 304 in 2 ms

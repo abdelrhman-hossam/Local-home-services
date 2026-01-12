@@ -6,6 +6,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors"); // للسماح بطلبات Cross-Origin
 const path = require("path");
+const helmet = require("helmet"); // حماية العناوين
+const rateLimit = require("express-rate-limit"); // تحديد عدد الطلبات
+const mongoSanitize = require("express-mongo-sanitize"); // منع NoSQL Injection
 
 // ====================================
 // إنشاء تطبيق Express
@@ -22,6 +25,28 @@ const corsOptions = {
   credentials: true
 };
 app.use(cors(corsOptions));
+
+// --- إعدادات الأمان (Security) ---
+
+// 1. حماية HTTP Headers باستخدام Helmet
+app.use(helmet({
+  contentSecurityPolicy: false, // تعطيل CSP مؤقتاً لسهولة التعامل مع الصور والسكربتات الخارجية في وضع التطوير
+}));
+
+// 2. منع NoSQL Injection (تطهير البيانات)
+app.use(mongoSanitize());
+
+// 3. تحديد معدل الطلبات العالمي (Rate Limiting)
+// يسمح بـ 100 طلب كل 15 دقيقة لكل IP
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 دقيقة
+  max: 100,
+  message: {
+    success: false,
+    message: "لقد تجاوزت عدد الطلبات المسموح بها، يرجى المحاولة لاحقاً."
+  }
+});
+app.use("/api", limiter); // تطبيق المحدد على مسارات الـ API فقط
 
 // معالجة البيانات الواردة بصيغة JSON
 app.use(express.json());
@@ -48,6 +73,9 @@ app.get("/", (req, res) => {
 // استيراد وربط routes الخاصة بالخدمات والطلبات
 const servicesRoutes = require("./routes/services");
 const ordersRoutes = require("./routes/orders");
+const authRoutes = require("./routes/auth");
+const adminRoutes = require("./routes/admin");
+const reviewRoutes = require("./routes/reviews");
 
 // Middleware لفحص حالة قاعدة البيانات قبل معالجة الطلبات
 app.use('/api', (req, res, next) => {
@@ -64,6 +92,9 @@ app.use('/api', (req, res, next) => {
 // استخدام Routes مع prefix مناسب
 app.use("/api/services", servicesRoutes); // مسارات الخدمات
 app.use("/api/orders", ordersRoutes);     // مسارات الطلبات
+app.use("/api/auth", authRoutes);         // مسارات المصادقة
+app.use("/api/admin", adminRoutes);       // مسارات الإدارة
+app.use("/api/reviews", reviewRoutes);     // مسارات التقييمات
 
 // ====================================
 // الاتصال بقاعدة البيانات MongoDB

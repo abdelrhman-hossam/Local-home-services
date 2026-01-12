@@ -29,6 +29,12 @@ const OrderSchema = new mongoose.Schema({
     minlength: [10, "العنوان يجب أن يكون 10 أحرف على الأقل"]
   },
 
+  // البريد الإلكتروني (اختياري للعميل)
+  user_email: {
+    type: String,
+    match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, "البريد الإلكتروني غير صحيح"]
+  },
+
   // مصفوفة الخدمات المطلوبة
   serviceId: {
     type: [mongoose.Schema.Types.ObjectId],
