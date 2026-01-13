@@ -79,6 +79,11 @@ router.post("/", async (req, res) => {
       status: "جديد"
     });
 
+    // حساب السعر الإجمالي حقيقياً من الخدمات في قاعدة البيانات
+    const Service = require("../models/Service");
+    const services = await Service.find({ _id: { $in: order.serviceId } });
+    order.totalAmount = services.reduce((acc, s) => acc + s.price, 0);
+
     // حفظ الطلب في قاعدة البيانات
     await order.save();
 
@@ -121,6 +126,20 @@ router.post("/", async (req, res) => {
       message: "حصل خطأ في الطلب",
       error: err.message
     });
+  }
+});
+
+// @desc    جلب تفاصيل طلب محدد
+// @route   GET /api/orders/:id
+router.get("/:id", async (req, res) => {
+  try {
+    const order = await Order.findById(req.params.id).populate('serviceId');
+    if (!order) {
+      return res.status(404).json({ success: false, message: "الطلب غير موجود" });
+    }
+    res.json({ success: true, data: order });
+  } catch (err) {
+    res.status(500).json({ success: false, message: "خطأ في جلب بيانات الطلب" });
   }
 });
 

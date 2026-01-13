@@ -188,6 +188,26 @@
 
         document.getElementById('orderId').textContent = '#' + (orderId || '0000').slice(-6);
 
+        // جلب تفاصيل الطلب الحقيقية من الباك اند
+        async function fetchOrderDetails() {
+            try {
+                const response = await fetch(`/api/orders/${orderId}`);
+                const result = await response.json();
+                if (result.success) {
+                    const order = result.data;
+                    document.getElementById('orderAmount').textContent = `${order.totalAmount} ج.م`;
+                    // إذا كان هناك اسم مستخدم مرتبط بالطلب
+                    if (order.user_name) {
+                        const methodNameElem = document.getElementById('methodName');
+                        methodNameElem.innerHTML += `<br><small style="opacity:0.8;">العميل: ${order.user_name}</small>`;
+                    }
+                }
+            } catch (err) {
+                console.error('Error fetching order:', err);
+            }
+        }
+        fetchOrderDetails();
+
         if (method === 'بطاقة بنكية') {
             document.getElementById('methodName').textContent = 'دفع بالبطاقة البنكية';
             document.getElementById('cardView').classList.add('active');

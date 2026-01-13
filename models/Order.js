@@ -58,6 +58,10 @@ const OrderSchema = new mongoose.Schema({
     unique: true,
     sparse: true
   },
+  totalAmount: {
+    type: Number,
+    default: 0
+  },
 
   // تاريخ الطلب
   order_date: {
