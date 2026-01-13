@@ -599,14 +599,28 @@ footer {
 
 .modal-content {
     background: var(--bg-white);
-    width: 90%;
+    width: 95%;
     max-width: 500px;
+    max-height: 90vh;
+    /* تحديد أقصى ارتفاع */
+    overflow-y: auto;
+    /* السماح بالتمرير الداخلي */
     border-radius: 20px;
-    padding: 30px;
+    padding: 25px;
     position: relative;
     box-shadow: var(--shadow-lg);
     transform: translateY(20px);
     transition: transform 0.3s ease;
+}
+
+/* تحسين السكرول بار للمودال */
+.modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
 }
 
 .modal-overlay.active .modal-content {
@@ -647,6 +661,50 @@ footer {
     margin-bottom: 8px;
     font-weight: 600;
     color: var(--secondary-color);
+}
+
+/* تحسين خيارات الدفع */
+.payment-methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.payment-option {
+    border: 1px solid #eee;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+}
+
+.payment-option:hover {
+    border-color: var(--primary-color);
+    background: #f0fdfc;
+}
+
+.payment-option input[type="radio"] {
+    width: auto;
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    .payment-methods {
+        grid-template-columns: 1fr;
+        /* عمود واحد للموبايل الصغير */
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.2rem;
+    }
 }
 
 .booking-form input,
