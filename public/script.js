@@ -765,3 +765,18 @@ function setupDarkMode() {
         });
     }
 }
+// ---------------------------------------------------------
+// Mouse Tracking for Nebula Footer
+// ---------------------------------------------------------
+document.addEventListener('mousemove', (e) => {
+    const footer = document.querySelector('footer');
+    if (footer) {
+        const rect = footer.getBoundingClientRect();
+        if (e.clientY >= rect.top && e.clientY <= rect.bottom) {
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            footer.style.setProperty('--mouse-x', `${x}%`);
+            footer.style.setProperty('--mouse-y', `${y}%`);
+        }
+    }
+});
