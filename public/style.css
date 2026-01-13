@@ -429,23 +429,36 @@ header {
    Footer
    ========================================= */
 footer {
-    background: linear-gradient(to right, #1a1d20, #2c3e50);
-    padding: 80px 0 30px;
+    background: linear-gradient(135deg, #0b0d17 0%, #1c1e2f 100%);
+    padding: 100px 0 40px;
     color: #fff;
     margin-top: 80px;
     position: relative;
     overflow: hidden;
 }
 
-/* Add a subtle top border/glow */
+/* Premium Neon Glow Top Border */
 footer::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 5px;
-    background: linear-gradient(to right, var(--primary-color), var(--primary-dark));
+    height: 4px;
+    background: linear-gradient(to right, #00f2fe, #4facfe, #7000ff, #00f2fe);
+    background-size: 200% auto;
+    animation: neonFlow 5s linear infinite;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+}
+
+@keyframes neonFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
 }
 
 .footer-content {
@@ -456,14 +469,18 @@ footer::before {
 }
 
 .footer-brand {
-    color: var(--primary-color);
-    font-size: 2rem;
+    color: #00f2fe;
+    font-size: 2.5rem;
     margin-bottom: 20px;
+    font-weight: 800;
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+    display: inline-block;
 }
 
 .footer-info p {
-    color: #adb5bd;
+    color: #94a3b8;
     max-width: 350px;
+    line-height: 1.8;
 }
 
 .footer-links h3,
@@ -542,8 +559,10 @@ footer::before {
 }
 
 .social-icon:hover {
-    background: var(--primary-color);
-    transform: translateY(-3px);
+    background: #00f2fe;
+    color: #0b0d17;
+    transform: translateY(-5px) rotate(360deg);
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
 }
 
 .newsletter-form {
@@ -578,8 +597,12 @@ footer::before {
 }
 
 .newsletter-btn:hover {
-    background: var(--primary-dark);
+    background: #00e0eb;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
 }
+
+
 
 /* =========================================
    Responsive Design (Media Queries)
