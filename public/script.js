@@ -11,6 +11,9 @@ const isProduction = window.location.port === '5000';
 const API_BASE_URL = isProduction ? '' : `http://${window.location.hostname}:5000`;
 
 document.addEventListener('DOMContentLoaded', () => {
+    // التأكد من أن الصفحة تبدأ من الأعلى دائماً
+    window.scrollTo(0, 0);
+
     console.log('🚀 تطبيق رعاية جاهز...');
 
     // Mobile Menu Toggle
