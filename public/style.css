@@ -429,10 +429,10 @@ header {
    Footer
    ========================================= */
 footer {
-    /* Dazzling Animated Gradient */
-    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1e2f);
+    /* Ultra-Dazzling Royal Gradient (No Black) */
+    background: linear-gradient(-45deg, #12c2e9, #c471ed, #f64f59, #8e2de2, #00d2ff);
     background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    animation: gradientBG 8s ease infinite;
     padding: 100px 0 40px;
     color: #fff;
     margin-top: 80px;
