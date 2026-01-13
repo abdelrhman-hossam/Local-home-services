@@ -181,6 +181,20 @@ header {
     width: auto;
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-right: auto;
+    margin-left: 20px;
+    z-index: 1001;
+}
+
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+
 .nav-links.desktop-nav {
     display: flex;
     gap: 30px;
@@ -790,7 +804,17 @@ footer::before {
     .service-row.reverse {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 40px;
+        gap: 30px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(2.2rem, 8vw, 3rem);
+        margin-bottom: 20px;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
     }
 
     /* Reset direction for mobile stacking */
@@ -845,6 +869,26 @@ footer::before {
 
     :root {
         --header-height: 70px;
+    }
+
+    .header-actions {
+        margin-left: 10px;
+        gap: 10px;
+    }
+
+    .header-actions .btn {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+
+    .theme-switch {
+        width: 45px;
+        height: 24px;
+    }
+
+    .slider:before {
+        height: 18px;
+        width: 18px;
     }
 }
 

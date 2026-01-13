@@ -559,42 +559,33 @@ function setupAuthForms() {
  */
 function updateUIForAuth() {
     const userJson = localStorage.getItem('user');
-    const navLinks = document.querySelector('.nav-links.desktop-nav');
+    const authLinksContainer = document.getElementById('auth-links');
     const mobileNav = document.querySelector('.mobile-nav');
 
-    if (!navLinks) return;
+    if (!authLinksContainer) return;
 
-    // إزالة أزرار قديمة إذا وجدت
-    const oldAuthLinks = document.querySelectorAll('.auth-link');
-    oldAuthLinks.forEach(l => l.remove());
+    // تفريغ المحتوى القديم للروابط في الهيدر والمنيو الموبايل
+    authLinksContainer.innerHTML = '';
+    const oldMobileAuth = document.querySelectorAll('.mobile-nav .auth-link');
+    oldMobileAuth.forEach(l => l.remove());
 
     if (userJson) {
         const user = JSON.parse(userJson);
 
-        // إضافة رابط لوحة التحكم للمدير
         if (user.role === 'admin') {
-            const adminLink = `<a href="admin.html" class="auth-link">لوحة التحكم</a>`;
-            navLinks.insertAdjacentHTML('beforeend', adminLink);
+            authLinksContainer.innerHTML = `<a href="admin.html" class="btn btn-outline" style="margin-left:10px; padding: 10px 15px;">لوحة التحكم</a>`;
             if (mobileNav) mobileNav.insertAdjacentHTML('beforeend', `<a href="admin.html" class="mobile-link auth-link">لوحة التحكم</a>`);
-        }
-
-        // إضافة رابط "طلباتي" للمستخدم العادي
-        if (user.role !== 'admin') {
-            const ordersLink = `<a href="orders.html" class="auth-link">طلباتي</a>`;
-            navLinks.insertAdjacentHTML('beforeend', ordersLink);
+        } else {
+            authLinksContainer.innerHTML = `<a href="orders.html" class="btn btn-outline" style="margin-left:10px; padding: 10px 15px;">طلباتي</a>`;
             if (mobileNav) mobileNav.insertAdjacentHTML('beforeend', `<a href="orders.html" class="mobile-link auth-link">طلباتي</a>`);
         }
 
-        // إضافة زر خروج
-        const logoutBtn = `<a href="#" class="auth-link" onclick="logout()">خروج (${user.username})</a>`;
-        navLinks.insertAdjacentHTML('beforeend', logoutBtn);
-        if (mobileNav) mobileNav.insertAdjacentHTML('beforeend', `<a href="#" class="mobile-link auth-link" onclick="logout()">خروج</a>`);
+        authLinksContainer.innerHTML += `<a href="#" class="btn btn-primary" onclick="logout()">خروج</a>`;
+        if (mobileNav) mobileNav.insertAdjacentHTML('beforeend', `<a href="#" class="mobile-link auth-link" onclick="logout()">خروج (${user.username})</a>`);
 
     } else {
-        // إضافة رابط تسجيل دخول
-        const loginLink = `<a href="auth.html" class="auth-link">دخول</a>`;
-        navLinks.insertAdjacentHTML('beforeend', loginLink);
-        if (mobileNav) mobileNav.insertAdjacentHTML('beforeend', `<a href="auth.html" class="mobile-link auth-link">دخول</a>`);
+        authLinksContainer.innerHTML = `<a href="auth.html" class="btn btn-primary">دخول</a>`;
+        if (mobileNav) mobileNav.insertAdjacentHTML('beforeend', `<a href="auth.html" class="mobile-link auth-link">دخول / تسجيل</a>`);
     }
 }
 
