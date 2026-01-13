@@ -4,6 +4,8 @@
 
 // متغير لتخزين الخدمات المتاحة
 let availableServices = [];
+let currentFilter = 'all';
+let searchQuery = '';
 
 // تحديد عنوان الـ API بناءً على البيئة
 // إذا كنا على المنفذ 5000 (الخادم المدمج)، نستخدم المسار النسبي - وإلا نستخدم 5000
@@ -34,6 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // تحديث واجهة المستخدم بناءً على تسجيل الدخول
     updateUIForAuth();
+
+    // إعداد الوضع الليلي
+    setupDarkMode();
 
     // جلب الخدمات من الـ API
     fetchServices().then(() => {
@@ -170,7 +175,30 @@ function renderHomePageServices(container) {
  */
 function renderAllServices(container) {
     container.innerHTML = '';
-    container.className = 'services-grid-page container'; // إضافة كلاس للتنسيق
+    container.className = 'services-grid-page container';
+
+    // فلترة الخدمات بناءً على القسم المدخل والبحث
+    const filteredServices = availableServices.filter(service => {
+        const matchesCategory = currentFilter === 'all' ||
+            (currentFilter === 'نظافة' && (service.name.includes('نظافة') || service.description.includes('نظافة'))) ||
+            (currentFilter === 'صيانة' && (service.name.includes('صيانة') || service.description.includes('صيانة'))) ||
+            (currentFilter === 'أخرى' && !service.name.includes('نظافة') && !service.name.includes('صيانة'));
+
+        const matchesSearch = service.name.toLowerCase().includes(searchQuery) ||
+            service.description.toLowerCase().includes(searchQuery);
+
+        return matchesCategory && matchesSearch;
+    });
+
+    if (filteredServices.length === 0) {
+        container.innerHTML = `
+            <div class="text-center" style="grid-column: 1/-1; padding: 60px;">
+                <h3 style="color: #888;">عذراً، لم نجد خدمات تطابق بحثك 🔍</h3>
+                <button class="btn btn-primary" style="margin-top: 20px;" onclick="document.getElementById('serviceSearch').value=''; searchQuery=''; filterServices();">عرض الكل</button>
+            </div>
+        `;
+        return;
+    }
 
     // إضافة تنسيق CSS للشبكة ديناميكياً إذا لم يكن موجوداً
     if (!document.getElementById('services-grid-style')) {
@@ -235,7 +263,7 @@ function renderAllServices(container) {
         document.head.appendChild(style);
     }
 
-    availableServices.forEach(service => {
+    filteredServices.forEach(service => {
         // تحديد الصورة بناءً على النوع
         let imgSrc = 'photo_2025-12-19_22-22-19.jpg'; // افتراضي
         if (service.name.includes('صيانة') || service.description.includes('كهرباء')) imgSrc = 'photo_2025-12-19_22-22-15.jpg';
@@ -550,6 +578,13 @@ function updateUIForAuth() {
             if (mobileNav) mobileNav.insertAdjacentHTML('beforeend', `<a href="admin.html" class="mobile-link auth-link">لوحة التحكم</a>`);
         }
 
+        // إضافة رابط "طلباتي" للمستخدم العادي
+        if (user.role !== 'admin') {
+            const ordersLink = `<a href="orders.html" class="auth-link">طلباتي</a>`;
+            navLinks.insertAdjacentHTML('beforeend', ordersLink);
+            if (mobileNav) mobileNav.insertAdjacentHTML('beforeend', `<a href="orders.html" class="mobile-link auth-link">طلباتي</a>`);
+        }
+
         // إضافة زر خروج
         const logoutBtn = `<a href="#" class="auth-link" onclick="logout()">خروج (${user.username})</a>`;
         navLinks.insertAdjacentHTML('beforeend', logoutBtn);
@@ -682,3 +717,60 @@ window.openReviewsModal = async function (serviceId, serviceName) {
         console.error(err);
     }
 };
+/**
+ * التحكم في البحث والفلترة
+ */
+function setFilter(category, btn) {
+    currentFilter = category;
+
+    // تحديث شكل الأزرار
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    applyFilters();
+}
+
+function filterServices() {
+    searchQuery = document.getElementById('serviceSearch').value.toLowerCase();
+    applyFilters();
+}
+
+function applyFilters() {
+    const servicesContainer = document.getElementById('services-container');
+    if (!servicesContainer) return;
+
+    const isHomePage = document.querySelector('.hero-section') !== null;
+
+    if (isHomePage) {
+        renderHomePageServices(servicesContainer);
+    } else {
+        renderAllServices(servicesContainer);
+    }
+}
+
+/**
+ * إعداد الوضع الليلي
+ */
+function setupDarkMode() {
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'dark') {
+            if (toggleSwitch) toggleSwitch.checked = true;
+        }
+    }
+
+    if (toggleSwitch) {
+        toggleSwitch.addEventListener('change', function (e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
+}

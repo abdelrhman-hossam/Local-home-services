@@ -27,7 +27,9 @@
     <div class="container">
       <div class="nav-container">
         <div class="logo">
-          <img src="photo_2025-12-19_22-23-03.jpg" alt="شعار رعاية">
+          <a href="index.html">
+            <img src="photo_2025-12-19_22-23-03.jpg" alt="شعار رعاية">
+          </a>
         </div>
 
         <!-- Desktop Nav -->
@@ -36,6 +38,18 @@
           <a href="#services">خدماتنا</a>
           <a href="#features">لماذا رعاية؟</a>
           <a href="#contact">تواصل معنا</a>
+          <div class="nav-actions" style="display: flex; align-items: center; margin-right: 20px;">
+            <div class="theme-switch-wrapper">
+              <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round"></div>
+              </label>
+              <span style="margin-right: 8px; font-size: 0.8rem;">🌙</span>
+            </div>
+            <div id="auth-links">
+              <a href="auth.html" class="btn btn-primary">دخول / تسجيل</a>
+            </div>
+          </div>
         </nav>
 
         <!-- Mobile Menu Button -->
@@ -197,6 +211,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/20123456789" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+    title="تواصل معنا عبر واتساب">
+    <div class="whatsapp-icon-wrapper">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </div>
+  </a>
 
   <!-- Scripts -->
   <script src="script.js"></script>

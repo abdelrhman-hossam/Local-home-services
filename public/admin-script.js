@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // تحميل البيانات الأولية
     loadDashboardStats();
     loadAdminOrders();
+    loadAnalytics();
 });
 
 const token = localStorage.getItem('token');
@@ -152,5 +153,63 @@ function getStatusClass(status) {
         case 'قيد التنفيذ': return 'status-pending';
         case 'مكتمل': return 'status-completed';
         default: return '';
+    }
+}
+/**
+ * تحميل وعرض الرسوم البيانية
+ */
+async function loadAnalytics() {
+    try {
+        const ordersRes = await fetch(`${API_BASE_URL}/api/orders`, { headers });
+        const ordersResult = await ordersRes.json();
+        const orders = ordersResult.data;
+
+        // 1. معالجة بيانات حركة الطلبات (آخر 7 أيام)
+        const days = ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
+        const last7Days = Array.from({ length: 7 }, (_, i) => {
+            const d = new Date();
+            d.setDate(d.getDate() - i);
+            return {
+                dayName: days[d.getDay()],
+                count: orders.filter(o => new Date(o.order_date).toDateString() === d.toDateString()).length
+            };
+        }).reverse();
+
+        new Chart(document.getElementById('ordersChart'), {
+            type: 'line',
+            data: {
+                labels: last7Days.map(d => d.dayName),
+                datasets: [{
+                    label: 'عدد الطلبات',
+                    data: last7Days.map(d => d.count),
+                    borderColor: '#2bc6c1',
+                    tension: 0.4,
+                    fill: true,
+                    backgroundColor: 'rgba(43, 198, 193, 0.1)'
+                }]
+            },
+            options: { plugins: { legend: { display: false } } }
+        });
+
+        // 2. معالجة بيانات توزيع الخدمات
+        const serviceStats = {};
+        orders.forEach(o => {
+            const name = o.serviceName || 'خدمة متنوعة';
+            serviceStats[name] = (serviceStats[name] || 0) + 1;
+        });
+
+        new Chart(document.getElementById('servicesChart'), {
+            type: 'doughnut',
+            data: {
+                labels: Object.keys(serviceStats),
+                datasets: [{
+                    data: Object.values(serviceStats),
+                    backgroundColor: ['#2bc6c1', '#343a40', '#adb5bd', '#f1c40f', '#e74c3c']
+                }]
+            }
+        });
+
+    } catch (err) {
+        console.error('Analytics Error:', err);
     }
 }

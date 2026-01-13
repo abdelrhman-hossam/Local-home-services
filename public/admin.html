@@ -12,6 +12,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+Arabic:wght@400;600;700;800&display=swap"
         rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
@@ -322,7 +324,19 @@
             </div>
         </section>
 
-        <!-- Section: Services -->
+        <!-- Analytics Section -->
+        <div class="stats-grid" style="grid-template-columns: 2fr 1fr;">
+            <div class="admin-card">
+                <h3>حركة الطلبات</h3>
+                <canvas id="ordersChart" height="250"></canvas>
+            </div>
+            <div class="admin-card">
+                <h3>توزيع الخدمات</h3>
+                <canvas id="servicesChart" height="250"></canvas>
+            </div>
+        </div>
+
+        <!-- Recent Orders -->
         <section id="servicesSection" class="admin-section">
             <div class="admin-card">
                 <div class="card-header">

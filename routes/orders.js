@@ -4,6 +4,7 @@
 const express = require("express");
 const router = express.Router();
 const Order = require("../models/Order");
+const { protect } = require("../middleware/auth");
 
 // ====================================
 // GET - جلب جميع الطلبات
@@ -25,6 +26,29 @@ router.get("/", async (req, res) => {
       message: "حصل خطأ في جلب الطلبات",
       error: err.message
     });
+  }
+});
+
+// ====================================
+// GET - جلب طلبات المستخدم الحالي
+// ====================================
+router.get("/my-orders", protect, async (req, res) => {
+  try {
+    // جلب الطلبات المرتبطة ببريد المستخدم أو هاتفه
+    const orders = await Order.find({
+      $or: [
+        { user_email: req.user.email },
+        { user_phone: req.user.phone }
+      ]
+    }).sort({ order_date: -1 });
+
+    res.json({
+      success: true,
+      count: orders.length,
+      data: orders
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, message: "خطأ في جلب طلباتك" });
   }
 });
 

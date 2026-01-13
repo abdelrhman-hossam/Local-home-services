@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رعاية | طلباتي</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .orders-page {
+            padding: 120px 0 60px;
+            min-height: 80vh;
+            background: #f8f9fa;
+        }
+
+        .orders-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .order-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .order-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .order-status {
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .status-new {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .status-processing {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+
+        .status-completed {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status-cancelled {
+            background: #ffebee;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo"><a href="index.html"><img src="photo_2025-12-19_22-23-03.jpg" alt="logo"></a></div>
+                <nav class="nav-links desktop-nav">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="services.html">خدماتنا</a>
+                    <a href="orders.html" class="active">طلباتي</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="orders-page">
+        <div class="container orders-container">
+            <h1 style="margin-bottom: 30px;">تاريخ طلباتي</h1>
+            <div id="userOrdersList">
+                <p class="text-center" style="padding: 40px; color: #888;">جاري تحميل طلباتك...</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = 'auth.html';
+                return;
+            }
+
+            try {
+                const isProduction = window.location.port === '5000' || window.location.port === '';
+                const API_BASE_URL = isProduction ? '' : `http://${window.location.hostname}:5000`;
+
+                const response = await fetch(`${API_BASE_URL}/api/orders/my-orders`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const result = await response.json();
+
+                const list = document.getElementById('userOrdersList');
+                if (result.success && result.data.length > 0) {
+                    list.innerHTML = result.data.map(order => `
+                        <div class="order-card">
+                            <div class="order-info">
+                                <h3>الخدمة #${order._id.slice(-6)}</h3>
+                                <p><strong>التاريخ:</strong> ${new Date(order.order_date).toLocaleDateString('ar-EG')}</p>
+                                <p><strong>الدفع:</strong> ${order.paymentMethod} (${order.paymentStatus})</p>
+                            </div>
+                            <div class="order-status ${getStatusClass(order.status)}">
+                                ${order.status}
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    list.innerHTML = '<div class="text-center" style="padding: 40px;"><p>لا يوجد لديك طلبات سابقة.</p><a href="services.html" class="btn btn-primary" style="margin-top:20px;">اطلب خدمة الآن</a></div>';
+                }
+            } catch (err) {
+                console.error(err);
+            }
+        });
+
+        function getStatusClass(status) {
+            switch (status) {
+                case 'جديد': return 'status-new';
+                case 'قيد التنفيذ': return 'status-processing';
+                case 'مكتمل': return 'status-completed';
+                case 'ملغي': return 'status-cancelled';
+                default: return '';
+            }
+        }
+    </script>
+</body>
+
+</html>
