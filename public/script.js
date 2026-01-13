@@ -55,6 +55,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// إجبار التمرير للأعلى عند اكتمال تحميل كل العناصر (الصور والخطوط)
+window.onload = function () {
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 10);
+};
+
 /**
  * إعداد قائمة الموبايل
  */
