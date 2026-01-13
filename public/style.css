@@ -429,12 +429,29 @@ header {
    Footer
    ========================================= */
 footer {
-    background: linear-gradient(135deg, #0b0d17 0%, #1c1e2f 100%);
+    /* Dazzling Animated Gradient */
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1e2f);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
     padding: 100px 0 40px;
     color: #fff;
     margin-top: 80px;
     position: relative;
     overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Premium Neon Glow Top Border */
