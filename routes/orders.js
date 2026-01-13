@@ -33,7 +33,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     // استخراج البيانات من الطلب
-    const { user_name, user_phone, user_address, user_email, serviceId } = req.body;
+    const { user_name, user_phone, user_address, user_email, serviceId, paymentMethod } = req.body;
 
     // التحقق من وجود البيانات المطلوبة
     if (!user_name || !user_phone || !user_address || !serviceId) {
@@ -50,6 +50,7 @@ router.post("/", async (req, res) => {
       user_address,
       user_email,
       serviceId: Array.isArray(serviceId) ? serviceId : [serviceId],
+      paymentMethod: paymentMethod || "كاش",
       order_date: new Date(),
       status: "جديد"
     });

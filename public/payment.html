@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة الدفع - رعاية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2bc6c1;
+            --secondary: #2c3e50;
+            --bg: #f8f9fa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .payment-container {
+            background: white;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: var(--secondary);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .order-info {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            background: #fffdf5;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .method-view {
+            display: none;
+        }
+
+        .method-view.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-pay {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-pay:hover {
+            background: #24afaa;
+        }
+
+        .fawry-code {
+            background: #f1f1f1;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 5px;
+            color: var(--secondary);
+            margin: 20px 0;
+        }
+
+        .voda-logo {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="payment-container">
+        <div class="header">
+            <h3>بوابة الدفع الآمنة</h3>
+            <p id="methodName">جارِ التحميل...</p>
+        </div>
+
+        <div class="order-info">
+            <div style="display:flex; justify-content:space-between;">
+                <span>قيمة الطلب:</span>
+                <strong id="orderAmount">... ج.م</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between; margin-top:5px;">
+                <span>رقم الطلب:</span>
+                <small id="orderId">#...</small>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Card View -->
+            <div id="cardView" class="method-view">
+                <div class="form-group">
+                    <label>رقم البطاقة</label>
+                    <input type="text" placeholder="1234 5678 1234 5678" maxlength="19">
+                </div>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label>تاريخ الانتهاء</label>
+                        <input type="text" placeholder="MM/YY">
+                    </div>
+                    <div class="form-group">
+                        <label>CVV</label>
+                        <input type="password" placeholder="***">
+                    </div>
+                </div>
+                <button class="btn btn-pay" onclick="simulateSuccess()">تأكيد الدفع</button>
+            </div>
+
+            <!-- Fawry View -->
+            <div id="fawryView" class="method-view">
+                <p>استخدم الكود التالي للدفع عبر أي ماكينة فوري:</p>
+                <div class="fawry-code">99887766</div>
+                <p style="font-size:0.8rem; color:red;">* تنتهي صلاحية الكود بعد 48 ساعة</p>
+                <button class="btn btn-pay" style="margin-top:20px;" onclick="simulateSuccess()">تم الدفع</button>
+            </div>
+
+            <!-- Vodafone View -->
+            <div id="vodaView" class="method-view" style="text-align:center;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Vodafone_logo.svg" class="voda-logo"
+                    alt="Vodafone">
+                <div class="form-group" style="text-align:right;">
+                    <label>رقم المحفظة</label>
+                    <input type="text" placeholder="010XXXXXXXX">
+                </div>
+                <p style="font-size:0.9rem; margin-bottom:20px;">ستصلك رسالة لتأكيد الدفع بكلمة السر الخاصة بمحفظتك</p>
+                <button class="btn btn-pay" onclick="simulateSuccess()">تأكيد الطلب</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const method = urlParams.get('method');
+        const orderId = urlParams.get('orderId');
+
+        document.getElementById('orderId').textContent = '#' + (orderId || '0000').slice(-6);
+
+        if (method === 'بطاقة بنكية') {
+            document.getElementById('methodName').textContent = 'دفع بالبطاقة البنكية';
+            document.getElementById('cardView').classList.add('active');
+        } else if (method === 'فوري') {
+            document.getElementById('methodName').textContent = 'دفع عبر فوري';
+            document.getElementById('fawryView').classList.add('active');
+        } else if (method === 'فودافون كاش') {
+            document.getElementById('methodName').textContent = 'دفع عبر محفظة إلكترونية';
+            document.getElementById('vodaView').classList.add('active');
+        }
+
+        async function simulateSuccess() {
+            alert('✅ تم معالجة العملية بنجاح! شكراً لك.');
+            // هنا يمكن تحديث حالة الطلب في الباك اند عبر API
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+
+</html>

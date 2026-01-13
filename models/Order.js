@@ -39,13 +39,24 @@ const OrderSchema = new mongoose.Schema({
   serviceId: {
     type: [mongoose.Schema.Types.ObjectId],
     ref: 'Service', // للربط مع نموذج الخدمات
-    required: [true, "يجب اختيار خدمة واحدة على الأقل"],
-    validate: {
-      validator: function (v) {
-        return v && v.length > 0;
-      },
-      message: "يجب اختيار خدمة واحدة على الأقل"
-    }
+    required: [true, "يجب اختيار خدمة واحدة على الأقل"]
+  },
+
+  // بيانات الدفع
+  paymentMethod: {
+    type: String,
+    enum: ["كاش", "بطاقة بنكية", "فوري", "فودافون كاش"],
+    default: "كاش"
+  },
+  paymentStatus: {
+    type: String,
+    enum: ["غير مدفوع", "مدفوع", "فشل"],
+    default: "غير مدفوع"
+  },
+  transactionId: {
+    type: String,
+    unique: true,
+    sparse: true
   },
 
   // تاريخ الطلب
@@ -74,4 +85,3 @@ OrderSchema.index({ status: 1 });       // للبحث حسب الحالة
 OrderSchema.index({ user_phone: 1 });   // للبحث برقم الهاتف
 
 module.exports = mongoose.model("Order", OrderSchema);
-

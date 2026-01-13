@@ -292,6 +292,30 @@ function setupBookingModal() {
                         <label for="userAddress">العنوان بالتفصيل</label>
                         <textarea id="userAddress" placeholder="أدخل عنوانك بالتفصيل هنا" required></textarea>
                     </div>
+
+                    <!-- اختيار وسيلة الدفع -->
+                    <div class="form-group">
+                        <label>وسيلة الدفع</label>
+                        <div class="payment-methods" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
+                            <label class="payment-option" style="border: 1px solid #eee; padding: 10px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 10px;">
+                                <input type="radio" name="paymentMethod" value="كاش" checked>
+                                <span>💵 كاش</span>
+                            </label>
+                            <label class="payment-option" style="border: 1px solid #eee; padding: 10px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 10px;">
+                                <input type="radio" name="paymentMethod" value="بطاقة بنكية">
+                                <span>💳 فيزا/ماستر</span>
+                            </label>
+                            <label class="payment-option" style="border: 1px solid #eee; padding: 10px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 10px;">
+                                <input type="radio" name="paymentMethod" value="فوري">
+                                <span>🏪 فوري</span>
+                            </label>
+                            <label class="payment-option" style="border: 1px solid #eee; padding: 10px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 10px;">
+                                <input type="radio" name="paymentMethod" value="فودافون كاش">
+                                <span>📱 محفظة إلكترونية</span>
+                            </label>
+                        </div>
+                    </div>
+
                     <button type="submit" class="btn btn-primary submit-btn">إرسال الطلب</button>
                 </form>
             </div>
@@ -324,13 +348,15 @@ function setupBookingModal() {
         const phone = document.getElementById('userPhone').value;
         const email = document.getElementById('userEmail').value;
         const address = document.getElementById('userAddress').value;
+        const paymentMethod = form.querySelector('input[name="paymentMethod"]:checked').value;
 
-        await submitOrder({
+        submitOrder({
             user_name: name,
             user_phone: phone,
             user_email: email,
             user_address: address,
-            serviceId: currentServiceId
+            serviceId: currentServiceId,
+            paymentMethod: paymentMethod
         });
 
         // إغلاق النافذة وتفريغ الحقول
@@ -382,7 +408,13 @@ async function submitOrder(orderData) {
 
         const result = await response.json();
         if (result.success) {
-            alert('🎉 تم إرسال طلبك بنجاح! سيتم التواصل معك قريباً.');
+            // إذا كانت وسيلة الدفع ليست كاش، ننتقل لصفحة الدفع
+            if (orderData.paymentMethod !== 'كاش') {
+                window.location.href = `payment.html?method=${encodeURIComponent(orderData.paymentMethod)}&orderId=${result.data._id}`;
+            } else {
+                alert('🎉 تم إرسال طلبك بنجاح! سيتم التواصل معك قريباً.');
+                window.location.reload();
+            }
         } else {
             alert('❌ فشل في إرسال الطلب: ' + (result.message || 'خطأ غير معروف'));
         }

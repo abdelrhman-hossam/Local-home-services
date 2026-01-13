@@ -76,6 +76,7 @@ const ordersRoutes = require("./routes/orders");
 const authRoutes = require("./routes/auth");
 const adminRoutes = require("./routes/admin");
 const reviewRoutes = require("./routes/reviews");
+const paymentRoutes = require("./routes/payment");
 
 // Middleware لفحص حالة قاعدة البيانات قبل معالجة الطلبات
 app.use('/api', (req, res, next) => {
@@ -95,6 +96,7 @@ app.use("/api/orders", ordersRoutes);     // مسارات الطلبات
 app.use("/api/auth", authRoutes);         // مسارات المصادقة
 app.use("/api/admin", adminRoutes);       // مسارات الإدارة
 app.use("/api/reviews", reviewRoutes);     // مسارات التقييمات
+app.use("/api/payment", paymentRoutes);   // مسارات الدفع
 
 // ====================================
 // الاتصال بقاعدة البيانات MongoDB

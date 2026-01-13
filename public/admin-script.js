@@ -58,6 +58,11 @@ async function loadAdminOrders() {
                     <td>${order.user_name}</td>
                     <td>الخدمة #${order.serviceId.length}</td>
                     <td>${new Date(order.order_date).toLocaleDateString('ar-EG')}</td>
+                    <td>
+                        <span style="font-size:0.9rem;">${order.paymentMethod || 'كاش'}</span>
+                        <br>
+                        <small class="status-badge ${order.paymentStatus === 'مدفوع' ? 'status-completed' : 'status-new'}">${order.paymentStatus || 'غير مدفوع'}</small>
+                    </td>
                     <td><span class="status-badge ${getStatusClass(order.status)}">${order.status}</span></td>
                     <td>
                         <select onchange="updateOrderStatus('${order._id}', this.value)" class="action-btn">
