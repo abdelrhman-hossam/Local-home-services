@@ -16,8 +16,14 @@
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="photo_2025-12-19_22-23-03.jpg">
+
+  <!-- Theme Check -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
 </head>
 
 <body>
@@ -76,7 +82,9 @@
       <div class="container">
         <div class="hero-content">
           <div class="hero-text">
-            <h1>نحن لا نرتاح<br>حتي تشعر أنت <span class="text-primary">بالراحة!</span></h1>
+            <p style="color: var(--primary-color); font-weight: 700; margin-bottom: 5px; font-size: 1.4rem;">نحن لا
+              نرتاح</p>
+            <h1 style="margin-top: 0;">حتى تشعر أنت <span class="text-primary">بالراحة.</span></h1>
             <p>حافظ على راحة أفراد عائلتك مع "رعاية". نقدم خدمات نظافة وصيانة منزلية على أعلى مستوى من الاحترافية
               والجودة.</p>
             <div class="hero-buttons">

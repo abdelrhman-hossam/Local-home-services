@@ -7,12 +7,13 @@
     --primary-color: #2bc6c1;
     --primary-dark: #24aca7;
     --primary-light: #e0f7f6;
-    --secondary-color: #f8f9fa;
-    --text-dark: #343a40;
-    --text-light: #6c757d;
+    --secondary-color: #1a1d20;
+    --text-dark: #2d3436;
+    --text-light: #636e72;
     --white: #ffffff;
-    --bg-light: #f4f7f6;
+    --bg-light: #f8f9fa;
     --footer-bg: #1a1d20;
+    --gradient-hero: linear-gradient(135deg, #f0fdfd 0%, #ffffff 100%);
 
     /* Spacing & Layout */
     --container-width: 1200px;
@@ -119,9 +120,11 @@ header {
     top: 0;
     left: 0;
     background: var(--nav-bg);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     z-index: 1000;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
 }
@@ -146,17 +149,19 @@ header {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--secondary-color);
+    color: var(--text-main);
     font-weight: 700;
     font-size: 1.1rem;
     transition: var(--transition);
     position: relative;
-    padding: 5px 0;
+    padding: 10px 15px;
+    border-radius: 8px;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--primary-color);
+    background: rgba(43, 198, 193, 0.05);
 }
 
 .nav-links a::after {
@@ -246,6 +251,29 @@ header {
     background: var(--gradient-hero);
     padding-top: var(--header-height);
     position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(43, 198, 193, 0.1) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    z-index: 0;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(112, 0, 255, 0.05) 0%, transparent 70%);
+    bottom: -50px;
+    left: -50px;
+    z-index: 0;
 }
 
 .hero-content {
@@ -256,19 +284,96 @@ header {
 }
 
 .hero-text h1 {
-    margin-bottom: 25px;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.2;
+    margin-bottom: 30px;
+    font-weight: 800;
+    color: var(--text-main);
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-text h1 .text-primary {
+    background: linear-gradient(120deg, var(--primary-color), #7000ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+}
+
+.hero-text h1 .text-primary::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(43, 198, 193, 0.15);
+    z-index: -1;
 }
 
 .hero-text p {
     color: var(--text-light);
-    margin-bottom: 40px;
-    max-width: 500px;
+    margin-bottom: 45px;
+    max-width: 550px;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-buttons {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+.btn {
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #20ada9 100%);
+    color: white;
+    box-shadow: 0 10px 20px rgba(43, 198, 193, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(43, 198, 193, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-5px);
 }
 
 .hero-img {
@@ -280,7 +385,20 @@ header {
     width: 100%;
     max-width: 600px;
     height: auto;
-    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+    animation: float 6s ease-in-out infinite, fadeInRight 1s ease-out;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes float {

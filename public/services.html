@@ -16,8 +16,14 @@
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="photo_2025-12-19_22-23-03.jpg">
+
+    <!-- Theme Check -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
 
     <style>
         .page-header {
