@@ -11,8 +11,15 @@ const isProduction = window.location.port === '5000';
 const API_BASE_URL = isProduction ? '' : `http://${window.location.hostname}:5000`;
 
 document.addEventListener('DOMContentLoaded', () => {
-    // التأكد من أن الصفحة تبدأ من الأعلى دائماً
+    // 1. منع المتصفح من استعادة مكان السكرول القديم
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+
+    // 2. إجبار الصفحة تبدأ من فوق فوراً
     window.scrollTo(0, 0);
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE
 
     console.log('🚀 تطبيق رعاية جاهز...');
 
@@ -40,6 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 renderAllServices(servicesContainer);
             }
+            // 3. تأكيد الصعود للأعلى بعد تحميل المحتوى
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 100);
         }
     });
 });
