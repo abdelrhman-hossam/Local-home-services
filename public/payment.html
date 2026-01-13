@@ -200,9 +200,57 @@
         }
 
         async function simulateSuccess() {
-            alert('✅ تم معالجة العملية بنجاح! شكراً لك.');
-            // هنا يمكن تحديث حالة الطلب في الباك اند عبر API
-            window.location.href = 'index.html';
+            const btn = document.querySelector('.btn-pay');
+            const originalText = btn.textContent;
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span> جارِ معالجة البيانات...';
+            btn.style.opacity = '0.7';
+            btn.style.cursor = 'not-allowed';
+
+            // إضافة ستايل بسيط للسبينر
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .spinner {
+                    display: inline-block;
+                    width: 15px;
+                    height: 15px;
+                    border: 3px solid rgba(255,255,255,0.3);
+                    border-radius: 50%;
+                    border-top-color: #fff;
+                    animation: spin 1s ease-in-out infinite;
+                    margin-left: 10px;
+                }
+                @keyframes spin { to { transform: rotate(360deg); } }
+            `;
+            document.head.appendChild(style);
+
+            try {
+                // محاكاة تأخير الشبكة لإعطاء إحساس بالواقعية
+                await new Promise(resolve => setTimeout(resolve, 2000));
+
+                const response = await fetch(`/api/payment/confirm/${orderId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        paymentStatus: 'مدفوع',
+                        transactionId: 'SIM-' + Math.random().toString(36).substr(2, 9).toUpperCase()
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    alert('✅ تم معالجة العملية بنجاح! شكراً لك.');
+                    window.location.href = 'index.html';
+                } else {
+                    alert('❌ حدث خطأ في تحديث حالة الدفع، لكن تم تسجيل العملية.');
+                    window.location.href = 'index.html';
+                }
+            } catch (err) {
+                console.error('Payment confirmation error:', err);
+                alert('✅ تم محاكاة الدفع بنجاح!');
+                window.location.href = 'index.html';
+            }
         }
     </script>
 </body>

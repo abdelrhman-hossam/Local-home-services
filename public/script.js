@@ -345,20 +345,20 @@ function setupBookingModal() {
                     <!-- اختيار وسيلة الدفع -->
                     <div class="form-group">
                         <label>وسيلة الدفع</label>
-                        <div class="payment-methods" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
-                            <label class="payment-option" style="border: 1px solid #eee; padding: 10px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 10px;">
+                        <div class="payment-methods">
+                            <label class="payment-option">
                                 <input type="radio" name="paymentMethod" value="كاش" checked>
                                 <span>💵 كاش</span>
                             </label>
-                            <label class="payment-option" style="border: 1px solid #eee; padding: 10px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 10px;">
+                            <label class="payment-option">
                                 <input type="radio" name="paymentMethod" value="بطاقة بنكية">
                                 <span>💳 فيزا/ماستر</span>
                             </label>
-                            <label class="payment-option" style="border: 1px solid #eee; padding: 10px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 10px;">
+                            <label class="payment-option">
                                 <input type="radio" name="paymentMethod" value="فوري">
                                 <span>🏪 فوري</span>
                             </label>
-                            <label class="payment-option" style="border: 1px solid #eee; padding: 10px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 10px;">
+                            <label class="payment-option">
                                 <input type="radio" name="paymentMethod" value="فودافون كاش">
                                 <span>📱 محفظة إلكترونية</span>
                             </label>
