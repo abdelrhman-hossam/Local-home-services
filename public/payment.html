@@ -208,13 +208,13 @@
         }
         fetchOrderDetails();
 
-        if (method === 'بطاقة بنكية') {
+        if (method === 'بطاقة بنكية' || method.includes('بطاقة')) {
             document.getElementById('methodName').textContent = 'دفع بالبطاقة البنكية';
             document.getElementById('cardView').classList.add('active');
-        } else if (method === 'فوري') {
+        } else if (method === 'فوري' || method.includes('فوري')) {
             document.getElementById('methodName').textContent = 'دفع عبر فوري';
             document.getElementById('fawryView').classList.add('active');
-        } else if (method === 'فودافون كاش') {
+        } else if (method === 'فودافون كاش' || method.includes('محفظة')) {
             document.getElementById('methodName').textContent = 'دفع عبر محفظة إلكترونية';
             document.getElementById('vodaView').classList.add('active');
         }

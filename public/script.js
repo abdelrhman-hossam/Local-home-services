@@ -437,9 +437,9 @@ window.openOrderModal = function (serviceName, serviceId) {
  */
 async function submitOrder(orderData) {
     try {
-        // إذا كان المعرف يبدأ بـ mock، فهو محاكاة
-        if (typeof orderData.serviceId === 'string' && orderData.serviceId.startsWith('mock')) {
-            alert('⚠️ النظام في وضع المحاكاة. تم قبول الطلب (محلياً فقط).');
+        // التحقق من صحة ID الخدمة
+        if (!orderData.serviceId) {
+            alert('⚠️ لم يتم تحديد الخدمة بشكل صحيح.');
             return;
         }
 
@@ -779,4 +779,48 @@ document.addEventListener('mousemove', (e) => {
             footer.style.setProperty('--mouse-y', `${y}%`);
         }
     }
+});
+
+// ---------------------------------------------------------
+// Live Chat Logic
+// ---------------------------------------------------------
+window.toggleChat = function () {
+    const chatWin = document.getElementById('chatWindow');
+    if (chatWin) chatWin.classList.toggle('active');
+};
+
+window.sendChatMessage = function () {
+    const input = document.getElementById('chatInput');
+    const msg = input.value.trim();
+    if (!msg) return;
+
+    appendMessage('user', msg);
+    input.value = '';
+
+    // Simple Auto-Bot response
+    setTimeout(() => {
+        const responses = [
+            "أهلاً بك! كيف يمكنني مساعدتك اليوم؟",
+            "سأقوم بتحويلك لأحد ممثلي خدمة العملاء فورا.",
+            "هل تود الاستفسار عن خدمة معينة؟",
+            "شكراً لتواصلك مع رعاية، نحن هنا لخدمتك."
+        ];
+        const random = responses[Math.floor(Math.random() * responses.length)];
+        appendMessage('bot', random);
+    }, 1000);
+};
+
+function appendMessage(type, text) {
+    const container = document.getElementById('chatMessages');
+    if (!container) return;
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `chat-msg msg-${type}`;
+    msgDiv.textContent = text;
+    container.appendChild(msgDiv);
+    container.scrollTop = container.scrollHeight;
+}
+
+// Support hitting Enter to send
+document.getElementById('chatInput')?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendChatMessage();
 });
