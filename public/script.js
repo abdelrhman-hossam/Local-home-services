@@ -9,8 +9,11 @@ let searchQuery = '';
 
 // تحديد عنوان الـ API بناءً على البيئة
 // إذا كنا على المنفذ 5000 (الخادم المدمج)، نستخدم المسار النسبي - وإلا نستخدم 5000
-const isProduction = window.location.port === '5000';
-const API_BASE_URL = isProduction ? '' : `http://${window.location.hostname}:5000`;
+// تحديد عنوان الـ API بناءً على البيئة
+// إذا كُنا نشغل الواجهة الأمامية والخلفية معاً على نفس الخادم (Production) نستخدم مساراً نسبياً
+// وإلا (في بيئة التطوير) نحاول الوصول للمنفذ 5000
+const isLocalDev = window.location.port !== '5000' && window.location.hostname === 'localhost';
+const API_BASE_URL = isLocalDev ? `http://localhost:5000` : '';
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. منع المتصفح من استعادة مكان السكرول القديم
@@ -468,8 +471,12 @@ async function submitOrder(orderData) {
             alert('❌ فشل في إرسال الطلب: ' + (result.message || 'خطأ غير معروف'));
         }
     } catch (error) {
-        alert('❌ حدث خطأ في الاتصال بالخادم.');
-        console.error(error);
+        console.error('Connection Error:', error);
+        if (error.message === 'Failed to fetch') {
+            alert('❌ فشل الاتصال بالخادم: يبدو أن الخادم (الباك اند) متوقف حالياً. يرجى التأكد من تشغيله.');
+        } else {
+            alert('❌ حدث خطأ غير متوقع في الاتصال بالخادم.');
+        }
     }
 }
 
