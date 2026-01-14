@@ -183,19 +183,20 @@
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        const method = urlParams.get('method');
+        const method = urlParams.get('method') || '';
         const orderId = urlParams.get('orderId');
 
         document.getElementById('orderId').textContent = '#' + (orderId || '0000').slice(-6);
 
         // جلب تفاصيل الطلب الحقيقية من الباك اند
         async function fetchOrderDetails() {
+            if (!orderId) return;
             try {
                 const response = await fetch(`/api/orders/${orderId}`);
                 const result = await response.json();
                 if (result.success) {
                     const order = result.data;
-                    document.getElementById('orderAmount').textContent = `${order.totalAmount} ج.م`;
+                    document.getElementById('orderAmount').textContent = `${order.totalAmount || 0} ج.م`;
                     // إذا كان هناك اسم مستخدم مرتبط بالطلب
                     if (order.user_name) {
                         const methodNameElem = document.getElementById('methodName');
@@ -208,15 +209,20 @@
         }
         fetchOrderDetails();
 
-        if (method === 'بطاقة بنكية' || method.includes('بطاقة')) {
+        // إظهار القسم المناسب بناءً على الوسيلة المختارة
+        if (method.includes('بطاقة') || method.includes('Visa') || method === 'card') {
             document.getElementById('methodName').textContent = 'دفع بالبطاقة البنكية';
             document.getElementById('cardView').classList.add('active');
-        } else if (method === 'فوري' || method.includes('فوري')) {
+        } else if (method.includes('فوري') || method === 'fawry') {
             document.getElementById('methodName').textContent = 'دفع عبر فوري';
             document.getElementById('fawryView').classList.add('active');
-        } else if (method === 'فودافون كاش' || method.includes('محفظة')) {
+        } else if (method.includes('فودافون') || method.includes('محفظة') || method === 'wallet') {
             document.getElementById('methodName').textContent = 'دفع عبر محفظة إلكترونية';
             document.getElementById('vodaView').classList.add('active');
+        } else {
+            // حالة افتراضية في حال عدم وجود وسيلة
+            document.getElementById('methodName').textContent = 'وسيلة دفع غير محددة';
+            alert('⚠️ لم يتم تحديد وسيلة الدفع بشكل صحيح.');
         }
 
         async function simulateSuccess() {
