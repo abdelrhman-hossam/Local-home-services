@@ -67,8 +67,8 @@ router.post("/", async (req, res) => {
       });
     }
 
-    // إنشاء طلب جديد
-    const order = new Order({
+    // إعداد كائن الطلب
+    const orderData = {
       user_name,
       user_phone,
       user_address,
@@ -76,22 +76,36 @@ router.post("/", async (req, res) => {
       serviceId: Array.isArray(serviceId) ? serviceId : [serviceId],
       paymentMethod: paymentMethod || "كاش",
       order_date: new Date(),
-      status: "جديد"
-    });
+      status: "جديد",
+      totalAmount: 0 // سيتم حسابه
+    };
 
-    // حساب السعر الإجمالي حقيقياً من الخدمات في قاعدة البيانات
-    const Service = require("../models/Service");
-    const services = await Service.find({ _id: { $in: order.serviceId } });
-    order.totalAmount = services.reduce((acc, s) => acc + s.price, 0);
+    let savedOrder;
 
-    // حفظ الطلب في قاعدة البيانات
-    await order.save();
+    // محاولة الحفظ في MongoDB
+    try {
+      if (mongoose.connection.readyState === 1) {
+        const Service = require("../models/Service");
+        const services = await Service.find({ _id: { $in: orderData.serviceId } });
+        orderData.totalAmount = services.reduce((acc, s) => acc + s.price, 0);
+
+        const order = new Order(orderData);
+        savedOrder = await order.save();
+      } else {
+        throw new Error("DB Disconnected");
+      }
+    } catch (dbError) {
+      console.warn("⚠️ فشل الحفظ في قاعدة البيانات، جاري التحويل للوضع المحلي (Offline Mode)...");
+      // Fallback to Local DB
+      const localDB = require("../utils/localDB");
+      // Calculate rough price if DB failed (assuming 0 or mock)
+      orderData.totalAmount = 0;
+      savedOrder = await localDB.saveOrder(orderData);
+    }
 
     // إرسال إشعار بريد إلكتروني (محاولة)
     try {
       const sendEmail = require("../utils/email");
-
-      // إرسال للعميل
       if (user_email) {
         await sendEmail({
           email: user_email,
@@ -99,26 +113,18 @@ router.post("/", async (req, res) => {
           html: `<h1>أهلاً بك يا ${user_name}</h1><p>لقد تلقينا طلبك وسنتواصل معك قريباً.</p><p>تفاصيل الطلب: ${user_address}</p>`
         });
       }
-
-      // إرسال للمدير (مثال)
-      await sendEmail({
-        email: "admin@raya.com",
-        subject: "طلب خدمة جديد 🆕",
-        html: `<h3>طلب جديد من ${user_name}</h3><p>الهاتف: ${user_phone}</p><p>العنوان: ${user_address}</p>`
-      });
-
     } catch (emailErr) {
       console.error("❌ فشل إرسال البريد:", emailErr.message);
-      // لا نعيد خطأ للعميل لأن الطلب تم حفظه فعلياً
     }
 
     console.log(`✅ تم استلام طلب جديد من: ${user_name}`);
 
     res.status(201).json({
       success: true,
-      message: "تم استلام الطلب بنجاح! سيتم التواصل معك قريباً عبر الهاتف أو البريد.",
-      data: order
+      message: "تم استلام الطلب بنجاح! سيتم التواصل معك قريباً.",
+      data: savedOrder
     });
+
   } catch (err) {
     console.error("❌ خطأ في إنشاء الطلب:", err);
     res.status(500).json({

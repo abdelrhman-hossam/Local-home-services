@@ -79,13 +79,11 @@ const reviewRoutes = require("./routes/reviews");
 const paymentRoutes = require("./routes/payment");
 
 // Middleware لفحص حالة قاعدة البيانات قبل معالجة الطلبات
+// Middleware (Relaxed): لا نمنع الطلب إذا كانت قاعدة البيانات مفصولة، نترك الكود يتعامل معه
 app.use('/api', (req, res, next) => {
-  if (mongoose.connection.readyState !== 1) { // 1 = connected
-    return res.status(503).json({
-      success: false,
-      message: "الخدمة غير متاحة حالياً - لا يوجد اتصال بقاعدة البيانات",
-      error: "Database Disconnected"
-    });
+  // مجرد تسجيل للحالة دون إيقاف الطلب
+  if (mongoose.connection.readyState !== 1) {
+    console.warn('⚠️ تنبيه: يتم معالجة طلب API وقاعدة البيانات مفصولة (Offline Mode Active).');
   }
   next();
 });
