@@ -3,6 +3,7 @@
 // ====================================
 const express = require("express");
 const router = express.Router();
+const mongoose = require("mongoose"); // Fixed: Import mongoose to avoid ReferenceError
 const Order = require("../models/Order");
 const { protect } = require("../middleware/auth");
 
