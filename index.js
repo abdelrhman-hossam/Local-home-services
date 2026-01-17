@@ -153,6 +153,7 @@ const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT, '0.0.0.0', () => {
   console.log("\n" + "=".repeat(50));
   console.log(`🚀 الخادم يعمل بنجاح على المنفذ ${PORT}`);
+  console.log(`📅 Version: ${new Date().toISOString()}`); // Force Redeploy Trigger
   console.log(`🌐 افتح المتصفح على: http://localhost:${PORT}`);
   console.log(`📘 API Endpoints:`);
   console.log(`   - GET  http://localhost:${PORT}/api/services`);
