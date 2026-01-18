@@ -462,7 +462,8 @@ async function submitOrder(orderData) {
         if (result.success) {
             // إذا كانت وسيلة الدفع ليست كاش، ننتقل لصفحة الدفع
             if (orderData.paymentMethod !== 'كاش') {
-                window.location.href = `payment.html?method=${encodeURIComponent(orderData.paymentMethod)}&orderId=${result.data._id}`;
+                const amount = result.data.totalAmount || 500;
+                window.location.href = `payment.html?method=${encodeURIComponent(orderData.paymentMethod)}&orderId=${result.data._id}&amount=${amount}`;
             } else {
                 alert('🎉 تم إرسال طلبك بنجاح! سيتم التواصل معك قريباً.');
                 window.location.reload();

@@ -185,8 +185,14 @@
         const urlParams = new URLSearchParams(window.location.search);
         const method = urlParams.get('method') || '';
         const orderId = urlParams.get('orderId');
+        const urlAmount = urlParams.get('amount'); // Read amount from URL
 
         document.getElementById('orderId').textContent = '#' + (orderId || '0000').slice(-6);
+
+        // Set initial amount from URL if available (Fastest)
+        if (urlAmount) {
+            document.getElementById('orderAmount').textContent = `${urlAmount} ج.م`;
+        }
 
         // جلب تفاصيل الطلب الحقيقية من الباك اند
         async function fetchOrderDetails() {
@@ -196,7 +202,7 @@
                 const result = await response.json();
                 if (result.success) {
                     const order = result.data;
-                    document.getElementById('orderAmount').textContent = `${order.totalAmount || 0} ج.م`;
+                    document.getElementById('orderAmount').textContent = `${order.totalAmount || urlAmount || 500} ج.م`;
                     // إذا كان هناك اسم مستخدم مرتبط بالطلب
                     if (order.user_name) {
                         const methodNameElem = document.getElementById('methodName');
@@ -205,6 +211,10 @@
                 }
             } catch (err) {
                 console.error('Error fetching order:', err);
+                // Fallback if fetch fails (e.g. Offline Mode)
+                if (urlAmount) {
+                    document.getElementById('orderAmount').textContent = `${urlAmount} ج.م`;
+                }
             }
         }
         fetchOrderDetails();
