@@ -148,53 +148,16 @@ app.use((err, req, res, next) => {
 // ====================================
 // تشغيل الخادم - Start Server
 // ====================================
-const PORT = process.env.PORT || 5000;
-
-const server = app.listen(PORT, '0.0.0.0', () => {
-  console.log("\n" + "=".repeat(50));
-  console.log(`🚀 الخادم يعمل بنجاح على المنفذ ${PORT}`);
-  console.log(`📅 Version: ${new Date().toISOString()}`); // Force Redeploy Trigger
-  console.log(`🌐 افتح المتصفح على: http://localhost:${PORT}`);
-  console.log(`📘 API Endpoints:`);
-  console.log(`   - GET  http://localhost:${PORT}/api/services`);
-  console.log(`   - POST http://localhost:${PORT}/api/orders`);
-  console.log("=".repeat(50) + "\n");
-});
-
 // ====================================
-// معالجة إغلاق الخادم بشكل آمن (Graceful Shutdown)
+// تصدير تطبيق Express ليعمل كـ Serverless Function على Vercel
 // ====================================
-process.on('SIGTERM', async () => {
-  console.log('\n⚠️  تم استلام إشارة SIGTERM. إغلاق الخادم بأمان...');
+module.exports = app;
 
-  server.close(async () => {
-    console.log('🔌 تم إيقاف الخادم');
-
-    try {
-      await mongoose.connection.close();
-      console.log('🔌 تم إغلاق الاتصال بقاعدة البيانات');
-      process.exit(0);
-    } catch (err) {
-      console.error('❌ خطأ في إغلاق الاتصال:', err);
-      process.exit(1);
-    }
+// تشغيل الخادم محلياً فقط (Local Development)
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running locally on port ${PORT}`);
+    console.log(`🌐 http://localhost:${PORT}`);
   });
-});
-
-process.on('SIGINT', async () => {
-  console.log('\n\n⚠️  تم استلام إشارة SIGINT (Ctrl+C). إغلاق الخادم بأمان...');
-
-  server.close(async () => {
-    console.log('🔌 تم إيقاف الخادم');
-
-    try {
-      await mongoose.connection.close();
-      console.log('🔌 تم إغلاق الاتصال بقاعدة البيانات');
-      console.log('👋 مع السلامة!\n');
-      process.exit(0);
-    } catch (err) {
-      console.error('❌ خطأ في إغلاق الاتصال:', err);
-      process.exit(1);
-    }
-  });
-});
+}
