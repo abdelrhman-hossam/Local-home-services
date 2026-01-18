@@ -1401,7 +1401,7 @@ input:checked+.slider:before {
     border: 1px solid rgba(0, 242, 254, 0.1);
 }
 
-.dark-mode .chat-window {
+[data-theme="dark"] .chat-window {
     background: var(--card-bg);
     border-color: rgba(137, 207, 240, 0.2);
     backdrop-filter: blur(10px);
@@ -1444,7 +1444,7 @@ input:checked+.slider:before {
     border-bottom-left-radius: 2px;
 }
 
-.dark-mode .msg-bot {
+[data-theme="dark"] .msg-bot {
     background: rgba(255, 255, 255, 0.05);
     color: #eee;
 }
@@ -1463,7 +1463,7 @@ input:checked+.slider:before {
     gap: 10px;
 }
 
-.dark-mode .chat-input-area {
+[data-theme="dark"] .chat-input-area {
     border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -1477,7 +1477,7 @@ input:checked+.slider:before {
     font-family: inherit;
 }
 
-.dark-mode .chat-input {
+[data-theme="dark"] .chat-input {
     background: rgba(255, 255, 255, 0.05);
     color: #fff;
 }
