@@ -102,6 +102,7 @@ router.post("/", async (req, res) => {
       savedOrder = {
         _id: 'offline_' + Date.now(),
         ...orderData,
+        totalAmount: orderData.totalAmount || 500, // Fallback price if DB lookup failed
         status: 'جديد (محلي)',
         paymentStatus: paymentMethod === 'كاش' ? 'غير مدفوع' : 'مدفوع (محاكاة)',
         createdAt: new Date(),
