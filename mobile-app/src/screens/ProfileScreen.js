@@ -4,9 +4,39 @@ import { Text, Button, Avatar, List, Divider, useTheme } from 'react-native-pape
 import { AuthContext } from '../context/AuthContext';
 import Header from '../components/Header';
 
-const ProfileScreen = () => {
-    const { logout, userInfo } = useContext(AuthContext);
+const ProfileScreen = ({ navigation }) => {
+    const { logout, userInfo, userToken } = useContext(AuthContext);
     const theme = useTheme();
+
+    if (!userToken) {
+        return (
+            <View style={styles.container}>
+                <Header title="Profile" />
+                <View style={[styles.container, { justifyContent: 'center', padding: 30 }]}>
+                    <Avatar.Icon size={100} icon="account-circle-outline" style={{ alignSelf: 'center', marginBottom: 20, backgroundColor: 'transparent' }} color={theme.colors.primary} />
+                    <Text variant="headlineMedium" style={{ textAlign: 'center', marginBottom: 10, fontWeight: 'bold' }}>Welcome!</Text>
+                    <Text variant="bodyMedium" style={{ textAlign: 'center', marginBottom: 40, color: 'gray' }}>
+                        Log in to manage your bookings and profile.
+                    </Text>
+                    <Button
+                        mode="contained"
+                        onPress={() => navigation.navigate('Login')}
+                        style={{ marginBottom: 15, borderRadius: 30, paddingVertical: 5 }}
+                    >
+                        Login
+                    </Button>
+                    {/* Add register navigation if available */}
+                    <Button
+                        mode="outlined"
+                        onPress={() => navigation.navigate('Login')}
+                        style={{ borderRadius: 30, paddingVertical: 5, borderColor: theme.colors.primary }}
+                    >
+                        Create Account
+                    </Button>
+                </View>
+            </View>
+        );
+    }
 
     return (
         <View style={styles.container}>

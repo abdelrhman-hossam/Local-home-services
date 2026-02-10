@@ -20,11 +20,8 @@ const AppNavigator = () => {
 
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-            {userToken ? (
-                <Stack.Screen name="Main" component={TabNavigator} />
-            ) : (
-                <Stack.Screen name="Login" component={LoginScreen} />
-            )}
+            <Stack.Screen name="Main" component={TabNavigator} />
+            <Stack.Screen name="Login" component={LoginScreen} />
         </Stack.Navigator>
     );
 };

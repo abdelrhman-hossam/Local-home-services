@@ -1,15 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import { View, FlatList, StyleSheet, RefreshControl } from 'react-native';
-import { Text, Surface, Card, Chip, useTheme, ActivityIndicator } from 'react-native-paper';
+import { Text, Surface, Card, Chip, useTheme, ActivityIndicator, Button } from 'react-native-paper';
 import client from '../api/client';
 import Header from '../components/Header';
 import Animated, { FadeInUp } from 'react-native-reanimated';
 
-const BookingsScreen = () => {
+const BookingsScreen = ({ navigation }) => {
     const theme = useTheme();
+    const { userToken } = React.useContext(require('../context/AuthContext').AuthContext);
     const [bookings, setBookings] = useState([]);
     const [loading, setLoading] = useState(true);
     const [refreshing, setRefreshing] = useState(false);
+
+    if (!userToken) {
+        return (
+            <View style={[styles.container, { justifyContent: 'center', alignItems: 'center', padding: 20 }]}>
+                <Header title="My Bookings" />
+                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                    <Text variant="titleMedium" style={{ marginBottom: 20 }}>Please login to view your bookings</Text>
+                    <Button
+                        mode="contained"
+                        onPress={() => navigation.navigate('Login')}
+                        style={{ borderRadius: 30 }}
+                    >
+                        Login Now
+                    </Button>
+                </View>
+            </View>
+        );
+    }
 
     const fetchBookings = async () => {
         try {

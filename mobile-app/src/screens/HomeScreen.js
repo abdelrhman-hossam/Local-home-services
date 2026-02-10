@@ -1,78 +1,191 @@
-import React from 'react';
-import { View, StyleSheet, ScrollView, FlatList, TouchableOpacity, Image } from 'react-native';
-import { Text, Surface, Card, IconButton, useTheme } from 'react-native-paper';
-import Animated, { FadeInRight, FadeInUp } from 'react-native-reanimated';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import Header from '../components/Header';
+import React, { useEffect, useState } from 'react';
+import { View, StyleSheet, ScrollView, Image, FlatList, TouchableOpacity, Dimensions } from 'react-native';
+import { Text, Surface, Card, Button, useTheme, ActivityIndicator } from 'react-native-paper';
+import { LinearGradient } from 'expo-linear-gradient';
+import Animated, { FadeIn, FadeInDown, FadeInRight } from 'react-native-reanimated';
+import { StatusBar } from 'expo-status-bar';
+import client from '../api/client';
 
-const CATEGORIES = [
-    { id: '1', name: 'Plumbing', icon: 'pipe-wrench' },
-    { id: '2', name: 'Electrical', icon: 'flash' },
-    { id: '3', name: 'Painting', icon: 'format-paint' },
-    { id: '4', name: 'Cleaning', icon: 'broom' },
-    { id: '5', name: 'Garden', icon: 'flower' },
-];
+const { width } = Dimensions.get('window');
 
-const FEATURED = [
-    { id: '1', title: 'AC Repair', price: '$50', image: 'https://via.placeholder.com/300' },
-    { id: '2', title: 'Full House Cleaning', price: '$120', image: 'https://via.placeholder.com/300' },
-    { id: '3', title: 'Kitchen Plumbing', price: '$80', image: 'https://via.placeholder.com/300' },
+// Features Data (Matching index.html)
+const FEATURES = [
+    {
+        id: '1',
+        title: 'Cleaning',
+        desc: 'Deep cleaning with safe tools.',
+        image: require('../assets/feature_cleaning.jpg'),
+    },
+    {
+        id: '2',
+        title: 'Maintenance',
+        desc: 'Expert electrical & plumbing fixes.',
+        image: require('../assets/feature_maintenance.jpg'),
+    },
+    {
+        id: '3',
+        title: 'Safety',
+        desc: 'Vetted professionals for your peace of mind.',
+        image: require('../assets/feature_safety.jpg'),
+    },
+    {
+        id: '4',
+        title: 'Best Price',
+        desc: 'Transparent pricing, no surprises.',
+        image: require('../assets/feature_price.jpg'),
+    },
 ];
 
 const HomeScreen = ({ navigation }) => {
     const theme = useTheme();
+    const [services, setServices] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    const renderCategory = ({ item, index }) => (
-        <Animated.View entering={FadeInRight.delay(index * 100).duration(500)}>
-            <TouchableOpacity style={styles.categoryItem} onPress={() => { }}>
-                <Surface style={[styles.categoryIcon, { backgroundColor: theme.colors.secondaryContainer }]} elevation={2}>
-                    <IconButton icon={item.icon} iconColor={theme.colors.primary} size={24} />
-                </Surface>
-                <Text variant="labelSmall" style={styles.categoryText}>{item.name}</Text>
-            </TouchableOpacity>
+    const fetchServices = async () => {
+        try {
+            // Adjust endpoint if necessary, check routes/services.js
+            const res = await client.get('/services');
+            if (res.data.success) {
+                setServices(res.data.data);
+            }
+        } catch (error) {
+            console.log('Error fetching services:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchServices();
+    }, []);
+
+    const renderFeature = ({ item, index }) => (
+        <Animated.View
+            entering={FadeInDown.delay(index * 200).duration(800)}
+            style={styles.featureCardContainer}
+        >
+            <Surface style={styles.featureCard} elevation={2}>
+                <Image source={item.image} style={styles.featureIcon} resizeMode="cover" />
+                <Text variant="titleMedium" style={styles.featureTitle}>{item.title}</Text>
+                <Text variant="bodySmall" style={styles.featureDesc}>{item.desc}</Text>
+            </Surface>
         </Animated.View>
     );
 
-    const renderFeatured = ({ item, index }) => (
-        <Animated.View entering={FadeInUp.delay(300 + (index * 100)).duration(700)}>
-            <Card style={styles.featuredCard} mode="elevated" onPress={() => { }}>
-                <Card.Cover source={{ uri: item.image }} style={styles.cardImage} />
-                <Card.Title
-                    title={item.title}
-                    subtitle={item.price}
-                    titleStyle={styles.cardTitle}
-                    subtitleStyle={{ color: theme.colors.secondary }}
-                    right={(props) => <IconButton {...props} icon="arrow-right" />}
-                />
+    const renderService = ({ item, index }) => (
+        <Animated.View entering={FadeInRight.delay(index * 150 + 500).duration(800)}>
+            <Card style={styles.serviceCard} mode="elevated" onPress={() => { }}>
+                {/* Use a placeholder if image is missing or local path issue */}
+                <Card.Cover source={{ uri: item.image || 'https://via.placeholder.com/300' }} style={styles.serviceImage} />
+                <Card.Content style={styles.serviceContent}>
+                    <Text variant="titleMedium" style={styles.serviceTitle}>{item.name}</Text>
+                    <Text variant="bodyMedium" style={{ color: theme.colors.primary, fontWeight: 'bold' }}>
+                        {item.price} EGP
+                    </Text>
+                    <Text variant="bodySmall" numberOfLines={2} style={styles.serviceDesc}>
+                        {item.description}
+                    </Text>
+                    <Button
+                        mode="contained"
+                        onPress={() => navigation.navigate('Bookings')} // Should ideally go to Booking Flow
+                        style={styles.bookBtn}
+                        labelStyle={{ fontSize: 12 }}
+                    >
+                        Book Now
+                    </Button>
+                </Card.Content>
             </Card>
         </Animated.View>
     );
 
     return (
         <View style={styles.container}>
-            <Header title="Good Morning, Hero" showAvatar={true} userInitials="MH" />
+            <StatusBar style="dark" />
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>
 
-            <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-
-                <View style={styles.section}>
-                    <Text variant="titleLarge" style={styles.sectionTitle}>Categories</Text>
-                    <FlatList
-                        horizontal
-                        data={CATEGORIES}
-                        renderItem={renderCategory}
-                        keyExtractor={item => item.id}
-                        showsHorizontalScrollIndicator={false}
-                        contentContainerStyle={styles.categoriesList}
+                {/* Hero Section */}
+                <View style={styles.heroContainer}>
+                    <LinearGradient
+                        colors={['#f0fdfd', '#ffffff']}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 1 }}
+                        style={StyleSheet.absoluteFill}
                     />
+
+                    <View style={styles.heroContent}>
+                        <Animated.View entering={FadeInDown.duration(1000)}>
+                            <Text style={styles.heroSub}>We don't rest</Text>
+                            <Text style={styles.heroTitle}>
+                                Until you feel <Text style={{ color: theme.colors.primary }}>Comfortable.</Text>
+                            </Text>
+                            <Text style={styles.heroDesc}>
+                                Keep your family comfortable with "Raya". We provide top-level home cleaning and maintenance services.
+                            </Text>
+
+                            <View style={styles.heroButtons}>
+                                <Button
+                                    mode="contained"
+                                    onPress={() => {
+                                        // Scroll to services or navigate
+                                    }}
+                                    style={styles.heroBtnPrimary}
+                                    contentStyle={{ height: 50 }}
+                                >
+                                    Order Now
+                                </Button>
+                                <Button
+                                    mode="outlined"
+                                    onPress={() => { }}
+                                    style={styles.heroBtnOutline}
+                                    contentStyle={{ height: 50 }}
+                                >
+                                    Learn More
+                                </Button>
+                            </View>
+                        </Animated.View>
+
+                        <Animated.Image
+                            entering={FadeIn.delay(500).duration(1000)}
+                            source={require('../assets/hero_image.jpg')}
+                            style={styles.heroImage}
+                            resizeMode="contain"
+                        />
+                    </View>
                 </View>
 
-                <View style={styles.section}>
-                    <Text variant="titleLarge" style={styles.sectionTitle}>Featured Services</Text>
-                    {FEATURED.map((item, index) => (
-                        <View key={item.id} style={{ marginBottom: 16 }}>
-                            {renderFeatured({ item, index })}
-                        </View>
-                    ))}
+                {/* Features Section */}
+                <View style={styles.sectionContainer}>
+                    <Text variant="headlineMedium" style={styles.sectionHeader}>Why Choose Us?</Text>
+                    <Text variant="bodyMedium" style={styles.sectionSubHeader}>
+                        A different experience in home services
+                    </Text>
+
+                    <View style={styles.featuresGrid}>
+                        {FEATURES.map((item, index) => (
+                            <View key={item.id} style={{ width: '48%', marginBottom: 15 }}>
+                                {renderFeature({ item, index })}
+                            </View>
+                        ))}
+                    </View>
+                </View>
+
+                {/* Services Section */}
+                <View style={[styles.sectionContainer, { backgroundColor: '#f8f9fa' }]}>
+                    <Text variant="headlineMedium" style={styles.sectionHeader}>Our Services</Text>
+
+                    {loading ? (
+                        <ActivityIndicator size="large" color={theme.colors.primary} style={{ marginTop: 20 }} />
+                    ) : (
+                        services.map((item, index) => (
+                            <View key={item._id} style={{ marginBottom: 20 }}>
+                                {renderService({ item, index })}
+                            </View>
+                        ))
+                    )}
+
+                    <Button mode="outlined" style={{ marginTop: 20, borderColor: theme.colors.primary }}>
+                        View All Services
+                    </Button>
                 </View>
 
             </ScrollView>
@@ -83,49 +196,129 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F5F5F5',
+        backgroundColor: '#ffffff',
     },
-    scrollContent: {
-        paddingBottom: 20,
-    },
-    section: {
-        paddingVertical: 20,
+    heroContainer: {
+        paddingTop: 60,
+        paddingBottom: 40,
         paddingHorizontal: 20,
-    },
-    sectionTitle: {
-        fontWeight: 'bold',
-        marginBottom: 15,
-    },
-    categoriesList: {
-        paddingRight: 20,
-    },
-    categoryItem: {
-        alignItems: 'center',
-        marginRight: 20,
-    },
-    categoryIcon: {
-        width: 60,
-        height: 60,
-        borderRadius: 30,
+        minHeight: Dimensions.get('window').height * 0.85, // Almost full screen
         justifyContent: 'center',
-        alignItems: 'center',
-        marginBottom: 8,
     },
-    categoryText: {
+    heroContent: {
+        alignItems: 'center',
+    },
+    heroSub: {
+        fontSize: 18,
+        fontWeight: '900',
+        color: '#333',
+        letterSpacing: 1,
+        marginBottom: 5,
+        opacity: 0.8,
+    },
+    heroTitle: {
+        fontSize: 32,
+        fontWeight: '900',
+        color: '#000',
+        lineHeight: 40,
+        marginBottom: 15,
         textAlign: 'center',
     },
-    featuredCard: {
-        marginBottom: 5,
-        borderRadius: 12,
-        overflow: 'hidden',
-        backgroundColor: 'white',
+    heroDesc: {
+        fontSize: 16,
+        color: '#666',
+        textAlign: 'center',
+        marginBottom: 30,
+        lineHeight: 24,
     },
-    cardImage: {
-        height: 150,
+    heroButtons: {
+        flexDirection: 'row',
+        gap: 15,
+        marginBottom: 40,
     },
-    cardTitle: {
+    heroBtnPrimary: {
+        borderRadius: 25,
+        paddingHorizontal: 10,
+    },
+    heroBtnOutline: {
+        borderRadius: 25,
+        paddingHorizontal: 10,
+        borderColor: '#2bc6c1',
+        borderWidth: 2,
+    },
+    heroImage: {
+        width: '100%',
+        height: 300,
+        borderRadius: 20,
+    },
+    sectionContainer: {
+        paddingVertical: 50,
+        paddingHorizontal: 20,
+    },
+    sectionHeader: {
         fontWeight: 'bold',
+        textAlign: 'center',
+        marginBottom: 10,
     },
+    sectionSubHeader: {
+        textAlign: 'center',
+        color: '#666',
+        marginBottom: 40,
+    },
+    featuresGrid: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+    },
+    featureCardContainer: {
+        width: '100%',
+    },
+    featureCard: {
+        padding: 20,
+        borderRadius: 15,
+        backgroundColor: 'white',
+        alignItems: 'center',
+        height: 200,
+        justifyContent: 'center',
+    },
+    featureIcon: {
+        width: 60,
+        height: 60,
+        marginBottom: 15,
+        borderRadius: 30,
+    },
+    featureTitle: {
+        fontWeight: 'bold',
+        marginBottom: 5,
+        textAlign: 'center',
+    },
+    featureDesc: {
+        textAlign: 'center',
+        color: '#666',
+        fontSize: 12,
+    },
+    serviceCard: {
+        backgroundColor: 'white',
+        borderRadius: 15,
+        overflow: 'hidden',
+    },
+    serviceImage: {
+        height: 180,
+    },
+    serviceContent: {
+        padding: 15,
+    },
+    serviceTitle: {
+        fontWeight: 'bold',
+        marginBottom: 5,
+    },
+    serviceDesc: {
+        color: '#666',
+        marginBottom: 15,
+    },
+    bookBtn: {
+        alignSelf: 'flex-start',
+    }
 });
 
 export default HomeScreen;
