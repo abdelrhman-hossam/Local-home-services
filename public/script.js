@@ -520,7 +520,7 @@ function setupAuthForms() {
                     localStorage.setItem('token', result.token);
                     localStorage.setItem('user', JSON.stringify(result.user));
                     alert('👋 تم تسجيل الدخول بنجاح!');
-                    window.location.href = 'index.html';
+                    window.location.href = '/';
                 } else {
                     alert('❌ ' + result.message);
                 }
@@ -550,7 +550,7 @@ function setupAuthForms() {
                     localStorage.setItem('token', result.token);
                     localStorage.setItem('user', JSON.stringify(result.user));
                     alert('🎉 تم إنشاء الحساب بنجاح!');
-                    window.location.href = 'index.html';
+                    window.location.href = '/';
                 } else {
                     alert('❌ ' + result.message);
                 }

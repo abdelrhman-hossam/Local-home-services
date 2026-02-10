@@ -277,15 +277,15 @@
 
                 if (result.success) {
                     alert('✅ تم معالجة العملية بنجاح! شكراً لك.');
-                    window.location.href = 'index.html';
+                    window.location.href = '/';
                 } else {
                     alert('❌ حدث خطأ في تحديث حالة الدفع، لكن تم تسجيل العملية.');
-                    window.location.href = 'index.html';
+                    window.location.href = '/';
                 }
             } catch (err) {
                 console.error('Payment confirmation error:', err);
                 alert('✅ تم محاكاة الدفع بنجاح!');
-                window.location.href = 'index.html';
+                window.location.href = '/';
             }
         }
     </script>
