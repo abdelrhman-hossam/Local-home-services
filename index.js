@@ -64,7 +64,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // Route للصفحة الرئيسية
 // ====================================
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "pro!.html"));
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 // ====================================
