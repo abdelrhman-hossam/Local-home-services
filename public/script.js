@@ -16,7 +16,33 @@ const isLocalDev = window.location.port !== '5000' && window.location.hostname =
 const API_BASE_URL = isLocalDev ? `http://localhost:5000` : '';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. منع المتصفح من استعادة مكان السكرول القديم
+    // تهيئة حركات AOS
+    if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 800, once: true });
+    }
+
+    // إنشاء حاوية التنبيهات
+    const toastContainer = document.createElement('div');
+    toastContainer.className = 'toast-container';
+    document.body.appendChild(toastContainer);
+
+    window.showToast = (message, type = 'success') => {
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.innerHTML = `
+      <div class="toast-content">
+        <span>${message}</span>
+      </div>
+    `;
+        toastContainer.appendChild(toast);
+        setTimeout(() => toast.classList.add('show'), 10);
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 500);
+        }, 4000);
+    };
+
+    // التحكم في السكرول
     if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
     }
@@ -27,6 +53,35 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE
 
     console.log('🚀 تطبيق رعاية جاهز...');
+
+    // 2. التحكم في النافبار عند التمرير وزر العودة للأعلى
+    const headerElement = document.querySelector('header');
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            headerElement.classList.add('scrolled');
+        } else {
+            headerElement.classList.remove('scrolled');
+        }
+
+        if (backToTopBtn) {
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        }
+    });
+
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 
     // Mobile Menu Toggle
     setupMobileMenu();
@@ -442,7 +497,7 @@ async function submitOrder(orderData) {
     try {
         // التحقق من صحة ID الخدمة
         if (!orderData.serviceId) {
-            alert('⚠️ لم يتم تحديد الخدمة بشكل صحيح.');
+            showToast('لم يتم تحديد الخدمة بشكل صحيح.', 'error');
             return;
         }
 
@@ -454,7 +509,7 @@ async function submitOrder(orderData) {
 
         // إذا كان الخادم مفصولاً
         if (response.status === 503) {
-            alert('⚠️ النظام في وضع الصيانة. لا يمكن حفظ الطلب حالياً.');
+            showToast('النظام في وضع الصيانة. لا يمكن حفظ الطلب حالياً.', 'error');
             return;
         }
 
@@ -465,18 +520,18 @@ async function submitOrder(orderData) {
                 const amount = result.data.totalAmount || 500;
                 window.location.href = `payment.html?method=${encodeURIComponent(orderData.paymentMethod)}&orderId=${result.data._id}&amount=${amount}`;
             } else {
-                alert('🎉 تم إرسال طلبك بنجاح! سيتم التواصل معك قريباً.');
+                showToast('تم إرسال طلبك بنجاح! سيتم التواصل معك قريباً.', 'success');
                 window.location.reload();
             }
         } else {
-            alert('❌ فشل في إرسال الطلب: ' + (result.message || 'خطأ غير معروف'));
+            showToast('فشل في إرسال الطلب: ' + (result.message || 'خطأ غير معروف'), 'error');
         }
     } catch (error) {
         console.error('Connection Error:', error);
         if (error.message === 'Failed to fetch') {
-            alert('❌ فشل الاتصال بالخادم: يبدو أن الخادم (الباك اند) متوقف حالياً. يرجى التأكد من تشغيله.');
+            showToast('فشل الاتصال بالخادم: تأكد أن الخادم يعمل.', 'error');
         } else {
-            alert('❌ حدث خطأ غير متوقع في الاتصال بالخادم.');
+            showToast('حدث خطأ غير متوقع في الاتصال.', 'error');
         }
     }
 }
@@ -652,7 +707,7 @@ window.openReviewsModal = async function (serviceId, serviceName) {
             e.preventDefault();
             const token = localStorage.getItem('token');
             if (!token) {
-                alert('⚠️ يرجى تسجيل الدخول أولاً للتمكن من التقييم');
+                showToast('يرجى تسجيل الدخول أولاً للتمكن من التقييم', 'error');
                 window.location.href = 'auth.html';
                 return;
             }
@@ -675,15 +730,15 @@ window.openReviewsModal = async function (serviceId, serviceName) {
 
                 const result = await response.json();
                 if (result.success) {
-                    alert('✅ شكراً لتقييمك!');
+                    showToast('شكراً لتقييمك!', 'success');
                     document.getElementById('addReviewForm').reset();
                     openReviewsModal(reviewData.service, serviceName); // إعادة تحميل التقييمات
                     fetchServices(); // لتحديث النجوم في البطاقة
                 } else {
-                    alert('❌ ' + result.message);
+                    showToast(result.message, 'error');
                 }
             } catch (err) {
-                alert('❌ حصل خطأ في الاتصال');
+                showToast('حصل خطأ في الاتصال', 'error');
             }
         });
     }

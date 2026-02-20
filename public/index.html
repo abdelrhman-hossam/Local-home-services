@@ -9,11 +9,16 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://cdn.jsdelivr.net; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' http://localhost:5000 https://local-home-services-final.vercel.app;">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+Arabic:wght@400;600;700;800&display=swap"
     rel="stylesheet">
 
   <!-- Styles -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="style.css">
 
   <link rel="icon" type="image/png" href="photo_2025-12-19_22-23-03.jpg">
@@ -34,7 +39,7 @@
       <div class="nav-container">
         <div class="logo">
           <a href="/">
-            <img src="photo_2025-12-19_22-23-03.jpg" alt="شعار رعاية">
+            <img src="photo_2025-12-19_22-23-03.jpg" alt="شعار رعاية" loading="lazy">
           </a>
         </div>
 
@@ -81,7 +86,7 @@
     <section class="hero-section">
       <div class="container">
         <div class="hero-content">
-          <div class="hero-text">
+          <div class="hero-text" data-aos="fade-left">
             <p
               style="color: var(--text-dark); font-weight: 900; margin-bottom: 5px; font-size: 1.6rem; letter-spacing: 1px;">
               نحن لا نرتاح</p>
@@ -93,8 +98,8 @@
               <a href="#features" class="btn btn-outline">المزيد عن رعاية</a>
             </div>
           </div>
-          <div class="hero-img">
-            <img src="photo_2025-12-19_22-22-08.jpg" alt="خدمات منزلية">
+          <div class="hero-img" data-aos="fade-right">
+            <img src="photo_2025-12-19_22-22-08.jpg" alt="خدمات منزلية" loading="lazy">
           </div>
         </div>
       </div>
@@ -109,26 +114,26 @@
         </div>
 
         <div class="features-grid">
-          <div class="feature-card">
+          <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
             <img src="photo_2025-12-19_22-22-19.jpg" alt="نظافة" class="feature-icon">
             <h3>نظافة تعيد الحياة</h3>
             <p>فريق متخصص يقدّم تنظيف شامل وسريع بأدوات آمنة ونتيجة مضمونة 100%.</p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
             <img src="photo_2025-12-19_22-22-15.jpg" alt="صيانة" class="feature-icon">
             <h3>صيانة موثوقة</h3>
             <p>خبراء في الكهرباء، السباكة، النجارة، والأجهزة. شغل دقيق ينهي مشكلتك من الجذر.</p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
             <img src="photo_2025-12-19_22-22-17.jpg" alt="أمان" class="feature-icon">
             <h3>راحة بالك أولويتنا</h3>
             <p>جميع مقدمي الخدمة موثوقون وتم فحصهم بدقة لضمان أمان عائلتك ومنزلك.</p>
           </div>
 
-          <div class="feature-card">
-            <img src="photo_2025-12-19_22-22-14.jpg" alt="سعر" class="feature-icon">
+          <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+            <img src="photo_2025-12-19_22-22-14.jpg" alt="سعر" class="feature-icon" loading="lazy">
             <h3>جودة مقابل سعر</h3>
             <p>تسعير شفاف بدون أي مفاجآت، مع خيارات دفع مرنة تناسب احتياجاتك.</p>
           </div>
@@ -141,10 +146,23 @@
       <div class="container">
 
         <!-- حاوية الخدمات الديناميكية -->
-        <div id="services-container">
-          <!-- سيتم تحميل الخدمات هنا بواسطة JavaScript -->
-          <div class="text-center" style="padding: 40px; color: var(--text-light);">
-            جاري تحميل الخدمات المميزة...
+        <div id="services-container" class="services-grid">
+          <!-- Skeleton Loaders -->
+          <div class="service-card skeleton-card">
+            <div class="skeleton" style="height: 200px; border-radius: 15px 15px 0 0;"></div>
+            <div style="padding: 20px;">
+              <div class="skeleton" style="height: 20px; width: 60%; margin-bottom: 10px;"></div>
+              <div class="skeleton" style="height: 15px; width: 80%; margin-bottom: 20px;"></div>
+              <div class="skeleton" style="height: 40px; width: 100%; border-radius: 25px;"></div>
+            </div>
+          </div>
+          <div class="service-card skeleton-card">
+            <div class="skeleton" style="height: 200px; border-radius: 15px 15px 0 0;"></div>
+            <div style="padding: 20px;">
+              <div class="skeleton" style="height: 20px; width: 60%; margin-bottom: 10px;"></div>
+              <div class="skeleton" style="height: 15px; width: 80%; margin-bottom: 20px;"></div>
+              <div class="skeleton" style="height: 40px; width: 100%; border-radius: 25px;"></div>
+            </div>
           </div>
         </div>
 
@@ -257,7 +275,15 @@
     </div>
   </div>
 
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="العودة للأعلى">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+    </svg>
+  </button>
+
   <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
 
