@@ -98,24 +98,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // إعداد الوضع الليلي
     setupDarkMode();
 
-    // جلب الخدمات من الـ API
-    fetchServices().then(() => {
-        // تحديد الصفحة الحالية
-        const isHomePage = document.querySelector('.hero-section') !== null;
-        const servicesContainer = document.getElementById('services-container');
+    // 1. Initial render with mock data (Instant)
+    availableServices = getMockServices();
+    const servicesContainer = document.getElementById('services-container');
+    const isHomePage = document.querySelector('.hero-section') !== null;
 
+    if (servicesContainer) {
+        if (isHomePage) renderHomePageServices(servicesContainer);
+        else renderAllServices(servicesContainer);
+    }
+
+    // 2. Fetch from API and re-render in background
+    fetchServices().then(() => {
         if (servicesContainer) {
-            if (isHomePage) {
-                renderHomePageServices(servicesContainer);
-            } else {
-                renderAllServices(servicesContainer);
-            }
-            // 3. تأكيد الصعود للأعلى بعد تحميل المحتوى
-            setTimeout(() => {
-                window.scrollTo(0, 0);
-            }, 100);
+            if (isHomePage) renderHomePageServices(servicesContainer);
+            else renderAllServices(servicesContainer);
         }
     });
+
+    // 3. الصعود للأعلى
+    window.scrollTo(0, 0);
 });
 
 // إجبار التمرير للأعلى عند اكتمال تحميل كل العناصر (الصور والخطوط)
