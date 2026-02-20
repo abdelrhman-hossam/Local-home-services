@@ -1432,7 +1432,7 @@ input:checked+.slider:before {
     left: 0;
     width: 350px;
     height: 450px;
-    background: var(--bg-white);
+    background: #ffffff;
     border-radius: 20px;
     box-shadow: var(--shadow-lg);
     display: none;
@@ -1444,9 +1444,8 @@ input:checked+.slider:before {
 }
 
 [data-theme="dark"] .chat-window {
-    background: var(--card-bg);
+    background: #0d1117;
     border-color: rgba(137, 207, 240, 0.2);
-    backdrop-filter: blur(10px);
 }
 
 .chat-window.active {
