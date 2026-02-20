@@ -834,26 +834,7 @@ footer::before {
     margin-top: 20px;
 }
 
-.social-icon {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.2rem;
-    transition: var(--transition);
-    text-decoration: none;
-}
-
-.social-icon:hover {
-    background: #00f2fe;
-    color: #0b0d17;
-    transform: translateY(-5px) rotate(360deg);
-    box-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
-}
+.social-icon { width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; transition: var(--transition); text-decoration: none; } .social-icon svg { width: 20px; height: 20px; } .social-icon:hover { background: var(--primary-color); color: white; transform: translateY(-5px); box-shadow: 0 5px 15px rgba(43, 198, 193, 0.4); }
 
 .newsletter-form {
     margin-top: 20px;
@@ -1539,3 +1520,4 @@ input:checked+.slider:before {
 }
 /* Skeleton Loading */
 .skeleton { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: skeleton-loading 1.5s infinite; border-radius: var(--radius-sm); display: block; } @keyframes skeleton-loading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } } [data-theme=" dark\] .skeleton { background: linear-gradient(90deg, #161b22 25%, #21262d 50%, #161b22 75%); background-size: 200% 100%; } /* Toast Notification */ .toast-container { position: fixed; top: 100px; left: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; pointer-events: none; } .toast { background: var(--white); color: var(--text-dark); padding: 15px 25px; border-radius: 12px; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 12px; min-width: 280px; transform: translateX(-120%); transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); border-right: 5px solid var(--primary-color); pointer-events: auto; } .toast.show { transform: translateX(0); } .toast.error { border-right-color: #ff4757; } .toast.success { border-right-color: #2ed573; }
+
