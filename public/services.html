@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>رعاية | جميع الخدمات</title>
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://cdn.jsdelivr.net; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' http://localhost:5000 https://local-home-services-final.vercel.app;">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +19,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="p.css">
+    <link rel="stylesheet" href="p1.css">
 
     <link rel="icon" type="image/png" href="photo_2025-12-19_22-23-03.jpg">
 
@@ -52,51 +58,15 @@
 <body>
 
     <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="nav-container">
-                <div class="logo">
-                    <a href="/">
-                        <img src="photo_2025-12-19_22-23-03.jpg" alt="شعار رعاية">
-                    </a>
-                </div>
-
-                <div class="nav-actions header-actions">
-                    <div class="theme-switch-wrapper">
-                        <label class="theme-switch" for="checkbox">
-                            <input type="checkbox" id="checkbox" />
-                            <div class="slider round"></div>
-                        </label>
-                    </div>
-                    <div id="auth-links">
-                        <a href="auth.html" class="btn btn-primary">دخول</a>
-                    </div>
-                </div>
-
-                <!-- Desktop Nav -->
-                <nav class="nav-links desktop-nav">
-                    <a href="/">الرئيسية</a>
-                    <a href="#" class="active">خدماتنا</a>
-                    <a href="/#features">لماذا رعاية؟</a>
-                    <a href="#contact">تواصل معنا</a>
-                </nav>
-
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn" aria-label="القائمة">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Nav Menu -->
-        <div class="mobile-nav">
-            <a href="/" class="mobile-link">الرئيسية</a>
-            <a href="#" class="mobile-link">خدماتنا</a>
-            <a href="/#features" class="mobile-link">لماذا رعاية؟</a>
-            <a href="#contact" class="mobile-link">تواصل معنا</a>
-        </div>
+    <header class="header">
+        <img class="logo" src="Group 1.png" />
+        <nav class="main-nav">
+            <ul class="main-nav-list">
+                <li><a class="main-nav-link" href="index.html">الصفحه الرئيسيه</a></li>
+                <li><a class="main-nav-link" href="services.html">الخدمات</a></li>
+                <li id="auth-links"></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
@@ -131,66 +101,40 @@
         </div>
     </main>
 
-    <footer id="contact">
-        <div class="footer-orb footer-orb-1"></div>
-        <div class="footer-orb footer-orb-2"></div>
-        <div class="container">
-            <div class="footer-content">
-                <!-- Brand & About -->
-                <div class="footer-info">
-                    <div class="footer-logo-wrapper">
-                        <h2 class="footer-brand" style="font-size: 2.5rem; margin-bottom: 10px;">رعاية <span
-                                style="font-size: 4rem; color: #00f2fe; line-height: 0;">.</span></h2>
-                    </div>
-                    <p>رعاية هي منصتك الأولى لخدمات المنازل، نجمع لك أفضل المحترفين لراحتك وسلامة منزلك. نعمل بشغف
-                        لتقديم تجربة استثنائية.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-icon" title="فيسبوك">f</a>
-                        <a href="#" class="social-icon" title="تويتر">x</a>
-                        <a href="#" class="social-icon" title="انستجرام">in</a>
-                        <a href="#" class="social-icon" title="لينكد إن">ln</a>
-                    </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="footer-links">
-                    <h3>روابط سريعة</h3>
-                    <ul>
-                        <li><a href="/">الرئيسية</a></li>
-                        <li><a href="#services">خدماتنا المميزة</a></li>
-                        <li><a href="/#features">لماذا تختارنا؟</a></li>
-                        <li><a href="auth.html">تسجيل الدخول / جديد</a></li>
-                    </ul>
-                </div>
-
-                <!-- Support -->
-                <div class="footer-links">
-                    <h3>الدعم والمساعدة</h3>
-                    <ul>
-                        <li><a href="#">الأسئلة الشائعة</a></li>
-                        <li><a href="#">سياسة الخصوصية</a></li>
-                        <li><a href="#">شروط الاستخدام</a></li>
-                        <li><a href="#">تواصل مع الدعم</a></li>
-                    </ul>
-                </div>
-
-                <!-- Newsletter -->
-                <div class="footer-contact">
-                    <h3>انضم لقائمتنا البريدية</h3>
-                    <p>اشترك للحصول على آخر العروض والخصومات الحصرية.</p>
-                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('شكراً لاشتراكك! 🎉');">
-                        <input type="email" class="newsletter-input" placeholder="بريدك الإلكتروني..">
-                        <button class="newsletter-btn">اشترك</button>
-                    </form>
-                    <div style="margin-top: 20px;">
-                        <p style="margin-bottom: 5px;">📞 0123456789</p>
-                        <p>📧 info@raya-services.com</p>
-                    </div>
-                </div>
+    <footer>
+        <div class="footer">
+            <img src="Vector 3.png" class="footer-img" />
+            <div class="logo-col">
+                <img class="logo1" alt="logo" src="Group 12.png" />
+                <p class="copyright">
+                    رعاية… لأن العناية ببيتك تستحق مستوى أعلى<br> من الجودة. نقدم خدمات
+                    نظافة وصيانة متكاملة<br> بتجربة سهلة وموثوقة تضمن لك الراحة<br> في كل خطوة."
+                </p>
             </div>
-
-            <div class="footer-bottom">
-                <p>جميع الحقوق محفوظة © رعاية 2026 | صنع بحب ❤️ في مصر</p>
+            <div class="link">
+                <p>استكشف</p>
+                <ul>
+                    <li><a href="index.html">الصفحه الرئيسه</a></li>
+                    <li><a href="index.html#features">تفاصيل عن رعايه</a></li>
+                    <li><a href="services.html">الخدمات</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <p>تواصل معنا</p>
+                <ul>
+                    <li>
+                        <img src="Group 24.png">
+                        <span> كنج مريوط</span>
+                    </li>
+                    <li>
+                        <img src="Group 25.png">
+                        <span>19392</span>
+                    </li>
+                    <li>
+                        <img src="Group 26.png">
+                        <span>info@kma.edu.eg</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </footer>

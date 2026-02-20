@@ -5,13 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>رعاية | طلباتي</title>
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://cdn.jsdelivr.net; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' http://localhost:5000 https://local-home-services-final.vercel.app;">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="p.css">
-    <link rel="stylesheet" href="p1.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap"
         rel="stylesheet">
     <style>
@@ -72,15 +66,17 @@
 </head>
 
 <body>
-    <header class="header">
-        <img class="logo" src="Group 1.png" />
-        <nav class="main-nav">
-            <ul class="main-nav-list">
-                <li><a class="main-nav-link" href="index.html">الصفحه الرئيسيه</a></li>
-                <li><a class="main-nav-link" href="services.html">الخدمات</a></li>
-                <li id="auth-links"></li>
-            </ul>
-        </nav>
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo"><a href="/"><img src="photo_2025-12-19_22-23-03.jpg" alt="logo"></a></div>
+                <nav class="nav-links desktop-nav">
+                    <a href="/">الرئيسية</a>
+                    <a href="services.html">خدماتنا</a>
+                    <a href="orders.html" class="active">طلباتي</a>
+                </nav>
+            </div>
+        </div>
     </header>
 
     <main class="orders-page">
@@ -141,44 +137,6 @@
             }
         }
     </script>
-    <footer>
-        <div class="footer">
-            <img src="Vector 3.png" class="footer-img" />
-            <div class="logo-col">
-                <img class="logo1" alt="logo" src="Group 12.png" />
-                <p class="copyright">
-                    رعاية… لأن العناية ببيتك تستحق مستوى أعلى<br> من الجودة. نقدم خدمات
-                    نظافة وصيانة متكاملة<br> بتجربة سهلة وموثوقة تضمن لك الراحة<br> في كل خطوة."
-                </p>
-            </div>
-            <div class="link">
-                <p>استكشف</p>
-                <ul>
-                    <li><a href="index.html">الصفحه الرئيسه</a></li>
-                    <li><a href="index.html#features">تفاصيل عن رعايه</a></li>
-                    <li><a href="services.html">الخدمات</a></li>
-                </ul>
-            </div>
-            <div class="link">
-                <p>تواصل معنا</p>
-                <ul>
-                    <li>
-                        <img src="Group 24.png">
-                        <span> كنج مريوط</span>
-                    </li>
-                    <li>
-                        <img src="Group 25.png">
-                        <span>19392</span>
-                    </li>
-                    <li>
-                        <img src="Group 26.png">
-                        <span>info@kma.edu.eg</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-    <script src="script.js"></script>
 </body>
 
 </html>
