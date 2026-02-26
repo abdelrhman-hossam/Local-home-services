@@ -405,6 +405,7 @@ body {
   position: relative;
   gap: 120px;
   min-height: 40vh;
+  margin-top: 60px;
   padding: 40px 0;
   background-color: #76d6da;
   color: #ffffff;
@@ -417,9 +418,9 @@ body {
 }
 
 .copyright {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 800;
-  line-height: 2.5rem;
+  line-height: 2rem;
 }
 
 .link {
@@ -428,7 +429,7 @@ body {
 
 .link p {
   display: inline-block;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 800;
   letter-spacing: 0.5px;
 }
@@ -440,9 +441,9 @@ ul {
 .link ul li a {
   text-decoration: none;
   color: #ffffff;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 800;
-  line-height: 2.8rem;
+  line-height: 2.2rem;
   letter-spacing: 0.8px;
 }
 
@@ -450,9 +451,9 @@ ul {
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 800;
-  line-height: 2.8rem;
+  line-height: 2.2rem;
 }
 
 .link ul li img {
