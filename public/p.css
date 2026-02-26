@@ -23,7 +23,6 @@ body {
   position: absolute;
   gap: 55rem;
   align-items: center;
-  margin-right: 10rem;
 }
 
 .logo {
@@ -34,6 +33,7 @@ body {
 .main-nav-list {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 

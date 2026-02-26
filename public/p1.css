@@ -24,7 +24,6 @@
 @media (max-width: 1530px) {
   .header {
     gap: 50rem;
-    left: 9%;
   }
 
   .home-1 {
@@ -39,7 +38,6 @@
 @media (max-width: 1437px) {
   .header {
     gap: 49rem;
-    left: 5%;
   }
 
   .home-img2 {
@@ -50,7 +48,6 @@
 @media (max-width: 1300px) {
   .header {
     gap: 44rem;
-    left: 8%;
   }
 
   .home-img2 {
@@ -125,7 +122,6 @@
 @media (max-width: 1220px) {
   .header {
     gap: 40rem;
-    left: 19%;
   }
 
   .home-img2 {
@@ -135,7 +131,11 @@
   .logo {
     width: 28%;
     height: 28%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
   }
+
 
   .home-text h1 {
     font-size: 2rem;
@@ -169,7 +169,6 @@
 @media (max-width: 1200px) {
   .header {
     gap: 40rem;
-    left: 18%;
   }
 
   .footer {
@@ -940,7 +939,6 @@
 @media (max-width: 570px) {
   .header {
     position: absolute;
-    left: 18%;
     gap: 11.6rem;
   }
 }

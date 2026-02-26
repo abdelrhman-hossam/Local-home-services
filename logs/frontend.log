@@ -684,3 +684,1357 @@
  HTTP  2/27/2026 12:11:37 AM ::1 Returned 304 in 1 ms
  HTTP  2/27/2026 12:11:37 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
  HTTP  2/27/2026 12:11:37 AM ::1 Returned 404 in 3 ms
+ HTTP  2/27/2026 12:12:22 AM ::1 GET /
+ HTTP  2/27/2026 12:12:22 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:12:23 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:12:23 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:12:30 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:12:30 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:12:30 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:12:30 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:12:30 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:12:30 AM ::1 Returned 404 in 3 ms
+ HTTP  2/27/2026 12:13:59 AM ::1 GET /
+ HTTP  2/27/2026 12:13:59 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:14:00 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:14:00 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:14:00 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:14:00 AM ::1 Returned 200 in 3 ms
+ HTTP  2/27/2026 12:14:00 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:14:00 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:14:00 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:14:00 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:14:00 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:14:00 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:14:00 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:14:00 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:14:00 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:14:00 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:14:00 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:14:00 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:14:00 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:14:00 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:14:00 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:14:00 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:14:00 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:14:00 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:14:00 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:14:00 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:14:00 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:14:00 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:14:00 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:14:00 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:14:00 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:14:00 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:14:00 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:14:00 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:14:01 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:14:01 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:14:01 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:14:01 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:14:01 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:14:01 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:14:21 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:14:21 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:14:21 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:14:21 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:14:21 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:14:21 AM ::1 Returned 404 in 1 ms
+ HTTP  2/27/2026 12:14:43 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:14:43 AM ::1 Returned 404 in 3 ms
+ HTTP  2/27/2026 12:16:04 AM ::1 GET /
+ HTTP  2/27/2026 12:16:04 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:16:04 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:16:04 AM ::1 Returned 404 in 2 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 7 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:16:06 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:16:06 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:18:21 AM ::1 GET /
+ HTTP  2/27/2026 12:18:21 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:18:22 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:18:22 AM ::1 Returned 404 in 1 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 200 in 4 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:18:23 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:18:23 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:19:24 AM ::1 GET /
+ HTTP  2/27/2026 12:19:24 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:19:25 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:19:25 AM ::1 Returned 404 in 2 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 200 in 4 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:19:26 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:19:26 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:19:48 AM ::1 GET /
+ HTTP  2/27/2026 12:19:48 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:19:48 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:19:48 AM ::1 Returned 404 in 2 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 200 in 2 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:19:50 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:19:50 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:20:20 AM ::1 GET /
+ HTTP  2/27/2026 12:20:20 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:20:20 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:20:20 AM ::1 Returned 404 in 1 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 200 in 3 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:20:22 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:20:22 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:22:55 AM ::1 GET /
+ HTTP  2/27/2026 12:22:55 AM ::1 Returned 200 in 3 ms
+ HTTP  2/27/2026 12:22:55 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:22:55 AM ::1 Returned 404 in 4 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 9 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:22:56 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:22:56 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:23:24 AM ::1 GET /
+ HTTP  2/27/2026 12:23:24 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:23:25 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:23:25 AM ::1 Returned 404 in 2 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 9 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:23:26 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:23:26 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:23:44 AM ::1 GET /
+ HTTP  2/27/2026 12:23:44 AM ::1 Returned 200 in 17 ms
+ HTTP  2/27/2026 12:23:45 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:23:45 AM ::1 Returned 404 in 2 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 9 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:46 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:23:46 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:56 AM ::1 GET /
+ HTTP  2/27/2026 12:23:56 AM ::1 Returned 200 in 4 ms
+ HTTP  2/27/2026 12:23:56 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:23:56 AM ::1 Returned 404 in 2 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 11 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:23:58 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:23:58 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:24:17 AM ::1 GET /
+ HTTP  2/27/2026 12:24:17 AM ::1 Returned 200 in 8 ms
+ HTTP  2/27/2026 12:24:17 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:24:17 AM ::1 Returned 404 in 3 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 7 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 7 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:24:18 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:24:18 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:24:34 AM ::1 GET /
+ HTTP  2/27/2026 12:24:34 AM ::1 Returned 200 in 3 ms
+ HTTP  2/27/2026 12:24:34 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:24:34 AM ::1 Returned 404 in 8 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:24:35 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:24:35 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:25:06 AM ::1 GET /
+ HTTP  2/27/2026 12:25:06 AM ::1 Returned 200 in 4 ms
+ HTTP  2/27/2026 12:25:06 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:25:06 AM ::1 Returned 404 in 2 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 8 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 9 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:25:08 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:25:08 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:26:53 AM ::1 GET /
+ HTTP  2/27/2026 12:26:53 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:26:54 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:26:54 AM ::1 Returned 404 in 3 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 200 in 11 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:26:55 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:26:55 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:27:56 AM ::1 GET /
+ HTTP  2/27/2026 12:27:56 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:27:56 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:27:56 AM ::1 Returned 404 in 2 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 200 in 7 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:27:58 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:27:58 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:29:31 AM ::1 GET /
+ HTTP  2/27/2026 12:29:31 AM ::1 Returned 200 in 3 ms
+ HTTP  2/27/2026 12:29:31 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:29:31 AM ::1 Returned 404 in 4 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:29:32 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:29:32 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:29:51 AM ::1 GET /
+ HTTP  2/27/2026 12:29:51 AM ::1 Returned 200 in 2 ms
+ HTTP  2/27/2026 12:29:52 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:29:52 AM ::1 Returned 404 in 1 ms
+ HTTP  2/27/2026 12:29:53 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:29:53 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:29:53 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:29:53 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:29:53 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:29:53 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:29:53 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:29:53 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:29:53 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:29:53 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:29:53 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:29:53 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:29:53 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:29:53 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:29:54 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:29:54 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:29:54 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:29:54 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:29:54 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:29:54 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:29:54 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:29:54 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:29:54 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:29:54 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:29:54 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:29:54 AM ::1 Returned 304 in 7 ms
+ HTTP  2/27/2026 12:29:54 AM ::1 Returned 304 in 7 ms
+ HTTP  2/27/2026 12:29:54 AM ::1 Returned 304 in 7 ms
+ HTTP  2/27/2026 12:29:54 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:29:54 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:29:54 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:29:54 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:29:54 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:29:54 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:29:54 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:29:54 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:29:54 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:29:54 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:30:28 AM ::1 GET /
+ HTTP  2/27/2026 12:30:28 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:30:28 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:30:28 AM ::1 Returned 404 in 2 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 7 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:30:30 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:30:30 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:30:38 AM ::1 GET /
+ HTTP  2/27/2026 12:30:38 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:30:38 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:30:38 AM ::1 Returned 404 in 4 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:30:40 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:30:40 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:31:21 AM ::1 GET /
+ HTTP  2/27/2026 12:31:21 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:31:21 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:31:21 AM ::1 Returned 404 in 3 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:31:23 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:31:23 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:31:49 AM ::1 GET /
+ HTTP  2/27/2026 12:31:49 AM ::1 Returned 304 in 7 ms
+ HTTP  2/27/2026 12:31:49 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:31:49 AM ::1 Returned 404 in 1 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:31:50 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:31:50 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:32:16 AM ::1 GET /
+ HTTP  2/27/2026 12:32:16 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:32:16 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:32:16 AM ::1 Returned 404 in 18 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 200 in 13 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:32:18 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:32:18 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:33:05 AM ::1 GET /
+ HTTP  2/27/2026 12:33:05 AM ::1 Returned 200 in 2 ms
+ HTTP  2/27/2026 12:33:05 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:33:05 AM ::1 Returned 404 in 2 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 8 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 7 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 7 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:33:07 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:33:07 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:34:16 AM ::1 GET /
+ HTTP  2/27/2026 12:34:16 AM ::1 Returned 304 in 9 ms
+ HTTP  2/27/2026 12:34:16 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:34:16 AM ::1 Returned 404 in 3 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 200 in 7 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 304 in 7 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 304 in 9 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 304 in 12 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:34:18 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:34:18 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:02 AM ::1 GET /
+ HTTP  2/27/2026 12:35:02 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:02 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:35:02 AM ::1 Returned 404 in 2 ms
+ HTTP  2/27/2026 12:35:05 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:35:05 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:05 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:35:05 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:35:05 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:35:05 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:05 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:35:05 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:35:05 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:35:05 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:05 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:35:05 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:05 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:35:05 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:05 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:35:05 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:35:05 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:35:05 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:05 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:35:05 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:05 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:35:05 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:05 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:35:05 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:06 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:35:06 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:06 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:35:06 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:06 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:35:06 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:06 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:35:06 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:06 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:35:06 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:06 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:35:06 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:06 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:35:06 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:23 AM ::1 GET /
+ HTTP  2/27/2026 12:35:23 AM ::1 Returned 200 in 9 ms
+ HTTP  2/27/2026 12:35:24 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:35:24 AM ::1 Returned 404 in 2 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:35:25 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:25 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:31 AM ::1 GET /
+ HTTP  2/27/2026 12:35:31 AM ::1 Returned 200 in 12 ms
+ HTTP  2/27/2026 12:35:31 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:35:31 AM ::1 Returned 404 in 8 ms
+ HTTP  2/27/2026 12:35:32 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:35:32 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:32 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:35:32 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:35:32 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:35:32 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:35:32 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:35:32 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:35:32 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:35:32 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:35:32 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:32 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:32 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:35:32 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:32 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:35:32 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:35:32 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:35:32 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:35:32 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:35:32 AM ::1 Returned 304 in 7 ms
+ HTTP  2/27/2026 12:35:33 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:35:33 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:35:33 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:35:33 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:35:33 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:35:33 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:35:33 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:35:33 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:35:33 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:35:33 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:33 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:35:33 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:33 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:35:33 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:35:33 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:33 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:35:33 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:35:33 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:35:41 AM ::1 GET /
+ HTTP  2/27/2026 12:35:41 AM ::1 Returned 200 in 2 ms
+ HTTP  2/27/2026 12:35:41 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:35:41 AM ::1 Returned 404 in 12 ms
+ HTTP  2/27/2026 12:35:42 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:35:42 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:42 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:35:42 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:35:42 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:35:42 AM ::1 Returned 304 in 8 ms
+ HTTP  2/27/2026 12:35:42 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:35:42 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:42 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:35:42 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:35:42 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:35:42 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:35:42 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:35:42 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:35:42 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:35:42 AM ::1 Returned 304 in 6 ms
+ HTTP  2/27/2026 12:35:42 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:35:42 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:42 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:35:42 AM ::1 Returned 304 in 7 ms
+ HTTP  2/27/2026 12:35:42 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:35:42 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:35:42 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:35:42 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:35:42 AM ::1 Returned 304 in 9 ms
+ HTTP  2/27/2026 12:35:42 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:35:42 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:35:42 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:35:42 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:35:42 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:43 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:35:43 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:35:43 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:35:43 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:35:43 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:35:43 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:35:43 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:35:43 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:37:43 AM ::1 GET /
+ HTTP  2/27/2026 12:37:43 AM ::1 Returned 200 in 3 ms
+ HTTP  2/27/2026 12:37:43 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:37:43 AM ::1 Returned 404 in 4 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:37:44 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:37:44 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:38:14 AM ::1 GET /
+ HTTP  2/27/2026 12:38:14 AM ::1 Returned 200 in 2 ms
+ HTTP  2/27/2026 12:38:14 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:38:14 AM ::1 Returned 404 in 2 ms
+ HTTP  2/27/2026 12:38:16 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:38:16 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:38:16 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:38:16 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:38:16 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:38:16 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:38:16 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:38:16 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:38:16 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:38:16 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:38:16 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:38:16 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:38:16 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:38:16 AM ::1 Returned 304 in 4 ms
+ HTTP  2/27/2026 12:38:16 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:38:16 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:38:17 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:38:17 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:38:17 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:38:17 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:38:17 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:38:17 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:38:17 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:38:17 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:38:17 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:38:17 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:38:17 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:38:17 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:38:17 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:38:17 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:38:17 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:38:17 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:38:17 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:38:17 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:38:17 AM ::1 Returned 304 in 5 ms
+ HTTP  2/27/2026 12:38:17 AM ::1 Returned 304 in 3 ms
+ HTTP  2/27/2026 12:38:17 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:38:17 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:39:01 AM ::1 GET /
+ HTTP  2/27/2026 12:39:01 AM ::1 Returned 200 in 1 ms
+ HTTP  2/27/2026 12:39:01 AM ::1 GET /.well-known/appspecific/com.chrome.devtools.json
+ HTTP  2/27/2026 12:39:01 AM ::1 Returned 404 in 3 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /p.css
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /p1.css
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /Group%201.png
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /img1.png
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /Group%2023.png
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /Group%202.png
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /Group%2022.png
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /Group%2021.png
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /script.js
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /Group%2020.png
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /Group%2011.png
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /Group%207.png
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /Screenshot%202025-12-04%20003314%201.png
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /Screenshot%202025-12-04%20004330%201.png
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 2 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /Vector%203.png
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /Group%2012.png
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /Group%2024.png
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /Group%2025.png
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 1 ms
+ HTTP  2/27/2026 12:39:03 AM ::1 GET /Group%2026.png
+ HTTP  2/27/2026 12:39:03 AM ::1 Returned 304 in 1 ms

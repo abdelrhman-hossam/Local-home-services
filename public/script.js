@@ -605,14 +605,14 @@ function updateUIForAuth() {
     const user = JSON.parse(userJson);
 
     if (user.role === "admin") {
-      authLinksContainer.innerHTML = `<a href="admin.html" class="btn btn-outline" style="margin-left:10px; padding: 10px 15px;">لوحة التحكم</a>`;
+      authLinksContainer.innerHTML = `<a href="admin.html" class="main-nav-link"; padding: 10px 15px;">لوحة التحكم</a>`;
     } else {
-      authLinksContainer.innerHTML = `<a href="orders.html" class="btn btn-outline" style="margin-left:10px; padding: 10px 15px;">طلباتي</a>`;
+      authLinksContainer.innerHTML = `<a href="orders.html" class="main-nav-link"; padding: 10px 15px;">طلباتي</a>`;
     }
 
-    authLinksContainer.innerHTML += `<a href="#" class="btn btn-primary" onclick="logout()">خروج</a>`;
+    authLinksContainer.innerHTML += `<a href="#" class="main-nav-link color:blue" onclick="logout()">خروج</a>`;
   } else {
-    authLinksContainer.innerHTML = `<a href="auth.html" class="btn btn-primary">دخول</a>`;
+    authLinksContainer.innerHTML = `<a href="auth.html" class="main-nav-link color:blue">دخول</a>`;
   }
 }
 
