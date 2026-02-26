@@ -403,18 +403,26 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  gap: 120px;
-  min-height: 40vh;
-  margin-top: 60px;
-  padding: 40px 0;
+  gap: 80px;
+  min-height: 35vh;
+  margin-top: 140px;
+  /* نزول الفوتر للأسفل لإظهار المحتوى فوقه */
+  padding: 30px 0;
   background-color: #76d6da;
   color: #ffffff;
 }
 
+.logo-col,
+.link {
+  position: relative;
+  z-index: 2;
+  /* لجعل النصوص فوق صورة الموجة */
+}
+
 .logo1 {
-  width: 24%;
+  width: 20%;
   height: auto;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .copyright {
@@ -424,12 +432,12 @@ body {
 }
 
 .link {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .link p {
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 800;
   letter-spacing: 0.5px;
 }
@@ -441,24 +449,24 @@ ul {
 .link ul li a {
   text-decoration: none;
   color: #ffffff;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 800;
   line-height: 2.2rem;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.5px;
 }
 
 .link ul li {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 0.8rem;
+  gap: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 800;
   line-height: 2.2rem;
 }
 
 .link ul li img {
-  width: 15%;
-  height: 15%;
+  width: 12%;
+  height: 12%;
 }
 
 .footer-img {
