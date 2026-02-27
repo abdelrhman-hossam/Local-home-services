@@ -655,11 +655,20 @@ ul {
   .meal {
     width: 100% !important;
     max-width: 100% !important;
-    min-height: auto !important;
     height: auto !important;
+    min-height: unset !important;
+    overflow: visible !important;
+    /* Fix: remove clip that hides content */
     display: flex !important;
     flex-direction: column !important;
     box-sizing: border-box !important;
+    border-radius: 16px !important;
+    /* Keep rounded corners */
+  }
+
+  /* Re-apply border-radius clip only to image top */
+  .meal>img:first-child {
+    border-radius: 16px 16px 0 0 !important;
   }
 
   .meal img {
