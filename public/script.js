@@ -41,12 +41,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // إعداد الوضع الليلي
   setupDarkMode();
 
-  // جلب الخدمات من الـ API
-  fetchServices().then(() => {
-    // تحديد الصفحة الحالية
-    const isHomePage = document.querySelector(".hero-section") !== null;
-    const servicesContainer = document.getElementById("services-container");
+  // جلب الخدمات من الـ API (عرض البيانات التجريبية فوراً للسرعة)
+  availableServices = getMockServices();
+  const servicesContainer = document.getElementById("services-container");
+  if (servicesContainer && document.querySelector(".hero-section") === null) {
+    renderAllServices(servicesContainer);
+  }
 
+  fetchServices().then(() => {
+    // تحديث الواجهة إذا تغيرت البيانات بعد الجلب الحقيقي
+    const isHomePage = document.querySelector(".hero-section") !== null;
     if (isHomePage) {
       renderHomePageServices();
     } else {
