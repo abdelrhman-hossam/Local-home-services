@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --teal-1: #3ec6ca;
   --teal-2: #3ec6ca;
@@ -26,8 +30,9 @@ body {
 }
 
 .logo {
-  max-width: 200px;
-  width: 15vw;
+  max-width: 180px;
+  width: 13vw;
+  margin-top: -30px;
 }
 
 .main-nav-list {
@@ -53,7 +58,8 @@ body {
   white-space: nowrap;
 }
 
-.main-nav-link:hover {
+.main-nav-link:hover,
+.main-nav-link.active-nav {
   background-color: #ffffff;
   color: #3ec6ca;
   padding: 9px 2.2rem;
@@ -85,6 +91,10 @@ body {
   display: flex;
   justify-self: flex-end;
   position: absolute;
+}
+
+.home-text {
+  margin-top: 50px;
 }
 
 .home-text h1 {
@@ -413,7 +423,7 @@ body {
   position: relative;
   gap: 80px;
   min-height: 35vh;
-  margin-top: 140px;
+  margin-top: 0;
   /* نزول الفوتر للأسفل لإظهار المحتوى فوقه */
   padding: 30px 0;
   background-color: #76d6da;

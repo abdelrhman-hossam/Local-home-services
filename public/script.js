@@ -110,8 +110,10 @@ function renderHomePageServices() {
   const cleaningContainer = document.getElementById("cleaning-container");
   const maintenanceContainer = document.getElementById("maintenance-container");
 
-  if (cleaningContainer) cleaningContainer.innerHTML = "";
-  if (maintenanceContainer) maintenanceContainer.innerHTML = "";
+  // Disable clearing and dynamic injection to strictly preserve the mocked UI
+  // if (cleaningContainer) cleaningContainer.innerHTML = "";
+  // if (maintenanceContainer) maintenanceContainer.innerHTML = "";
+  return;
 
   availableServices.forEach((service) => {
     const isCleaning =
@@ -157,7 +159,7 @@ function renderHomePageServices() {
  */
 function renderAllServices(container) {
   container.innerHTML = "";
-  container.className = "services-grid-page container";
+  container.className = "services-grid-page";
 
   // فلترة الخدمات بناءً على القسم المدخل والبحث
   const filteredServices = availableServices.filter((service) => {
@@ -182,107 +184,60 @@ function renderAllServices(container) {
 
   if (filteredServices.length === 0) {
     container.innerHTML = `
-            <div class="text-center" style="grid-column: 1/-1; padding: 60px;">
-                <h3 style="color: #888;">عذراً، لم نجد خدمات تطابق بحثك 🔍</h3>
-                <button class="btn btn-primary" style="margin-top: 20px;" onclick="document.getElementById('serviceSearch').value=''; searchQuery=''; filterServices();">عرض الكل</button>
+            <div style="padding: 60px; text-align: center; width: 100%;">
+                <h3 style="color: #888; font-size: 1.5rem;">عذراً، لم نجد خدمات تطابق بحثك 🔍</h3>
+                <button onclick="document.getElementById('serviceSearch').value=''; searchQuery=''; currentFilter='all'; renderAllServices(document.getElementById('services-container'));" style="margin-top: 20px; background:#3ec6ca; color:#fff; border:none; padding:12px 30px; border-radius:50px; cursor:pointer; font-size:1rem; font-weight:700;">عرض الكل</button>
             </div>
         `;
     return;
   }
 
-  // إضافة تنسيق CSS للشبكة ديناميكياً إذا لم يكن موجوداً
-  if (!document.getElementById("services-grid-style")) {
-    const style = document.createElement("style");
-    style.id = "services-grid-style";
-    style.textContent = `
-            .services-grid-page {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 30px;
-                padding: 40px 20px;
-            }
-            .service-card-full {
-                background: #fff;
-                border-radius: 20px;
-                overflow: hidden;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-                transition: transform 0.3s ease;
-                border: 1px solid #eee;
-                display: flex;
-                flex-direction: column;
-            }
-            .service-card-full:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 25px rgba(43, 198, 193, 0.2);
-            }
-            .service-card-img {
-                height: 200px;
-                background-color: #e0f7f6;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .service-card-img img {
-                max-width: 60%;
-                max-height: 80%;
-            }
-            .service-card-body {
-                padding: 25px;
-                flex-grow: 1;
-                display: flex;
-                flex-direction: column;
-            }
-            .service-card-body h3 {
-                color: #343a40;
-                margin-bottom: 10px;
-                font-size: 1.3rem;
-            }
-            .service-card-body p {
-                color: #6c757d;
-                font-size: 0.95rem;
-                margin-bottom: 20px;
-                flex-grow: 1;
-            }
-            .service-price {
-                font-weight: 700;
-                color: #2bc6c1;
-                font-size: 1.2rem;
-                margin-bottom: 15px;
-            }
-        `;
-    document.head.appendChild(style);
-  }
-
   filteredServices.forEach((service) => {
-    // تحديد الصورة بناءً على النوع
-    let imgSrc = "photo_2025-12-19_22-22-19.jpg"; // افتراضي
+    // تحديد الصورة بناءً على نوع الخدمة
+    let imgSrc = "Screenshot 2025-12-04 001749 2.png";
     if (
       service.name.includes("صيانة") ||
-      service.description.includes("كهرباء")
-    )
-      imgSrc = "photo_2025-12-19_22-22-15.jpg";
-    if (service.name.includes("نظافة"))
-      imgSrc = "photo_2025-12-19_22-22-04.jpg";
+      service.description.includes("صيانة") ||
+      service.name.includes("كهرباء") ||
+      service.name.includes("تكييف")
+    ) {
+      imgSrc = "Screenshot 2025-12-04 004330 1.png";
+    } else if (
+      service.name.includes("مكافحة") ||
+      service.name.includes("حشر")
+    ) {
+      imgSrc = "Screenshot 2025-12-03 234633 1.png";
+    } else if (
+      service.name.includes("خزان") ||
+      service.name.includes("سباكة")
+    ) {
+      imgSrc = "Screenshot 2025-12-03 234633 2.png";
+    }
 
-    const averageRating = service.averageRating || 0;
-    const numOfReviews = service.numOfReviews || 0;
+    const escapedName = escapeHTML(service.name);
+    const escapedPrice = escapeHTML(service.price.toString());
 
+    // نفس تركيبة الصفحة الرئيسية تماماً
     const html = `
-            <div class="service-card-full">
-                <div class="service-card-img">
-                    <img src="${imgSrc}" alt="${service.name}">
-                </div>
-                <div class="service-card-body">
-                    <h3>${service.name}</h3>
-                    <div class="service-rating" style="margin-bottom: 10px; color: #f1c40f;">
-                        ${generateStars(averageRating)}
-                        <span style="color: #888; font-size: 0.8rem; margin-right: 5px;">(${numOfReviews} تقييم)</span>
-                    </div>
-                    <p>${service.description}</p>
-                    <div class="service-price">${service.price} ج.م</div>
-                    <div style="display:flex; gap:10px;">
-                        <button class="btn btn-outline" style="flex:1" onclick="openOrderModal('${service.name}', '${service._id}')">طلب</button>
-                        <button class="btn btn-primary" style="flex:1" onclick="window.openReviewsModal('${service._id}', '${service.name}')">تقييمات</button>
+            <div class="meal">
+                <img src="${imgSrc}" alt="${escapedName}">
+                <div class="meal-content">
+                    <p class="meal-title">${escapedName}</p>
+                    <ul>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="meal-icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+                            </svg>
+                            <span>خدمة مميزة</span>
+                        </li>
+                        <li>
+                            <ion-icon class="meal-icon" name="checkmark-done-outline"></ion-icon>
+                            <span>جودة مضمونة</span>
+                        </li>
+                    </ul>
+                    <div class="chair-price">
+                        <a href="javascript:void(0)" onclick="openOrderModal('${escapedName}', '${service._id}')" class="btn--small">طلب</a>
+                        <strong><span>ج.م</span>${escapedPrice}</strong>
                     </div>
                 </div>
             </div>
@@ -290,6 +245,9 @@ function renderAllServices(container) {
     container.insertAdjacentHTML("beforeend", html);
   });
 }
+
+
+
 
 /**
  * توليد نجوم التقييم
@@ -612,7 +570,7 @@ function updateUIForAuth() {
 
     authLinksContainer.innerHTML += `<a href="#" class="main-nav-link color:blue" onclick="logout()">خروج</a>`;
   } else {
-    authLinksContainer.innerHTML = `<a href="auth.html" class="main-nav-link color:blue">دخول</a>`;
+    authLinksContainer.innerHTML = ``;
   }
 }
 

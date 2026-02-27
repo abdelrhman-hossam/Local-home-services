@@ -19,7 +19,8 @@
         rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="p.css" />
+    <link rel="stylesheet" href="p1.css" />
 
     <link rel="icon" type="image/png" href="photo_2025-12-19_22-23-03.jpg">
 
@@ -31,25 +32,244 @@
     </script>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            padding: 1rem 5% !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            z-index: 2000;
+            width: 100%;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .main-nav-link:link,
+        .main-nav-link:visited {
+            display: inline-block;
+            text-decoration: none;
+            color: #333 !important;
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1.1rem;
+            background-color: #f8f9fa;
+            /* Subtle background for non-active links */
+            border: 1px solid #eee;
+        }
+
+        .main-nav-link:hover,
+        .main-nav-link.active-nav {
+            background-color: #3ec6ca !important;
+            border-color: #3ec6ca !important;
+            color: #fff !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(62, 198, 202, 0.3);
+        }
+
         .page-header {
-            background: var(--bg-light);
-            padding: 120px 0 60px;
+            background: linear-gradient(135deg, #f4f8ff 0%, #ffffff 100%);
+            padding: 100px 20px 60px;
             text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .header-content-inner {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .page-header h1 {
-            color: var(--text-dark);
-            margin-bottom: 25px;
+            color: #2d3436;
+            margin-bottom: 20px;
             font-size: 3.5rem;
             font-weight: 900;
+            letter-spacing: -1px;
         }
 
         .page-header p {
-            color: var(--text-light);
+            color: #636e72;
             font-size: 1.35rem;
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
+            line-height: 1.6;
             font-weight: 600;
+        }
+
+        /* ====== Services Section ====== */
+        .services-section {
+            padding: 60px 5% 300px;
+            background-color: #f4f8ff;
+            position: relative;
+            z-index: 5;
+        }
+
+        #services-container {
+            margin: 0 auto;
+            min-height: 400px;
+        }
+
+        /* Override p.css .meal width:210px for services page */
+        .services-grid-page {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+            gap: 3rem !important;
+            padding: 0 !important;
+            max-width: 1400px !important;
+            margin: 0 auto !important;
+        }
+
+        .services-grid-page .meal {
+            width: 100% !important;
+            max-width: 100% !important;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .services-grid-page .meal:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(62, 198, 202, 0.2);
+        }
+
+        .services-grid-page .meal img {
+            width: 100% !important;
+            height: 200px !important;
+            object-fit: cover;
+        }
+
+        .services-grid-page .meal-content {
+            padding: 1.5rem !important;
+            margin-right: 0 !important;
+        }
+
+        .services-grid-page .meal-title {
+            font-size: 1.4rem !important;
+            font-weight: 900;
+            color: #2d3436;
+            margin-bottom: 12px;
+        }
+
+        .services-grid-page .chair-price {
+            margin-left: 0 !important;
+            justify-content: space-between !important;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+
+        .services-grid-page .chair-price a.btn--small {
+            padding: 10px 25px !important;
+            font-size: 1rem !important;
+            background-color: #3ec6ca;
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .services-grid-page .chair-price a.btn--small:hover {
+            background-color: white !important;
+            color: #3ec6ca !important;
+            border: 2px solid #3ec6ca;
+        }
+
+        .services-grid-page .chair-price strong {
+            font-size: 1.4rem !important;
+            color: #2d3436;
+            margin-top: 0 !important;
+        }
+
+        .search-filter-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .search-box {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 20px 65px 20px 30px;
+            border-radius: 100px;
+            border: 2px solid #e0e0e0;
+            font-size: 1.15rem;
+            transition: all 0.3s;
+            outline: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            font-family: inherit;
+        }
+
+        .search-box input:focus {
+            border-color: #3ec6ca;
+            box-shadow: 0 15px 40px rgba(62, 198, 202, 0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: #3ec6ca;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 12px 35px;
+            border-radius: 50px;
+            border: 2px solid #3ec6ca;
+            background: #fff;
+            color: #3ec6ca;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+            font-size: 1.1rem;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #3ec6ca;
+            color: #fff !important;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(62, 198, 202, 0.25);
         }
     </style>
 </head>
@@ -57,57 +277,22 @@
 <body>
 
     <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="nav-container">
-                <div class="logo">
-                    <a href="/">
-                        <img src="photo_2025-12-19_22-23-03.jpg" alt="شعار رعاية">
-                    </a>
-                </div>
-
-                <div class="nav-actions header-actions">
-                    <div class="theme-switch-wrapper">
-                        <label class="theme-switch" for="checkbox">
-                            <input type="checkbox" id="checkbox" />
-                            <div class="slider round"></div>
-                        </label>
-                    </div>
-                    <div id="auth-links">
-                        <a href="auth.html" class="btn btn-primary">دخول</a>
-                    </div>
-                </div>
-
-                <!-- Desktop Nav -->
-                <nav class="nav-links desktop-nav">
-                    <a href="/">الرئيسية</a>
-                    <a href="#" class="active">خدماتنا</a>
-                    <a href="/#features">لماذا رعاية؟</a>
-                    <a href="#contact">تواصل معنا</a>
-                </nav>
-
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn" aria-label="القائمة">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Nav Menu -->
-        <div class="mobile-nav">
-            <a href="/" class="mobile-link">الرئيسية</a>
-            <a href="#" class="mobile-link">خدماتنا</a>
-            <a href="/#features" class="mobile-link">لماذا رعاية؟</a>
-            <a href="#contact" class="mobile-link">تواصل معنا</a>
-        </div>
+    <header class="header">
+        <a href="index.html" style="text-decoration: none;"><img class="logo" src="Group 1.png"
+                style="height: 40px;" /></a>
+        <nav class="main-nav">
+            <ul class="main-nav-list">
+                <li><a class="main-nav-link" href="index.html">الصفحه الرئيسيه</a></li>
+                <li><a class="main-nav-link active-nav" href="services.html">الخدمات</a></li>
+                <li id="auth-links"></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
         <!-- Page Header -->
         <div class="page-header">
-            <div class="container">
+            <div class="header-content-inner">
                 <h1>جميع خدماتنا</h1>
                 <p>تصفح قائمتنا الشاملة من خدمات النظافة والصيانة المنزلية المصممة لراحتك</p>
 
@@ -128,132 +313,54 @@
             </div>
         </div>
 
-        <!-- Services Grid Container -->
-        <div id="services-container" style="min-height: 400px;">
-            <div class="text-center" style="padding: 60px; color: var(--text-light);">
-                جاري تحميل القائمة الكاملة...
+        <!-- Services Grid Section -->
+        <section class="services-section">
+            <div id="services-container">
+                <div class="text-center" style="padding: 100px; color: #636e72; font-size: 1.5rem; text-align: center;">
+                    <p>جاري تحميل الخدمات المميزة...</p>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
 
-    <footer id="contact">
-        <div class="footer-orb footer-orb-1"></div>
-        <div class="footer-orb footer-orb-2"></div>
-        <div class="container">
-            <div class="footer-content">
-                <!-- Brand & About -->
-                <div class="footer-info">
-                    <div class="footer-logo-wrapper">
-                        <h2 class="footer-brand" style="font-size: 2.5rem; margin-bottom: 10px;">رعاية <span
-                                style="font-size: 4rem; color: #00f2fe; line-height: 0;">.</span></h2>
-                    </div>
-                    <p>رعاية هي منصتك الأولى لخدمات المنازل، نجمع لك أفضل المحترفين لراحتك وسلامة منزلك. نعمل بشغف
-                        لتقديم تجربة استثنائية.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-icon" title="فيسبوك">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3l-.5 3h-2.5v6.8c4.56-.93 8-4.96 8-9.8z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="social-icon" title="اكس">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="social-icon" title="لينكد إن">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a2.7 2.7 0 0 0-2.7-2.7c-1.2 0-2.3 1.1-2.3 2.3v5.7h-3v-9h3v1.1c.5-.7 1.4-1.4 2.5-1.4a3.8 3.8 0 0 1 3.8 3.8v5.5h-3m-11-9h-3v9h3v-9m-1.5-1.7c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="social-icon" title="انستجرام">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="footer-links">
-                    <h3>روابط سريعة</h3>
-                    <ul>
-                        <li><a href="/">الرئيسية</a></li>
-                        <li><a href="#services">خدماتنا المميزة</a></li>
-                        <li><a href="/#features">لماذا تختارنا؟</a></li>
-                        <li><a href="auth.html">تسجيل الدخول / جديد</a></li>
-                    </ul>
-                </div>
-
-                <!-- Support -->
-                <div class="footer-links">
-                    <h3>الدعم والمساعدة</h3>
-                    <ul>
-                        <li><a href="#">الأسئلة الشائعة</a></li>
-                        <li><a href="#">سياسة الخصوصية</a></li>
-                        <li><a href="#">شروط الاستخدام</a></li>
-                        <li><a href="javascript:void(0)" onclick="toggleChat()">تواصل مع الدعم</a></li>
-                    </ul>
-                </div>
-
-                <!-- Newsletter -->
-                <div class="footer-contact">
-                    <h3>انضم لقائمتنا البريدية</h3>
-                    <p>اشترك للحصول على آخر العروض والخصومات الحصرية.</p>
-                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('شكراً لاشتراكك! 🎉');">
-                        <input type="email" class="newsletter-input" placeholder="بريدك الإلكتروني..">
-                        <button class="newsletter-btn">اشترك</button>
-                    </form>
-                    <div style="margin-top: 20px;">
-                        <p style="margin-bottom: 5px;">📞 0123456789</p>
-                        <p>📧 info@raya-services.com</p>
-                    </div>
-                </div>
+    <footer>
+        <div class="footer">
+            <img src="Vector 3.png" class="footer-img" />
+            <div class="logo-col">
+                <img class="logo1" alt="logo" src="Group 12.png" />
+                <p class="copyright">
+                    رعاية… لأن العناية ببيتك تستحق مستوى أعلى<br> من الجودة. نقدم خدمات
+                    نظافة وصيانة متكاملة<br> بتجربة سهلة وموثوقة تضمن لك الراحة<br> في كل خطوة."
+                </p>
             </div>
-
-            <div class="footer-bottom">
-                <p>جميع الحقوق محفوظة © رعاية 2026 | صنع بحب ❤️ في مصر</p>
+            <div class="link">
+                <p>استكشف</p>
+                <ul>
+                    <li><a href="index.html">الصفحه الرئيسه</a></li>
+                    <li><a href="#">تفاصيل عن رعايه</a></li>
+                    <li><a href="services.html">الخدمات</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <p>تواصل معنا</p>
+                <ul>
+                    <li>
+                        <img src="Group 24.png">
+                        <span> كنج مريوط</span>
+                    </li>
+                    <li>
+                        <img src="Group 25.png" <span>19392</span>
+                    </li>
+                    <li>
+                        <img src="Group 26.png">
+                        <span>info@kma.edu.eg</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/20123456789" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
-        title="تواصل معنا عبر واتساب">
-        <div class="whatsapp-icon-wrapper">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-        </div>
-    </a>
 
-    <!-- Live Chat Widget -->
-    <div class="chat-widget">
-        <div class="chat-button" onclick="toggleChat()">
-            <svg viewBox="0 0 24 24">
-                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
-            </svg>
-        </div>
-        <div class="chat-window" id="chatWindow">
-            <div class="chat-header">
-                <span>رعاية - محادثة مباشرة</span>
-                <button onclick="toggleChat()"
-                    style="background:none; border:none; color:#fff; cursor:pointer; font-size:1.2rem;">×</button>
-            </div>
-            <div class="chat-messages" id="chatMessages">
-                <div class="chat-msg msg-bot">أهلاً بك في رعاية! كيف يمكننا مساعدتك اليوم؟</div>
-            </div>
-            <div class="chat-input-area">
-                <input type="text" id="chatInput" class="chat-input" placeholder="اكتب رسالتك هنا...">
-                <button class="chat-send" onclick="sendChatMessage()">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- Scripts -->
     <script src="script.js"></script>
