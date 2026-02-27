@@ -607,75 +607,99 @@ ul {
     width: 100% !important;
   }
 
-  /* Cleaning/Maintenance Sections - PREVENT OVERLAP */
+  /* Cleaning/Maintenance Sections - AGGRESSIVE SPACING */
   .cleaning-services {
     flex-direction: column !important;
     display: flex !important;
-    padding: 50px 20px !important;
+    padding: 0 20px 80px 20px !important;
+    /* Added large bottom padding */
     text-align: center !important;
-    gap: 30px !important;
+    gap: 20px !important;
     min-height: auto !important;
     height: auto !important;
+    margin: 0 !important;
+    position: relative !important;
   }
 
   .cleaning-services.part2 {
     flex-direction: column-reverse !important;
-    /* Image back on bottom for consistency if needed, or keeping content first */
+    border-top: 2px solid #f0f0f0;
+    padding-top: 100px !important;
+    /* Huge gap between cleaning and maintenance */
+    background-color: #f9fbff !important;
   }
 
   .cleaning-services .services {
     width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
+    margin-bottom: 20px !important;
+    display: block !important;
   }
 
   .services img {
-    width: 85% !important;
+    width: 100% !important;
     max-width: 320px !important;
     height: auto !important;
-    display: block !important;
     margin: 0 auto !important;
+    display: block !important;
   }
 
   .servicing {
     width: 100% !important;
-    padding: 0 !important;
+    padding: 20px 0 !important;
   }
 
   .servicing h1 {
-    font-size: 1.7rem !important;
-    line-height: 1.3 !important;
-    margin-bottom: 15px !important;
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 20px !important;
+    padding: 0 10px !important;
   }
 
   .servicing p {
-    font-size: 1.05rem !important;
+    font-size: 1.1rem !important;
     line-height: 1.6 !important;
-    margin-bottom: 20px !important;
-    font-weight: 600 !important;
+    margin-bottom: 30px !important;
+    padding: 0 15px !important;
   }
 
   .servicing p br {
-    display: none;
-    /* Hide force breaks on mobile to prevent weird gaps */
+    display: none !important;
   }
 
-  /* Section Titles (e.g. قسم النظافة) */
+  .servicing a:link,
+  .servicing a:visited {
+    margin-top: 10px !important;
+    margin-bottom: 40px !important;
+    /* Massive margin below button */
+    display: inline-block !important;
+    width: 80% !important;
+    max-width: 250px !important;
+  }
+
+  /* Section Titles (e.g. قسم النظافة) - BIG CLEARANCE */
+  .container-all {
+    padding-top: 120px !important;
+    /* HUGE clearance from section above */
+    padding-bottom: 50px !important;
+    margin-top: 50px !important;
+    height: auto !important;
+  }
+
   .container-all h1 {
-    font-size: 2rem !important;
-    margin: 40px 0 20px 0 !important;
+    font-size: 2.3rem !important;
+    margin: 0 0 40px 0 !important;
     text-align: center !important;
     padding: 0 !important;
     width: 100% !important;
+    line-height: 1.2 !important;
   }
 
   /* Service Cards Container */
   .container {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 2.5rem !important;
-    padding: 2rem 20px !important;
-    align-items: stretch !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3.5rem !important;
+    padding: 10px 20px !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
@@ -684,93 +708,59 @@ ul {
   .meal {
     width: 100% !important;
     max-width: 100% !important;
-    height: auto !important;
-    min-height: unset !important;
-    overflow: visible !important;
-    display: flex !important;
-    flex-direction: column !important;
-    box-sizing: border-box !important;
+    margin: 0 auto 20px auto !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
     border-radius: 12px !important;
-    margin-bottom: 10px !important;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
-    background: #fff !important;
+    overflow: hidden !important;
+    /* Re-enable for card only */
   }
 
   .meal>img:first-child {
-    border-radius: 12px 12px 0 0 !important;
+    height: 190px !important;
     width: 100% !important;
-    height: 180px !important;
     object-fit: cover !important;
+    border-radius: 12px 12px 0 0 !important;
   }
 
   .meal-content {
-    padding: 1.2rem !important;
-    margin-right: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    flex-grow: 1 !important;
-    gap: 10px !important;
-    text-align: right !important;
-    /* Ensure Arabic RTL alignment */
+    padding: 1.5rem !important;
+    gap: 12px !important;
   }
 
   .meal-title {
-    font-size: 1.4rem !important;
-    font-weight: 800 !important;
-    margin-bottom: 8px !important;
-    color: #333 !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 10px !important;
   }
 
   .meal ul {
-    margin-bottom: 15px !important;
-    gap: 10px !important;
-    padding: 0 !important;
+    margin-bottom: 25px !important;
+    gap: 12px !important;
   }
 
   .meal li {
-    font-size: 1.05rem !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-    color: #555 !important;
+    font-size: 1.1rem !important;
+    gap: 12px !important;
   }
 
   .meal-icon {
-    width: 1.5rem !important;
-    height: 1.5rem !important;
-    min-width: 1.5rem !important;
+    width: 1.6rem !important;
+    height: 1.6rem !important;
   }
 
   .chair-price {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
+    padding-top: 20px !important;
+    border-top: 1px solid #eee !important;
     margin-top: auto !important;
-    padding-top: 15px !important;
-    border-top: 1px solid #f0f0f0 !important;
-    gap: 10px !important;
-    width: 100% !important;
   }
 
   .chair-price a:link,
   .chair-price a:visited {
+    min-width: 140px !important;
     padding: 12px 20px !important;
-    font-size: 1rem !important;
-    border-radius: 50px !important;
-    background-color: #3ec6ca !important;
-    color: white !important;
-    text-align: center !important;
-    min-width: 125px !important;
-    flex-shrink: 0 !important;
   }
 
   .chair-price strong {
-    font-size: 1.4rem !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 4px !important;
-    white-space: nowrap !important;
+    font-size: 1.6rem !important;
   }
 
   .chair-price strong span {
