@@ -647,30 +647,66 @@ ul {
     padding: 1rem 15px 2rem 15px !important;
     flex-direction: column !important;
     align-items: center !important;
+    display: flex !important;
   }
 
-  /* Individual Service Cards - Single Column on Mobile */
+  /* Individual Service Cards - FORCE Single Column on Mobile */
   .meal {
-    width: 90% !important;
-    max-width: 350px !important;
+    width: 92vw !important;
+    max-width: 420px !important;
+    min-height: auto !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 
   .meal img {
+    width: 100% !important;
     height: 200px !important;
+    object-fit: cover !important;
   }
 
   .meal-content {
     padding: 15px !important;
+    margin-right: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
   }
 
   .meal-title {
     font-size: 1.4rem !important;
+    margin-bottom: 8px !important;
+  }
+
+  .meal ul {
+    gap: 0.4rem !important;
+  }
+
+  .meal li {
+    font-size: 1rem !important;
   }
 
   .chair-price {
-    margin-left: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
     justify-content: space-between !important;
-    padding: 10px 5px 0 5px !important;
+    align-items: center !important;
+    margin: 10px 0 5px 0 !important;
+    padding: 10px 0 0 0 !important;
+    gap: 0.5rem !important;
+  }
+
+  .chair-price a:link,
+  .chair-price a:visited {
+    padding: 8px 20px !important;
+    margin-top: 0 !important;
+    font-size: 1rem !important;
+  }
+
+  .chair-price strong {
+    font-size: 1.3rem !important;
+    margin-top: 0 !important;
   }
 
   /* Footer */
