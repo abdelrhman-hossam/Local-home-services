@@ -236,7 +236,7 @@ function renderAllServices(container) {
                         </li>
                     </ul>
                     <div class="chair-price">
-                        <a href="javascript:void(0)" onclick="openOrderModal('${escapedName}', '${service._id}')" class="btn--small">طلب</a>
+                        <a href="javascript:void(0)" onclick="openOrderModal('${escapedName}', '${service._id}')" class="btn--small">اطلب الخدمه</a>
                         <strong><span>ج.م</span>${escapedPrice}</strong>
                     </div>
                 </div>
