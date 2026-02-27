@@ -653,49 +653,52 @@ ul {
 
   /* Individual Service Cards - FORCE Single Column on Mobile */
   .meal {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 96% !important;
+    max-width: 400px !important;
     height: auto !important;
     min-height: unset !important;
     overflow: visible !important;
-    /* Fix: remove clip that hides content */
     display: flex !important;
     flex-direction: column !important;
     box-sizing: border-box !important;
-    border-radius: 16px !important;
-    /* Keep rounded corners */
+    border-radius: 12px !important;
+    margin-bottom: 25px !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+    background: #fff !important;
   }
 
-  /* Re-apply border-radius clip only to image top */
   .meal>img:first-child {
-    border-radius: 16px 16px 0 0 !important;
-  }
-
-  .meal img {
+    border-radius: 12px 12px 0 0 !important;
     width: 100% !important;
-    height: 200px !important;
+    height: 180px !important;
     object-fit: cover !important;
   }
 
   .meal-content {
-    padding: 15px !important;
+    padding: 1rem !important;
     margin-right: 0 !important;
     display: flex !important;
     flex-direction: column !important;
+    flex-grow: 1 !important;
     gap: 8px !important;
   }
 
   .meal-title {
     font-size: 1.4rem !important;
-    margin-bottom: 8px !important;
+    font-weight: 800 !important;
+    margin-bottom: 5px !important;
   }
 
   .meal ul {
-    gap: 0.4rem !important;
+    margin-bottom: 12px !important;
+    gap: 5px !important;
   }
 
   .meal li {
     font-size: 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
   }
 
   .chair-price {
@@ -703,21 +706,32 @@ ul {
     flex-direction: row !important;
     justify-content: space-between !important;
     align-items: center !important;
-    margin: 10px 0 5px 0 !important;
-    padding: 10px 0 0 0 !important;
-    gap: 0.5rem !important;
+    margin-top: auto !important;
+    padding-top: 15px !important;
+    border-top: 1px solid #f0f0f0 !important;
+    gap: 8px !important;
   }
 
   .chair-price a:link,
   .chair-price a:visited {
-    padding: 8px 20px !important;
-    margin-top: 0 !important;
+    padding: 10px 18px !important;
     font-size: 1rem !important;
+    border-radius: 50px !important;
+    background-color: #3ec6ca !important;
+    color: white !important;
+    text-align: center !important;
+    min-width: 120px !important;
   }
 
   .chair-price strong {
-    font-size: 1.3rem !important;
-    margin-top: 0 !important;
+    font-size: 1.4rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+
+  .chair-price strong span {
+    font-size: 0.95rem !important;
   }
 
   /* Footer */
