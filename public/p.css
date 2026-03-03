@@ -540,10 +540,14 @@ ul {
 
   .main-nav {
     width: 100% !important;
+    margin-top: 15px !important;
+    /* Forces separation from logo */
+    padding-bottom: 5px !important;
   }
 
   .main-nav-list {
-    gap: 10px !important;
+    gap: 15px !important;
+    /* Perfect touch target separation */
     flex-wrap: wrap;
     justify-content: center !important;
     width: 100% !important;
@@ -553,18 +557,24 @@ ul {
   .main-nav-link:link,
   .main-nav-link:visited {
     font-size: 0.95rem !important;
-    padding: 8px 18px !important;
+    padding: 10px 24px !important;
     white-space: nowrap;
     color: #2ea3a7 !important;
-    /* Visible against white header */
-    border: 2px solid transparent;
+    border: 2px solid rgba(46, 163, 167, 0.3) !important;
+    /* Elegant outline */
+    border-radius: 30px !important;
+    /* Stunning pill shape */
+    background: transparent !important;
+    transition: all 0.3s ease !important;
+    font-weight: 800 !important;
   }
 
   .main-nav-link.active-nav {
-    background-color: #3ec6ca !important;
+    background: linear-gradient(135deg, #3ec6ca 0%, #2ea3a7 100%) !important;
     color: #fff !important;
-    border: 2px solid #3ec6ca !important;
-    border-radius: 20px !important;
+    border: 2px solid transparent !important;
+    box-shadow: 0 4px 10px rgba(62, 198, 202, 0.3) !important;
+    /* Premium glow overlay */
   }
 
 
