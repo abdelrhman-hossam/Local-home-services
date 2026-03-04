@@ -525,33 +525,32 @@ ul {
   }
 
   .header-inner {
-    flex-wrap: nowrap !important;
-    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
     align-items: center !important;
-    gap: 10px !important;
+    gap: 15px !important;
   }
 
   .logo {
-    max-width: none !important;
-    width: auto !important;
-    height: 50px !important;
+    max-width: 120px !important;
+    height: auto !important;
     margin: 0 !important;
     padding: 0 !important;
   }
 
   .main-nav {
-    width: 60% !important;
+    width: 100% !important;
     margin-top: 10px !important;
-    /* Forces separation from logo */
     padding-bottom: 5px !important;
     display: flex;
-    justify-content: flex-end !important;
+    justify-content: center !important;
   }
 
   .main-nav-list {
-    gap: 8px !important;
-    flex-wrap: nowrap !important;
-    justify-content: flex-end !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
     width: 100% !important;
     padding: 0 !important;
   }
