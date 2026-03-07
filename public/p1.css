@@ -460,7 +460,7 @@
 
   .chair-price {
     display: flex;
-    gap: 32px;
+    gap: 16px;
   }
 
   .chair-price a:link,
