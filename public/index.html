@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>رعايه</title>
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://cdn.jsdelivr.net; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' http://localhost:5000 https://local-home-services-final.vercel.app https://unpkg.com;">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+        content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://cdn.jsdelivr.net; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' http://localhost:5000 https://local-home-services-final.vercel.app https://unpkg.com;" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <link rel="stylesheet" href="p.css" />
     <link rel="stylesheet" href="p1.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,15 +19,30 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="header-inner">
-            <a href="index.html" class="logo-link">
-                <img class="logo" src="Group 1.png" />
-            </a>
+    <header style="width: 95vw; margin: 0; padding: 0; margin-top: 5px" class="header">
+        <div style="
+          width: 100vw;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        ">
+            <a href="index.html" style="
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 30px;
+          "><img class="logo" src="Group 1.png" alt="logo" style="
+              height: 80px;
+              width: auto;
+              cursor: pointer;
+              margin-top: -5px;
+            " /></a>
             <nav class="main-nav">
-                <ul class="main-nav-list">
-                    <li><a class="main-nav-link" href="#">الصفحه الرئيسيه</a></li>
-                    <li><a class="main-nav-link active-nav" href="services.html">الخدمات</a></li>
+                <ul class="main-nav-list" id="main-nav-list">
+                    <li><a class="main-nav-link" id="nav-home" href="index.html">الصفحه الرئيسيه</a></li>
+                    <li>
+                        <a class="main-nav-link active-nav" id="nav-services" href="services.html">الخدمات</a>
+                    </li>
                     <li id="auth-links"></li>
                 </ul>
             </nav>
@@ -52,7 +67,7 @@
                 </div>
 
                 <div>
-                    <img src="Group 2.png" class="home-img1" />
+                    <img src="Group 2.png" class="home-img1" alt="img home" />
                 </div>
             </div>
         </section>
@@ -60,7 +75,7 @@
             <h1>ما الذي يجعل خدماتنا مميزة</h1>
             <div class="home-2">
                 <div>
-                    <img src="Group 23.png" alt="" />
+                    <img src="Group 23.png" alt="broom" />
                     <p>
                         <strong>نظافة تدي بيتك حياة جديدة</strong>
                     </p>
@@ -70,7 +85,7 @@
                     </p>
                 </div>
                 <div>
-                    <img src="Group 22.png" alt="" />
+                    <img src="Group 22.png" alt="tools" />
                     <p>
                         <strong>صيانة موثوقة لكل اعطال البيت.</strong>
                     </p>
@@ -80,7 +95,7 @@
                     </p>
                 </div>
                 <div>
-                    <img src="Group 21.png" alt="" />
+                    <img src="Group 21.png" alt="heart" />
                     <p><strong>راحة بالك أولويتنا</strong></p>
                     <p>
                         مزودون موثوقون، تقييمات واضحة، وزيارات<br />
@@ -88,7 +103,7 @@
                     </p>
                 </div>
                 <div>
-                    <img src="Group 20.png" alt="" />
+                    <img src="Group 20.png" alt="money" />
                     <p><strong>جودة عالية بسعر مناسب</strong></p>
                     <p>
                         تسعير شفاف بدون مفاجآت، ودفع مرن عندك<br />
@@ -100,7 +115,7 @@
         <section id="about">
             <div class="cleaning-services part1">
                 <div class="services">
-                    <img src="Group 11.png" alt="" />
+                    <img src="Group 11.png" alt="clean" />
                 </div>
                 <div class="servicing">
                     <h1>تنظيف يهتمّ ببيتك … <span>لأنها رعاية</span></h1>
@@ -109,9 +124,14 @@
                         لنترك بيتك أكثر ترتيبًا وانتعاشًا. <br />مع رعاية… نظافة تليق
                         براحتك ووقتك
                     </p>
-                    <a href="javascript:void(0)"
-                        onclick="const sClean = availableServices.find(x => x.name.includes('نظافة') || x.description.includes('نظافة')); if(sClean) openOrderModal(sClean.name, sClean._id); else alert('الخدمات قيد التحميل، يرجى المحاولة بعد قليل.');">اطلب
-                        الخدمه الان</a>
+                    <a href="javascript:void(0)" onclick="
+                const sClean = availableServices.find(
+                  (x) =>
+                    x.name.includes('نظافة') || x.description.includes('نظافة'),
+                );
+                if (sClean) openOrderModal(sClean.name, sClean._id);
+                else alert('الخدمات قيد التحميل، يرجى المحاولة بعد قليل.');
+              ">اطلب الخدمه الان</a>
                 </div>
             </div>
             <div class="cleaning-services part2">
@@ -122,12 +142,19 @@
                         بسرعة واحتراف، بفريق متخصص يضمن <br />إصلاحات دقيقة وأمان أعلى
                         لمنزلك. <br />مع رعاية… صيانة تليق براحتك ووقتك.
                     </p>
-                    <a href="javascript:void(0)"
-                        onclick="const sMaint = availableServices.find(x => x.name.includes('صيانة') || x.description.includes('صيانة') || x.name.includes('كهرباء')); if(sMaint) openOrderModal(sMaint.name, sMaint._id); else alert('الخدمات قيد التحميل، يرجى المحاولة بعد قليل.');">اطلب
-                        الخدمه الان</a>
+                    <a href="javascript:void(0)" onclick="
+                const sMaint = availableServices.find(
+                  (x) =>
+                    x.name.includes('صيانة') ||
+                    x.description.includes('صيانة') ||
+                    x.name.includes('كهرباء'),
+                );
+                if (sMaint) openOrderModal(sMaint.name, sMaint._id);
+                else alert('الخدمات قيد التحميل، يرجى المحاولة بعد قليل.');
+              ">اطلب الخدمه الان</a>
                 </div>
                 <div class="services">
-                    <img src="Group 7.png" alt="" />
+                    <img src="Group 7.png" alt="service" />
                 </div>
             </div>
         </section>
@@ -136,7 +163,7 @@
                 <h1>قسم النظافه</h1>
                 <div class="container" id="cleaning-container">
                     <div class="meal">
-                        <img src="norhan_new.jpg" />
+                        <img src="norhan_new.jpg" alt="people" />
                         <div class="meal-content">
                             <p class="meal-title">نورهان صبحي</p>
                             <ul>
@@ -158,16 +185,16 @@
                                 </li>
                             </ul>
                             <div class="chair-price">
-                                <a href="javascript:void(0)"
-                                    onclick="openOrderModal('عامله نظافه - نورهان صبحي', 'cleaning1')"
-                                    class="btn--small">اطلب الخدمه</a>
+                                <a href="javascript:void(0)" onclick="
+                      openOrderModal('عامله نظافه - نورهان صبحي', 'cleaning1')
+                    " class="btn--small">طلب</a>
                                 <strong><span>ج.م</span>٢٥٠</strong>
                             </div>
                         </div>
                     </div>
 
                     <div class="meal">
-                        <img src="Screenshot 2025-12-04 001749 2.png" />
+                        <img src="Screenshot 2025-12-04 001749 2.png" alt="people" />
                         <div class="meal-content">
                             <p class="meal-title">سهير السيد</p>
                             <ul>
@@ -189,9 +216,10 @@
                                 </li>
                             </ul>
                             <div class="chair-price">
-                                <a href="javascript:void(0)"
-                                    onclick="openOrderModal('عامله نظافه - سهير السيد', 'cleaning2')"
-                                    class="btn--small">اطلب الخدمه</a>
+                                <a href="javascript:void(0)" onclick="
+                      openOrderModal('عامله نظافه - سهير السيد', 'cleaning2')
+                    " class="btn--small">طلب
+                                </a>
                                 <strong><span>ج.م</span>٣٠٠</strong>
                             </div>
                         </div>
@@ -204,7 +232,7 @@
                 <div class="container" id="maintenance-container">
                     <!-- Dynamic Maintenance Services will be injected here -->
                     <div class="meal">
-                        <img src="Screenshot 2025-12-04 003314 1.png" />
+                        <img src="Screenshot 2025-12-04 003314 1.png" alt="people" />
                         <div class="meal-content">
                             <p class="meal-title">هاني ابراهيم</p>
                             <ul>
@@ -226,15 +254,18 @@
                                 </li>
                             </ul>
                             <div class="chair-price">
-                                <a href="javascript:void(0)"
-                                    onclick="openOrderModal('عامل سباكه - هاني ابراهيم', 'maintenance1')"
-                                    class="btn--small">اطلب الخدمه</a>
+                                <a href="javascript:void(0)" onclick="
+                      openOrderModal(
+                        'عامل سباكه - هاني ابراهيم',
+                        'maintenance1',
+                      )
+                    " class="btn--small">طلب</a>
                                 <strong><span>ج.م</span>٣٥٠</strong>
                             </div>
                         </div>
                     </div>
                     <div class="meal">
-                        <img src="Screenshot 2025-12-04 004330 1.png" />
+                        <img src="Screenshot 2025-12-04 004330 1.png" alt="people" />
                         <div class="meal-content">
                             <p class="meal-title">حسن هاشم</p>
                             <ul>
@@ -256,9 +287,9 @@
                                 </li>
                             </ul>
                             <div class="chair-price">
-                                <a href="javascript:void(0)"
-                                    onclick="openOrderModal('عامل كهرباء - حسن هاشم', 'maintenance2')"
-                                    class="btn--small">اطلب الخدمه</a>
+                                <a href="javascript:void(0)" onclick="
+                      openOrderModal('عامل كهرباء - حسن هاشم', 'maintenance2')
+                    " class="btn--small">طلب</a>
                                 <strong><span>ج.م</span>٥٠٠</strong>
                             </div>
                         </div>
@@ -273,8 +304,10 @@
             <div class="logo-col">
                 <img class="logo1" alt="logo" src="Group 12.png" />
                 <p class="copyright">
-                    رعاية… لأن العناية ببيتك تستحق مستوى أعلى<br> من الجودة. نقدم خدمات
-                    نظافة وصيانة متكاملة<br> بتجربة سهلة وموثوقة تضمن لك الراحة<br> في كل خطوة."
+                    رعاية… لأن العناية ببيتك تستحق مستوى أعلى<br />
+                    من الجودة. نقدم خدمات نظافة وصيانة متكاملة<br />
+                    بتجربة سهلة وموثوقة تضمن لك الراحة<br />
+                    في كل خطوة."
                 </p>
             </div>
             <div class="link">
@@ -289,14 +322,12 @@
                 <p>تواصل معنا</p>
                 <ul>
                     <li>
-                        <img src="Group 24.png">
+                        <img src="Group 24.png" alt="location" />
                         <span> كينج مريوط</span>
                     </li>
+                    <li><img src="Group 25.png" alt="phone" /> <span>19392</span></li>
                     <li>
-                        <img src="Group 25.png"> <span>19392</span>
-                    </li>
-                    <li>
-                        <img src="Group 26.png">
+                        <img src="Group 26.png" alt="email" />
                         <span>info@kma.edu.eg</span>
                     </li>
                 </ul>

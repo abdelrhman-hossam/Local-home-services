@@ -1,23 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>رعاية | تسجيل الدخول</title>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+Arabic:wght@400;600;700;800&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="photo_2025-12-19_22-23-03.jpg">
+    <link rel="icon" type="image/png" href="photo_2025-12-19_22-23-03.jpg" />
 
     <style>
         .auth-section {
@@ -146,22 +146,6 @@
 </head>
 
 <body>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="nav-container">
-                <div class="logo">
-                    <a href="/"><img src="photo_2025-12-19_22-23-03.jpg" alt="شعار رعاية"></a>
-                </div>
-                <nav class="nav-links desktop-nav">
-                    <a href="/">الرئيسية</a>
-                    <a href="services.html">خدماتنا</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
     <main class="auth-section">
         <div class="auth-container">
             <div class="auth-header">
@@ -170,38 +154,46 @@
             </div>
 
             <div class="auth-tabs">
-                <button class="auth-tab active" onclick="switchAuthTab('login')">دخول</button>
-                <button class="auth-tab" onclick="switchAuthTab('register')">تسجيل جديد</button>
+                <button class="auth-tab active" onclick="switchAuthTab('login')">
+                    دخول
+                </button>
+                <button class="auth-tab" onclick="switchAuthTab('register')">
+                    تسجيل جديد
+                </button>
             </div>
 
             <!-- Login Form -->
             <form id="loginForm" class="auth-form active">
                 <div class="form-group">
                     <label for="loginEmail">البريد الإلكتروني</label>
-                    <input type="email" id="loginEmail" placeholder="example@mail.com" required>
+                    <input type="email" id="loginEmail" placeholder="example@mail.com" required />
                 </div>
                 <div class="form-group">
                     <label for="loginPassword">كلمة المرور</label>
-                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required />
                 </div>
-                <button type="submit" class="btn btn-primary auth-btn">تسجيل الدخول</button>
+                <button type="submit" class="btn btn-primary auth-btn">
+                    تسجيل الدخول
+                </button>
             </form>
 
             <!-- Register Form -->
             <form id="registerForm" class="auth-form">
                 <div class="form-group">
                     <label for="regUsername">اسم المستخدم</label>
-                    <input type="text" id="regUsername" placeholder="مثال: abdelrhman" required>
+                    <input type="text" id="regUsername" placeholder="مثال: Name" required />
                 </div>
                 <div class="form-group">
                     <label for="regEmail">البريد الإلكتروني</label>
-                    <input type="email" id="regEmail" placeholder="example@mail.com" required>
+                    <input type="email" id="regEmail" placeholder="example@mail.com" required />
                 </div>
                 <div class="form-group">
                     <label for="regPassword">كلمة المرور</label>
-                    <input type="password" id="regPassword" placeholder="6 أحرف على الأقل" required minlength="6">
+                    <input type="password" id="regPassword" placeholder="6 أحرف على الأقل" required minlength="6" />
                 </div>
-                <button type="submit" class="btn btn-primary auth-btn">إنشاء حساب</button>
+                <button type="submit" class="btn btn-primary auth-btn">
+                    إنشاء حساب
+                </button>
             </form>
 
             <div class="auth-footer">
@@ -213,18 +205,18 @@
     <script src="script.js"></script>
     <script>
         function switchAuthTab(tab) {
-            const tabs = document.querySelectorAll('.auth-tab');
-            const forms = document.querySelectorAll('.auth-form');
+            const tabs = document.querySelectorAll(".auth-tab");
+            const forms = document.querySelectorAll(".auth-form");
 
-            tabs.forEach(t => t.classList.remove('active'));
-            forms.forEach(f => f.classList.remove('active'));
+            tabs.forEach((t) => t.classList.remove("active"));
+            forms.forEach((f) => f.classList.remove("active"));
 
-            if (tab === 'login') {
-                tabs[0].classList.add('active');
-                document.getElementById('loginForm').classList.add('active');
+            if (tab === "login") {
+                tabs[0].classList.add("active");
+                document.getElementById("loginForm").classList.add("active");
             } else {
-                tabs[1].classList.add('active');
-                document.getElementById('registerForm').classList.add('active');
+                tabs[1].classList.add("active");
+                document.getElementById("registerForm").classList.add("active");
             }
         }
     </script>
