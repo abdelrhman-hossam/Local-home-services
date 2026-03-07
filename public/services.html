@@ -50,20 +50,7 @@
         }
 
         @media (min-width: 769px) {
-            .header {
-                position: sticky;
-                top: 0;
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(15px);
-                box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
-                padding: 12px 6% !important;
-                display: flex !important;
-                justify-content: space-between !important;
-                align-items: center !important;
-                z-index: 2000;
-                width: 100%;
-                gap: 0 !important;
-            }
+            /* Standard Header from p.css */
 
             .logo {
                 height: 50px;
@@ -290,10 +277,9 @@
                 <img class="logo" src="Group 1.png" />
             </a>
             <nav class="main-nav">
-                <ul class="main-nav-list">
-                    <li><a class="main-nav-link" href="index.html">الصفحه الرئيسيه</a></li>
-                    <li><a class="main-nav-link active-nav" href="services.html">الخدمات</a></li>
-                    <li id="auth-links"></li>
+                <ul class="main-nav-list" id="main-nav-list">
+                    <li><a class="main-nav-link" id="nav-home" href="index.html">الصفحه الرئيسيه</a></li>
+                    <li><a class="main-nav-link active-nav" id="nav-services" href="services.html">الخدمات</a></li>
                 </ul>
             </nav>
         </div>
@@ -334,6 +320,42 @@
 
 
     <!-- Scripts -->
+    <footer>
+        <div class="footer">
+            <img src="Vector 3.png" class="footer-img" />
+            <div class="logo-col">
+                <img class="logo1" alt="logo" src="Group 12.png" />
+                <p class="copyright">
+                    رعاية… لأن العناية ببيتك تستحق مستوى أعلى<br />
+                    من الجودة. نقدم خدمات نظافة وصيانة متكاملة<br />
+                    بتجربة سهلة وموثوقة تضمن لك الراحة<br />
+                    في كل خطوة."
+                </p>
+            </div>
+            <div class="link">
+                <p>استكشف</p>
+                <ul>
+                    <li><a href="index.html">الصفحه الرئيسه</a></li>
+                    <li><a href="index.html#about">تفاصيل عن رعايه</a></li>
+                    <li><a href="services.html">الخدمات</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <p>تواصل معنا</p>
+                <ul>
+                    <li>
+                        <img src="Group 24.png" alt="location" />
+                        <span> كينج مريوط</span>
+                    </li>
+                    <li><img src="Group 25.png" alt="phone" /> <span>19392</span></li>
+                    <li>
+                        <img src="Group 26.png" alt="email" />
+                        <span>info@kma.edu.eg</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
 
