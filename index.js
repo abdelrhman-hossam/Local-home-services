@@ -15,6 +15,9 @@ const mongoSanitize = require("express-mongo-sanitize"); // منع NoSQL Injecti
 // ====================================
 const app = express();
 
+// Set trust proxy for Vercel/proxies so rate limiters work correctly
+app.set('trust proxy', 1);
+
 // ====================================
 // Middleware - البرمجيات الوسيطة
 // ====================================

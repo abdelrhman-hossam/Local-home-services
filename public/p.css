@@ -21,7 +21,6 @@ body {
   font-style: normal;
   direction: rtl;
 }
-
 .header-inner {
   display: flex;
   width: 100%;
@@ -100,13 +99,8 @@ body {
   position: absolute;
 }
 
-.home-img1 {
-  z-index: 2;
-}
-
 .home-text {
   margin-top: 50px;
-  z-index: 2;
 }
 
 .home-text h1 {
@@ -514,7 +508,6 @@ ul {
    Mobile Responsive Styles
    =========================== */
 @media (max-width: 768px) {
-
   /* Header */
   .header {
     position: relative !important;
@@ -650,7 +643,7 @@ ul {
     gap: 30px !important;
   }
 
-  .home-2>div {
+  .home-2 > div {
     background: #ffffff;
     padding: 30px 20px;
     border-radius: 20px;
@@ -659,7 +652,7 @@ ul {
     transition: transform 0.3s ease;
   }
 
-  .home-2>div:active {
+  .home-2 > div:active {
     transform: scale(0.98);
   }
 
@@ -798,7 +791,7 @@ ul {
     background: #fff !important;
   }
 
-  .meal>img:first-child {
+  .meal > img:first-child {
     height: 200px !important;
     width: 100% !important;
     object-fit: cover !important;

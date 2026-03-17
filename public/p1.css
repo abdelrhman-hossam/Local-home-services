@@ -5,7 +5,8 @@
     gap: 50rem;
   }
 
-  .home-1 {}
+  .home-1 {
+  }
 
   .home-img2 {
     width: 60rem;
@@ -130,7 +131,6 @@
     top: 10px;
     right: 10px;
   }
-
 
   .home-text h1 {
     font-size: 2rem;
@@ -603,7 +603,8 @@
   }
 }
 
-@media (max-width: 730px) {}
+@media (max-width: 730px) {
+}
 
 /* Clean Mobile Navigation - Keeps Links Visible */
 @media (max-width: 790px) {
@@ -631,7 +632,6 @@
     align-items: center !important;
     gap: 12px !important;
   }
-
 
   .servicing h1 {
     font-size: 1.2rem;
