@@ -108,9 +108,10 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/local_
 // متغير لتتبع حالة الاتصال
 let isDbConnected = false;
 
+// تعديل مهم: تم زيادة وقت المهلة وإلغاء القفل السريع (SocketTimeout)
+// لأن سيرفرات Vercel تنام أحياناً وتحتاج وقت أطول للاستيقاظ وإعادة الاتصال
 mongoose.connect(MONGODB_URI, {
-  serverSelectionTimeoutMS: 3000, // مهلة 3 ثوانٍ فقط للاتصال
-  socketTimeoutMS: 3000,
+  serverSelectionTimeoutMS: 15000, // مهلة 15 ثانية للاتصال بسيرفر أطلس
 })
   .then(() => {
     isDbConnected = true;
