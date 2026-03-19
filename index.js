@@ -82,11 +82,18 @@ const reviewRoutes = require("./routes/reviews");
 const paymentRoutes = require("./routes/payment");
 
 // Middleware لفحص حالة قاعدة البيانات قبل معالجة الطلبات
-// Middleware (Relaxed): لا نمنع الطلب إذا كانت قاعدة البيانات مفصولة، نترك الكود يتعامل معه
-app.use('/api', (req, res, next) => {
-  // مجرد تسجيل للحالة دون إيقاف الطلب
+// في بيئة Vercel (Serverless) يجب أن ننتظر حتى تتصل القاعدة قبل معالجة الطلب
+app.use('/api', async (req, res, next) => {
   if (mongoose.connection.readyState !== 1) {
-    console.warn('⚠️ تنبيه: يتم معالجة طلب API وقاعدة البيانات مفصولة (Offline Mode Active).');
+    console.warn('⚠️ جاري محاولة إنشاء اتصال بقاعدة البيانات...');
+    try {
+      await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/local_home_services', {
+        serverSelectionTimeoutMS: 15000,
+      });
+      console.log("✅ تم الاتصال بقاعدة البيانات MongoDB بنجاح قبل معالجة الطلب!");
+    } catch (err) {
+      console.error("❌ فشل الاتصال بقاعدة البيانات قبل معالجة الطلب:", err.message);
+    }
   }
   next();
 });
@@ -100,34 +107,22 @@ app.use("/api/reviews", reviewRoutes);     // مسارات التقييمات
 app.use("/api/payment", paymentRoutes);   // مسارات الدفع
 
 // ====================================
-// الاتصال بقاعدة البيانات MongoDB
+// الاتصال الأولي بقاعدة البيانات MongoDB
 // ====================================
-// استخدام MONGODB_URI من ملف .env للحفاظ على أمان البيانات
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/local_home_services';
 
-// متغير لتتبع حالة الاتصال
-let isDbConnected = false;
-
-// تعديل مهم: تم زيادة وقت المهلة وإلغاء القفل السريع (SocketTimeout)
-// لأن سيرفرات Vercel تنام أحياناً وتحتاج وقت أطول للاستيقاظ وإعادة الاتصال
+// محاولة الاتصال عند بدء التشغيل
 mongoose.connect(MONGODB_URI, {
   serverSelectionTimeoutMS: 15000, // مهلة 15 ثانية للاتصال بسيرفر أطلس
 })
   .then(() => {
-    isDbConnected = true;
-    console.log("✅ تم الاتصال بقاعدة البيانات MongoDB بنجاح");
+    console.log("✅ تم الاتصال بقاعدة البيانات MongoDB (بدء التشغيل)");
     console.log(`📊 Database: ${mongoose.connection.name}`);
   })
   .catch(err => {
-    isDbConnected = false;
-    console.error("❌ فشل الاتصال بقاعدة البيانات!");
+    console.error("❌ فشل الاتصال الأولي بقاعدة البيانات!");
     console.error("📝 السبب المحتمل: " + err.message);
-    if (err.message.includes('Atlas')) {
-      console.log("💡 نصيحة: تأكد من إضافة عنوان الـ IP الحالي لجهازك في MongoDB Atlas -> Network Access.");
-    }
-    console.log("⚠️  ملاحظة: خدمات API التي تعتمد على قاعدة البيانات لن تعمل، لكن الموقع سيظل متاحاً.");
   });
-
 
 
 // ====================================
