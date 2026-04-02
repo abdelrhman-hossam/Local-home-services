@@ -58,7 +58,8 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 0.5rem;
+    margin-right: 5rem; /* يدفع شريط التنقل بالكامل لليسار في الجزء الأزرق */
 }
 
 .main-nav-link:link,
