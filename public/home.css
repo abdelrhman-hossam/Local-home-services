@@ -74,9 +74,9 @@ html {
     margin-right: 0;
 }
 
-/* تحريك زرار "الصفحه الرئيسيه" فقط ناحية اليسار بعيداً عن الموجة البيضاء */
-.main-nav-list li:first-child {
-    margin-left: 70px;
+/* استهداف أول زرار فقط (الصفحة الرئيسية) */
+.main-nav-list li:first-child .main-nav-link {
+    transform: translateX(-15px); /* الـ 15 بكسل هي الـ "سنة" اللي محتاجها بالشمال */
 }
 
 .main-nav-link:link,
