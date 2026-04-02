@@ -55,8 +55,14 @@ html {
     display: none;
 }
 
+/* تجاوز الـ inline style الخاطئة على الـ div الداخلي في الـ header */
+.header > div {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
 .main-nav {
-    padding-right: 80px; /* يحرك شريط التنقل ناحية اليسار */
+    padding-right: 0;
 }
 
 .main-nav-list {
