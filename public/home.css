@@ -33,12 +33,14 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px;
-    z-index: 100;
+    padding: 15px 20px;
+    z-index: 1000;
+    background-color: #3ec6ca; /* خلفية سماوية ثابتة دائماً */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .logo {
@@ -58,23 +60,22 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
-    margin-right: 5rem; /* يدفع شريط التنقل بالكامل لليسار في الجزء الأزرق */
+    gap: 1rem;
+    margin-right: 0;
 }
 
 .main-nav-link:link,
 .main-nav-link:visited {
     display: inline-block;
     color: #ffffff;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
     position: relative;
     z-index: 1;
     text-decoration: none;
-    margin-right: 0.5rem; /* تم تقليل المسافة لتجنب الخروج للون الأبيض */
+    margin-right: 0;
     transition: transform 180ms ease, box-shadow 220ms ease;
     white-space: nowrap;
-    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); /* إضافة ظل خفيف للقراءة في أي خلفية */
 }
 
 .main-nav-link:hover {
