@@ -76,7 +76,7 @@ html {
 
 /* تحريك زرار "الصفحه الرئيسيه" فقط ناحية اليسار بعيداً عن الموجة البيضاء */
 .main-nav-list li:first-child {
-    margin-left: 40px;
+    margin-left: 70px;
 }
 
 .main-nav-link:link,
