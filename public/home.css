@@ -70,9 +70,10 @@ html {
     position: relative;
     z-index: 1;
     text-decoration: none;
-    margin-right: 2rem;
+    margin-right: 0.5rem; /* تم تقليل المسافة لتجنب الخروج للون الأبيض */
     transition: transform 180ms ease, box-shadow 220ms ease;
     white-space: nowrap;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); /* إضافة ظل خفيف للقراءة في أي خلفية */
 }
 
 .main-nav-link:hover {
