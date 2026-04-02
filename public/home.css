@@ -76,7 +76,7 @@ html {
 
 /* استهداف أول زرار فقط (الصفحة الرئيسية) */
 .main-nav-list li:first-child .main-nav-link {
-    transform: translateX(-15px); /* الـ 15 بكسل هي الـ "سنة" اللي محتاجها بالشمال */
+    transform: translateX(-80px); /* دفعة "حلوة" للشمال */
 }
 
 .main-nav-link:link,
