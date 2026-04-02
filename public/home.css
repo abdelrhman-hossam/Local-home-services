@@ -71,12 +71,7 @@ html {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    margin-right: 0;
-}
-
-/* استهداف أول زرار فقط (الصفحة الرئيسية) */
-.main-nav-list li:first-child .main-nav-link {
-    transform: translateX(-80px); /* دفعة "حلوة" للشمال */
+    margin-right: 150px; /* دفعة قوية وأكيدة للشمال لكل الأزرار ككتلة واحدة */
 }
 
 .main-nav-link:link,
