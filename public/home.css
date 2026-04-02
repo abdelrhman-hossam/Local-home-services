@@ -74,6 +74,11 @@ html {
     margin-right: 0;
 }
 
+/* تحريك زرار "الصفحه الرئيسيه" فقط ناحية اليسار بعيداً عن الموجة البيضاء */
+.main-nav-list li:first-child {
+    margin-left: 40px;
+}
+
 .main-nav-link:link,
 .main-nav-link:visited {
     display: inline-block;
