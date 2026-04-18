@@ -130,7 +130,7 @@
                     x.name.includes('نظافة') || x.description.includes('نظافة'),
                 );
                 if (sClean) openOrderModal(sClean.name, sClean._id);
-                else alert('الخدمات قيد التحميل، يرجى المحاولة بعد قليل.');
+                else openOrderModal('خدمة نظافة عامة', 'cleaning_general');
               ">اطلب الخدمه الان</a>
         </div>
       </div>
@@ -150,7 +150,7 @@
                     x.name.includes('كهرباء'),
                 );
                 if (sMaint) openOrderModal(sMaint.name, sMaint._id);
-                else alert('الخدمات قيد التحميل، يرجى المحاولة بعد قليل.');
+                else openOrderModal('خدمة صيانة عامة', 'maintenance_general');
               ">اطلب الخدمه الان</a>
         </div>
         <div class="services">
