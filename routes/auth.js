@@ -6,22 +6,59 @@ const router = express.Router();
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 const rateLimit = require("express-rate-limit");
+const { protect } = require("../middleware/auth");
 
-// محدد خاص لمحاولات تسجيل الدخول والتسجيل (أكثر صرامة)
+// ====================================
+// التحقق من وجود JWT_SECRET في البيئة
+// ====================================
+if (!process.env.JWT_SECRET) {
+    console.error("⛔ SECURITY ERROR: JWT_SECRET غير موجود في ملف .env - يجب تحديده فوراً!");
+    if (process.env.NODE_ENV === "production") {
+        process.exit(1); // إيقاف السيرفر في الإنتاج إذا لم يوجد المفتاح السري
+    }
+}
+
+// ====================================
+// Rate Limiter خاص بالمصادقة (أكثر صرامة)
+// ====================================
 const authLimiter = rateLimit({
     windowMs: 60 * 60 * 1000, // ساعة واحدة
-    max: 15, // 15 محاولة فقط كل ساعة
+    max: 10, // 10 محاولات فقط كل ساعة (مشدد من 15)
     message: {
         success: false,
         message: "كثير من محاولات الدخول/التسجيل، يرجى المحاولة بعد ساعة."
-    }
+    },
+    standardHeaders: true,
+    legacyHeaders: false
 });
 
-// @desc    Register a new user
+// ====================================
+// @desc    تسجيل مستخدم جديد
 // @route   POST /api/auth/register
+// @access  Public
+// ====================================
 router.post("/register", authLimiter, async (req, res) => {
     try {
-        const { username, email, password, role } = req.body;
+        // ✅ FIX API3 - Mass Assignment: استخراج الحقول المسموح بها فقط
+        // يُمنع منعاً باتاً قبول حقل "role" من المستخدم
+        // الـ role يُحدد دائماً على السيرفر وليس من الـ client
+        const { username, email, password } = req.body;
+
+        // التحقق من وجود جميع الحقول المطلوبة
+        if (!username || !email || !password) {
+            return res.status(400).json({
+                success: false,
+                message: "جميع الحقول مطلوبة (اسم المستخدم، البريد الإلكتروني، كلمة المرور)"
+            });
+        }
+
+        // التحقق من طول كلمة المرور
+        if (password.length < 8) {
+            return res.status(400).json({
+                success: false,
+                message: "كلمة المرور يجب أن تكون 8 أحرف على الأقل"
+            });
+        }
 
         // التحقق من وجود المستخدم مسبقاً
         const userExists = await User.findOne({ $or: [{ email }, { username }] });
@@ -32,26 +69,30 @@ router.post("/register", authLimiter, async (req, res) => {
             });
         }
 
-        // إنشاء مستخدم جديد
+        // ✅ إنشاء مستخدم جديد - الـ role دائماً "user" ولا يُقبل من الـ body أبداً
         const user = await User.create({
             username,
             email,
             password,
-            role: role || "user" // الافتراضي مستخدم عادي
+            role: "user" // ← مُثبّت على السيرفر - لا يمكن للمستخدم تغييره
         });
 
         sendTokenResponse(user, 201, res);
     } catch (err) {
+        // ✅ FIX API7: لا نكشف تفاصيل الخطأ الداخلية في الإنتاج
         res.status(500).json({
             success: false,
             message: "خطأ في عملية التسجيل",
-            error: err.message
+            error: process.env.NODE_ENV === "development" ? err.message : undefined
         });
     }
 });
 
-// @desc    Login user
+// ====================================
+// @desc    تسجيل الدخول
 // @route   POST /api/auth/login
+// @access  Public
+// ====================================
 router.post("/login", authLimiter, async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -67,6 +108,7 @@ router.post("/login", authLimiter, async (req, res) => {
         // البحث عن المستخدم وتضمين كلمة المرور
         const user = await User.findOne({ email }).select("+password");
 
+        // ✅ رسالة خطأ موحدة لمنع User Enumeration
         if (!user || !(await user.matchPassword(password))) {
             return res.status(401).json({
                 success: false,
@@ -79,18 +121,39 @@ router.post("/login", authLimiter, async (req, res) => {
         res.status(500).json({
             success: false,
             message: "خطأ في عملية تسجيل الدخول",
-            error: err.message
+            error: process.env.NODE_ENV === "development" ? err.message : undefined
         });
     }
 });
 
-// ميثود لإنشاء التوكن وإرسال الاستجابة
+// ====================================
+// @desc    جلب بيانات المستخدم الحالي
+// @route   GET /api/auth/me
+// @access  Private
+// ====================================
+router.get("/me", protect, async (req, res) => {
+    res.json({
+        success: true,
+        user: {
+            id: req.user._id,
+            username: req.user.username,
+            email: req.user.email,
+            role: req.user.role
+        }
+    });
+});
+
+// ====================================
+// دالة داخلية لإنشاء التوكن وإرسال الاستجابة
+// ====================================
 const sendTokenResponse = (user, statusCode, res) => {
-    // إنشاء التوكن
+    const secret = process.env.JWT_SECRET || "raya_dev_secret_key_NOT_FOR_PRODUCTION_2026";
+
+    // ✅ التوكن صالح لـ 24 ساعة فقط (مشدد من 30 يوم)
     const token = jwt.sign(
         { id: user._id },
-        process.env.JWT_SECRET || "raya_secret_key_2026",
-        { expiresIn: "30d" }
+        secret,
+        { expiresIn: "24h" }
     );
 
     res.status(statusCode).json({

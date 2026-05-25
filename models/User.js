@@ -27,7 +27,7 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: [true, "كلمة المرور مطلوبة"],
-        minlength: [6, "كلمة المرور يجب أن تكون 6 أحرف على الأقل"],
+        minlength: [8, "كلمة المرور يجب أن تكون 8 أحرف على الأقل"], // ✅ رُفع الحد من 6 إلى 8
         select: false // لا تظهر كلمة المرور بشكل افتراضي عند جلب البيانات
     },
 

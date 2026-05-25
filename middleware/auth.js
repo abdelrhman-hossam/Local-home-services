@@ -4,10 +4,16 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
-// حماية المسارات (يجب أن يكون المستخدم مسجلاً)
+// المفتاح السري المستخدم في كل مكان
+const JWT_SECRET = process.env.JWT_SECRET || "raya_dev_secret_key_NOT_FOR_PRODUCTION_2026";
+
+// ====================================
+// ✅ Middleware: حماية المسارات (المستخدم لازم يكون مسجل دخول)
+// ====================================
 exports.protect = async (req, res, next) => {
     let token;
 
+    // قبول التوكن من الـ Authorization Header فقط (Bearer token)
     if (
         req.headers.authorization &&
         req.headers.authorization.startsWith("Bearer")
@@ -15,29 +21,47 @@ exports.protect = async (req, res, next) => {
         token = req.headers.authorization.split(" ")[1];
     }
 
-    // التحقق من وجود التوكن
+    // ✅ رفض الطلب إذا لم يوجد توكن
     if (!token) {
         return res.status(401).json({
             success: false,
-            message: "غير مصرح لك بالوصول لهذا المسار"
+            message: "غير مصرح لك بالوصول - يجب تسجيل الدخول أولاً"
         });
     }
 
     try {
-        // التحقق من صحة التوكن
-        const decoded = jwt.verify(token, process.env.JWT_SECRET || "raya_secret_key_2026");
+        // ✅ التحقق من صحة التوكن وانتهاء صلاحيته
+        const decoded = jwt.verify(token, JWT_SECRET);
 
-        req.user = await User.findById(decoded.id);
+        // ✅ جلب المستخدم من قاعدة البيانات (لا نثق بالـ token وحده)
+        // هذا يضمن أن المستخدم لا يزال موجوداً في النظام
+        const user = await User.findById(decoded.id).select("-password");
 
-        if (!req.user) {
+        if (!user) {
+            // المستخدم تم حذفه لكن التوكن لا يزال صالحاً
+            console.warn(`⚠️ [SECURITY] محاولة وصول بتوكن لمستخدم محذوف: ${decoded.id}`);
             return res.status(401).json({
                 success: false,
                 message: "المستخدم غير موجود"
             });
         }
 
+        // ✅ حفظ بيانات المستخدم الحقيقية من DB (وليس من الـ token)
+        // الـ role يُؤخذ من قاعدة البيانات دائماً - ليس من الـ JWT
+        req.user = user;
+
         next();
     } catch (err) {
+        // تسجيل محاولات التزوير
+        if (err.name === "JsonWebTokenError") {
+            console.warn(`⚠️ [SECURITY] توكن مزور أو تالف من IP: ${req.ip}`);
+        } else if (err.name === "TokenExpiredError") {
+            return res.status(401).json({
+                success: false,
+                message: "انتهت صلاحية الجلسة - يرجى تسجيل الدخول مجدداً"
+            });
+        }
+
         return res.status(401).json({
             success: false,
             message: "التوكن غير صالح"
@@ -45,15 +69,29 @@ exports.protect = async (req, res, next) => {
     }
 };
 
-// تحديد الصلاحيات (للأدمن فقط مثلاً)
+// ====================================
+// ✅ Middleware: تحديد الصلاحيات بحسب الدور (Role-Based Access Control)
+// ====================================
 exports.authorize = (...roles) => {
     return (req, res, next) => {
-        if (!roles.includes(req.user.role)) {
+        // التأكد من أن req.user موجود (protect لازم يُشغَّل قبله)
+        if (!req.user || !req.user.role) {
             return res.status(403).json({
                 success: false,
-                message: `المستخدم بالدور (${req.user.role}) غير مسموح له بالقيام بهذا الإجراء`
+                message: "غير مسموح بالوصول"
             });
         }
+
+        if (!roles.includes(req.user.role)) {
+            // تسجيل محاولة الوصول غير المصرح بها
+            console.warn(`⚠️ [SECURITY] محاولة وصول غير مصرح: المستخدم ${req.user._id} (دور: ${req.user.role}) حاول الوصول لمسار يتطلب: [${roles.join(", ")}]`);
+
+            return res.status(403).json({
+                success: false,
+                message: "ليس لديك صلاحية للوصول إلى هذا المسار"
+            });
+        }
+
         next();
     };
 };

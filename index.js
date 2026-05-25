@@ -21,19 +21,58 @@ app.set('trust proxy', 1);
 // ====================================
 // Middleware - البرمجيات الوسيطة
 // ====================================
-// تفعيل CORS للسماح بطلبات من نطاقات مختلفة
-// استخدام CORS_ORIGIN من ملف .env أو السماح من أي مكان للتطوير
+// ✅ FIX API7 - CORS: تقييد المصادر المسموح بها
+// في الإنتاج: حدد النطاق الفعلي فقط (مثل: https://yourdomain.com)
+// لا تستخدم '*' في الإنتاج أبداً
+const allowedOrigins = process.env.CORS_ORIGIN
+  ? process.env.CORS_ORIGIN.split(",").map(o => o.trim())
+  : ["http://localhost:5000", "http://127.0.0.1:5000"];
+
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN || '*',
-  credentials: true
+  origin: (origin, callback) => {
+    // السماح للطلبات بدون origin (Postman, mobile apps, same-origin)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      console.warn(`⚠️ [SECURITY] محاولة وصول CORS من مصدر غير مصرح: ${origin}`);
+      callback(new Error("غير مسموح بالوصول من هذا المصدر (CORS)"));
+    }
+  },
+  credentials: true,
+  optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
 
 // --- إعدادات الأمان (Security) ---
 
-// 1. حماية HTTP Headers باستخدام Helmet
+// ✅ FIX API7 - تفعيل جميع إعدادات Helmet الأمنية
+// إزالة X-Powered-By header لمنع كشف تقنية السيرفر
+app.disable("x-powered-by");
+
 app.use(helmet({
-  contentSecurityPolicy: false, // تعطيل CSP مؤقتاً لسهولة التعامل مع الصور والسكربتات الخارجية في وضع التطوير
+  // ✅ تفعيل Content Security Policy لمنع XSS
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'"], // inline scripts للـ frontend الحالي
+      styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+      fontSrc: ["'self'", "https://fonts.gstatic.com"],
+      imgSrc: ["'self'", "data:", "https:"],
+      connectSrc: ["'self'"],
+      frameSrc: ["'none'"],
+      objectSrc: ["'none'"]
+    }
+  },
+  // ✅ إخفاء معلومات السيرفر
+  hidePoweredBy: true,
+  // ✅ منع Clickjacking
+  frameguard: { action: "deny" },
+  // ✅ منع MIME type sniffing
+  noSniff: true,
+  // ✅ تفعيل XSS Protection للمتصفحات القديمة
+  xssFilter: true,
+  // ✅ HSTS - إجبار HTTPS في الإنتاج
+  hsts: process.env.NODE_ENV === "production" ? { maxAge: 31536000, includeSubDomains: true } : false
 }));
 
 // 2. منع NoSQL Injection (تطهير البيانات)
@@ -51,11 +90,17 @@ const limiter = rateLimit({
 });
 app.use("/api", limiter); // تطبيق المحدد على مسارات الـ API فقط
 
-// معالجة البيانات الواردة بصيغة JSON
-app.use(express.json());
+// ✅ FIX API4 - تحديد حجم الـ request body لمنع هجمات الـ payload الكبير
+app.use(express.json({ limit: "10kb" }));
 
-// معالجة البيانات الواردة من النماذج
-app.use(express.urlencoded({ extended: true }));
+// ✅ تحذير أمني عند عدم وجود JWT_SECRET
+if (!process.env.JWT_SECRET) {
+  console.warn("⛔ [SECURITY WARNING] JWT_SECRET غير محدد في ملف .env!");
+  console.warn("⛔ السيرفر يستخدم مفتاحاً افتراضياً غير آمن للتطوير فقط!");
+}
+
+// معالجة البيانات الواردة من النماذج (بحد أقصى 10kb)
+app.use(express.urlencoded({ extended: true, limit: "10kb" }));
 
 // ====================================
 // تقديم الملفات الثابتة (Static Files)
