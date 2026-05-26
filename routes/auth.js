@@ -12,9 +12,10 @@ const { protect } = require("../middleware/auth");
 // التحقق من وجود JWT_SECRET في البيئة
 // ====================================
 if (!process.env.JWT_SECRET) {
-    console.error("⛔ SECURITY ERROR: JWT_SECRET غير موجود في ملف .env - يجب تحديده فوراً!");
+    console.error("⛔ SECURITY WARNING: JWT_SECRET غير موجود في متغيرات البيئة.");
+    console.error("⛔ في الإنتاج يجب إضافة JWT_SECRET في إعدادات Vercel أو سياسات المصادقة قد تتعرض للخطر.");
     if (process.env.NODE_ENV === "production") {
-        process.exit(1); // إيقاف السيرفر في الإنتاج إذا لم يوجد المفتاح السري
+        console.error("⛔ لن يتم إيقاف العملية في بيئة Serverless، لكن يجب إصلاح المتغير فوراً.");
     }
 }
 
@@ -147,7 +148,15 @@ router.get("/me", protect, async (req, res) => {
 // دالة داخلية لإنشاء التوكن وإرسال الاستجابة
 // ====================================
 const sendTokenResponse = (user, statusCode, res) => {
-    const secret = process.env.JWT_SECRET || "raya_dev_secret_key_NOT_FOR_PRODUCTION_2026";
+    const secret = process.env.JWT_SECRET || (process.env.NODE_ENV === 'production' ? null : "raya_dev_secret_key_NOT_FOR_PRODUCTION_2026");
+
+    if (!secret) {
+        console.error("⛔ JWT_SECRET غير موجود. لا يمكن إنشاء توكن في بيئة الإنتاج.");
+        return res.status(500).json({
+            success: false,
+            message: "خطأ في إعداد المصادقة. الرجاء التحقق من متغير JWT_SECRET في Vercel."
+        });
+    }
 
     // ✅ التوكن صالح لـ 24 ساعة فقط (مشدد من 30 يوم)
     const token = jwt.sign(

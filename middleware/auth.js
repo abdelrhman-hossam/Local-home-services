@@ -5,7 +5,11 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
 // المفتاح السري المستخدم في كل مكان
-const JWT_SECRET = process.env.JWT_SECRET || "raya_dev_secret_key_NOT_FOR_PRODUCTION_2026";
+const JWT_SECRET = process.env.JWT_SECRET || (process.env.NODE_ENV === 'production' ? null : "raya_dev_secret_key_NOT_FOR_PRODUCTION_2026");
+
+if (!JWT_SECRET && process.env.NODE_ENV === 'production') {
+    console.error("⛔ SECURITY ERROR: JWT_SECRET غير موجود في متغيرات البيئة. المصادقة لن تعمل في الإنتاج.");
+}
 
 // ====================================
 // ✅ Middleware: حماية المسارات (المستخدم لازم يكون مسجل دخول)
